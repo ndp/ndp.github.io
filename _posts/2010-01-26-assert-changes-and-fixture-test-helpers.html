@@ -1,0 +1,14 @@
+---
+layout: post
+title: Assert Changes and Fixture Test Helpers
+date: '2010-01-26T21:21:00.000-08:00'
+author: ndp
+tags:
+- unit testing
+- rails
+- ruby
+- agile
+modified_time: '2010-02-01T23:21:42.918-08:00'
+---
+
+About a year ago I posted some <a href="http://blog.carbonfive.com/2009/04/testing/assert_changes-and-assert_no_changes-in-ruby">test helpers for checking pre- and post-conditions during a test</a>. I called them "<b>assert_changes</b>" and "<b>assert_no_changes</b>".&nbsp; They took a ruby expression to evaluate, a block, and did what you expected:<br /><pre><code>    o.answer = 'yes'<br />    assert_changes 'o.answer' =&gt; ['yes','no'] do<br />      o.answer = 'no'<br />    end</pre></code><br />Since then, I have discovered similar functionality in shoulda and rspec. But if you're using test unit, and you don't want to take the leap to shoulda (which is painless), I packaged up my test helpers into <a href="http://github.com/ndp/ayudante">a gem that's easy to install</a>. Plus, mine are a little easier to read, if you don't mind evaling strings within your tests.<br /><br />It's called "ayudante". To install, <br /><pre><code>    gem install ndp-ayudante --source=http://gems.github.com</pre></code><br />Also included in the gem are "<b>fixture helpers</b>". These make it easy to test for sets and lists of your fixture model objects, without the hassle of building up your own lists and sets. <br /><br />On <a href="http://www.gobalto.com">goBalto</a>, Ingar had created something like it for testing Sphinx search results. We had sets of fixtures, and we wanted to make sure a search returned certain results-- sometimes contains, sometimes exact. Sometimes we didn't care exactly what the order was so we wanted set comparisons. Or we didn't care about extra items.<br /><br />Here's how it works. If you have a model object and fixtures for CandyBars, it adds test helper methods for <b>assert_list_of_candy_bars</b> (using #method_missing). Like all xUnit asserts, you pass the expected values (a list of symbols identifying the fixture objects), and the value you are testing.<br /><br /><pre><code>    result = CandyBar.find(:all, ... )<br />    assert_list_of_candy_bars [:mars, :eminem], result</pre></code><br />It also supports <b>assert_set_of_candy_bars</b>, so you can ignore the order of comparisons; and <b>assert_contains_candy_bars</b> so you can make sure it results contain a subset. Enjoy!
