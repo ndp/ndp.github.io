@@ -1,0 +1,21 @@
+---
+layout: post
+title: "Introducing Test Pantry"
+date: 2017-02-19
+comments: false
+url: /2017/02/2017-02-19-test-pantry-test-data-factory.html
+tags:
+ - software development
+ - unit testing
+ - ES6
+ - javascript
+ - prototyping
+ - mini-project
+ - agile
+ - mock objects
+ - coding
+ - expectations
+---
+
+<div class='post'>
+<br />On two recent Javascript projects, we needed good tools for building test data. I'm used to <a href="https://github.com/thoughtbot/factory_girl">Thoughtbot's Factory Girl</a> for Ruby, but didn't find the equivalent. There are several around, but the syntax is picky, and it didn't seem like they offered enough advantages over going it alone. In Javascript, because of the nice object literal format, it's pretty easy to just hard-code yourself, and that must be what most people do. But having a few tools to make it easier really helps, so I created <a href="https://github.com/ndp-software/test-pantry" target="_blank">Test Pantry</a>.<br /><br /><a name='more'></a>This library takes care of some of the problems you run into when you do it yourself. For example, all of your objects may have unique IDs, but writing this into every single factory method is a bit tedious. Test Pantry allows you to define a single factory/trait such as <span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">has-id</span>, and mix it into any all your model objects.<br /><br />Another mess is creating networks of objects with relationships to each other. Custom-built functions get complex fast. Test Pantry provides a couple tools to make this easier.<br /><br />Finally, I&nbsp;incorporated a unique feature to test data factories: seedable random data. Test Pantry will generate random values, but each factory has its own "seed" that causes a predictable sequence to be emitted. From the docs:<br /><pre style="font-family: Courier New, Courier, monospace; font-size: small;">pantry.recipeFor('randomSequence', function() {<br />  return this.randomInt(10)<br />})<br /><br />pantry.randomSequence() // --&gt; 9<br />pantry.randomSequence() // --&gt; 6<br />pantry.randomSequence() // --&gt; 2<br />pantry.randomSequence() // --&gt; 5<br /><br />pantry.randomSequence.reset()   // let's start over<br />pantry.randomSequence() // --&gt; 9&nbsp<br />pantry.randomSequence() // --&gt; 6 ...<br /></pre><br /> This allows your tests to express the notion that they don't care what the data is, but at the same time make assertions about the results. You can definitely live without this, but removing some of the "randomness" makes writing tests quicker. More and more we're writing probabilistic code&nbsp;and having this at the core really speeds things up.<br /><br />If you are writing ECMA/JavaScript, and writing tests-- and who's isn't--&nbsp;<a href="https://github.com/ndp-software/test-pantry" target="_blank">check it out</a>!</div>
