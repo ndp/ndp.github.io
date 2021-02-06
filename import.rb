@@ -3,14 +3,38 @@
 require 'rubygems'
 require 'nokogiri'
 require 'fileutils'
+require 'optionparser'
 require 'date'
 require 'uri'
+require 'reverse_markdown'
 
 # usage: ruby import.rb my-blog.xml
 # my-blog.xml is a file from Settings -> Basic -> Export in blogger.
+opts        = OptionParser.new
+opts.banner = "Usage: ruby import.rb [-f md|html] [blogger-export-file.xml]\n."
 
+extension = :html
+opts.on("-f", "--format [html|markdown]", String, "Creates posts of the format. Default html.") do |f|
+  extension = f.downcase == 'html' ? :html : :md
+end
+opts.parse!
+raise opts.banner if ARGV[0].nil?
 data = File.read ARGV[0]
 doc  = Nokogiri::XML(data)
+
+class CodeBlock < ReverseMarkdown::Converters::Base
+  def convert(node, state = {})
+    style = node.attribute('style')
+    if /font-family:.*courier.*monospace/ =~ style ||
+      (/white-space: pre-wrap/ =~ style &&
+        /font-family: .*source code pro/ =~ style)
+      "`#{node.text}`"
+    else
+      treat_children(node, state)
+    end
+  end
+end
+ReverseMarkdown::Converters.register :span, CodeBlock.new
 
 @posts  = {}
 @drafts = {}
@@ -45,15 +69,13 @@ def published?(node)
   node.at_css('app|control app|draft', 'app' => 'http://purl.org/atom/app#').nil?
 end
 
-def write(post, path)
+def write(post, path, extension)
   puts "Post [#{post.title}] has #{post.comments.count} comments"
-  File.open(File.join(path, post.file_name), 'w') do |file|
+  File.open(File.join(path, "#{post.file_name}.#{extension}"), 'w') do |file|
     file.write post.header
     file.write "\n\n"
     #file.write "<h1>{{ page.title }}</h1>\n"
-    file.write "<div class='post'>\n"
-    file.write post.content
-    file.write "</div>\n"
+    file.write post.content_as(extension)
 
     unless post.comments.empty?
       file.write "<h2>Comments</h2>\n"
@@ -64,7 +86,7 @@ def write(post, path)
         file.write comment.author
         file.write "</div>\n"
         file.write "<div class='content'>\n"
-        file.write comment.content
+        file.write comment.content_as(extension)
         file.write "</div>\n"
         file.write "</div>\n"
       end
@@ -74,11 +96,30 @@ def write(post, path)
   end
 end
 
-class Post
+class PostOrComment
+  def initialize(node)
+    @node = node
+  end
+
+  def content_as(extension)
+    extension == :md ? content_as_md : content_as_html
+  end
+
+  def content_as_md
+    ReverseMarkdown.convert(content, unknown_tags: :pass_through, github_flavored: true)
+  end
+
+  def content_as_html
+    "<div class='post'>\n#{content}</div>\n"
+  end
+
+end
+
+class Post < PostOrComment
   attr_reader :comments
 
   def initialize(node)
-    @node     = node
+    super
     @comments = []
   end
 
@@ -91,7 +132,7 @@ class Post
   end
 
   def content
-    @content ||= @node.at_css('content').content
+    @node.at_css('content').content
   end
 
   def creation_date
@@ -123,14 +164,14 @@ class Post
 
   def permalink_path
     if permalink.nil?
-      "/#{creation_datetime.year}/#{creation_datetime.month.to_s.rjust(2,'0')}/#{param_name}.html"
+      "/#{creation_datetime.year}/#{creation_datetime.month.to_s.rjust(2, '0')}/#{param_name}.html"
     else
       permalink.gsub(/^https?:\/\/[^\/]+/, '')
     end
   end
 
   def file_name
-    %{#{creation_date}-#{param_name}.html}
+    %{#{creation_date}-#{param_name}}
     # permalink.split('/').last
   end
 
@@ -168,11 +209,7 @@ class Post
   end
 end
 
-class Comment
-  def initialize(node)
-    @node = node
-  end
-
+class Comment < PostOrComment
   def author
     @node.search('author name').first.content
   end
@@ -193,7 +230,7 @@ FileUtils.rm_rf('_posts')
 Dir.mkdir("_posts") unless File.directory?("_posts")
 
 @posts.each do |id, post|
-  write post, '_posts'
+  write post, '_posts', extension
 end
 
 puts "\n"
@@ -203,5 +240,5 @@ FileUtils.rm_rf('_drafts')
 Dir.mkdir("_drafts") unless File.directory?("_drafts")
 
 @drafts.each do |id, post|
-  write post, '_drafts'
+  write post, '_drafts', extension
 end

@@ -18,3 +18,4 @@ group :jekyll_plugins do
   gem "jekyll-feed"
 end
 
+gem 'reverse_markdown'
