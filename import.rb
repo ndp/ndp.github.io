@@ -1,3 +1,5 @@
+# Based on https://gist.github.com/juniorz/1564581
+
 require 'rubygems'
 require 'nokogiri'
 require 'fileutils'
@@ -8,13 +10,13 @@ require 'uri'
 # my-blog.xml is a file from Settings -> Basic -> Export in blogger.
 
 data = File.read ARGV[0]
-doc = Nokogiri::XML(data)
+doc  = Nokogiri::XML(data)
 
-@posts = {}
+@posts  = {}
 @drafts = {}
 
 def add(node)
-  id = node.search('id').first.content
+  id   = node.search('id').first.content
   type = node
            .search('category')
            .filter('[scheme="http://schemas.google.com/g/2005#kind"]')
@@ -29,13 +31,13 @@ def add(node)
       @drafts[id] = Post.new(node)
     end
   when 'comment'
-    reply_to = node.children.find {|c| c.name == 'in-reply-to' }
-    post_id = reply_to.attr('ref')
+    reply_to = node.children.find { |c| c.name == 'in-reply-to' }
+    post_id  = reply_to.attr('ref')
     #post_id = node.search('thr').first.attr('ref')
     @posts[post_id].add_comment(Comment.new(node))
   when 'template', 'settings', 'page'
   else
-    raise 'dunno '+type
+    raise 'dunno ' + type
   end
 end
 
@@ -43,10 +45,9 @@ def published?(node)
   node.at_css('app|control app|draft', 'app' => 'http://purl.org/atom/app#').nil?
 end
 
-def write(post)
+def write(post, path)
   puts "Post [#{post.title}] has #{post.comments.count} comments"
-  #FileUtils.mkdir_p(post.path) unless File.exists?(post.path)
-  File.open(File.join('./_posts/', post.file_name), 'w') do |file|
+  File.open(File.join(path, post.file_name), 'w') do |file|
     file.write post.header
     file.write "\n\n"
     #file.write "<h1>{{ page.title }}</h1>\n"
@@ -75,8 +76,9 @@ end
 
 class Post
   attr_reader :comments
+
   def initialize(node)
-    @node = node
+    @node     = node
     @comments = []
   end
 
@@ -107,7 +109,7 @@ class Post
   def permalink
     return @permalink unless @permalink.nil?
 
-    link_node = @node.at_css('link[rel=alternate]')
+    link_node  = @node.at_css('link[rel=alternate]')
     @permalink = link_node && link_node.attr('href')
   end
 
@@ -119,8 +121,12 @@ class Post
     end
   end
 
-  def path
-    "#{permalink.gsub('https://blog.ndpsoftware.com','')}".split('/').join('/')
+  def permalink_path
+    if permalink.nil?
+      "/#{creation_datetime.year}/#{creation_datetime.month.to_s.rjust(2,'0')}/#{param_name}.html"
+    else
+      permalink.gsub(/^https?:\/\/[^\/]+/, '')
+    end
   end
 
   def file_name
@@ -135,7 +141,7 @@ class Post
       %{title: "#{title}"},
       %{date: #{creation_datetime}},
       %{comments: false},
-      %{url: #{path}/#{file_name}},
+      %{url: #{permalink_path}},
       tags,
       '---'
     ].compact.join("\n")
@@ -146,7 +152,7 @@ class Post
     unless Array(terms).empty?
       [
         'categories:',
-        terms.map{ |t| t.attr('term') && " - #{t.attr('term')}" }.compact.join("\n"),
+        terms.map { |t| t.attr('term') && " - #{t.attr('term')}" }.compact.join("\n"),
       ].join("\n")
     end
   end
@@ -156,7 +162,7 @@ class Post
     unless Array(terms).empty?
       [
         'tags:',
-        terms.map{ |t| t.attr('term') && " - #{t.attr('term')}" }.compact.join("\n"),
+        terms.map { |t| t.attr('term') && " - #{t.attr('term')}" }.compact.join("\n"),
       ].join("\n")
     end
   end
@@ -176,7 +182,7 @@ class Comment
   end
 end
 
-entries = {} 
+entries = {}
 
 doc.search('entry').each do |entry|
   add entry
@@ -187,15 +193,15 @@ FileUtils.rm_rf('_posts')
 Dir.mkdir("_posts") unless File.directory?("_posts")
 
 @posts.each do |id, post|
-  write post
+  write post, '_posts'
 end
 
-# puts "\n"
-# puts "** Writing DRAFT posts"
-#
-# FileUtils.rm_rf('_drafts')
-# Dir.mkdir("_drafts") unless File.directory?("_drafts")
-#
-# @drafts.each do |id, post|
-#   write post, '_drafts'
-# end
+puts "\n"
+puts "** Writing DRAFT posts"
+
+FileUtils.rm_rf('_drafts')
+Dir.mkdir("_drafts") unless File.directory?("_drafts")
+
+@drafts.each do |id, post|
+  write post, '_drafts'
+end
