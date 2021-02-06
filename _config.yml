@@ -26,6 +26,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.ndpsoftware.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ndp8
 github_username:  ndp
+linkedin_username:  ndpsoftware
 google_analytics: UA-1458227-4
 
 # Build settings
@@ -53,3 +54,7 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 show_excerpts: true
+header_pages:
+  - about.markdown
+  - "[NDP Software](https://www.ndpsoftware.com)"
+  - "[&what](https://www.amp-what.com)"
