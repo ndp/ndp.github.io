@@ -120,7 +120,7 @@ class Post
   end
 
   def path
-    "#{permalink.gsub('https://blog.ndpsoftware.com','')}".split('/')[0...-1].join('/')
+    "#{permalink.gsub('https://blog.ndpsoftware.com','')}".split('/').join('/')
   end
 
   def file_name
