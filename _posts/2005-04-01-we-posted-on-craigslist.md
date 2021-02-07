@@ -4,6 +4,7 @@ title: ""
 date: 2005-04-01
 comments: false
 url: /2006/03/we-posted-on-craigslist.html
+permalink: /2006/03/we-posted-on-craigslist.html
 ---
 
 We posted on craigslist.org for a jr. java engineer and gotten the predictable hundreds of responses. I have seen all sorts of mistakes. Normally I wouldn't repeat this sort of information in a public forum, but what the heck, it's a blog.  

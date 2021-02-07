@@ -4,6 +4,7 @@ title: ""
 date: 2010-09-19
 comments: false
 url: /2010/09/most-resumes-are-pretty-boring.html
+permalink: /2010/09/most-resumes-are-pretty-boring.html
 tags:
  - css
  - software development
@@ -26,7 +27,7 @@ Although I think [linkedin](http://www.linkedin.com/in/ndpsoftware) does a darn 
   
 What do you think? Is it interesting enough to explore the data?  
   
-If you had one visualization to complement your resume, what would you want to convey?<h2>Comments</h2>
+If you had one visualization to complement your resume, what would you want to convey? <h2>Comments</h2>
 <div class='comments'>
 <div class='comment'>
 <div class='author'>ndp</div>

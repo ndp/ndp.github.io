@@ -4,6 +4,7 @@ title: "Why Hire an Agile Consultant"
 date: 2013-01-17
 comments: false
 url: /2013/01/why-agile-consultant.html
+permalink: /2013/01/why-agile-consultant.html
 tags:
  - experience
  - C5
@@ -45,7 +46,7 @@ Agile, and the related methodologies like scrum, extreme programming, lean/agile
 Agile, with its emphasis, addresses these:  
   
 The most common reasons for software failure are _unrealistic or unarticulated project goals_ and _badly defined requirements_. We build working software in collaboration with our customers. By collaborating, we identify missing requirements right away (and resolve them with you.) And our customers see problems right away, and get a chance to respond to them. This tends to reveal right away when our goals aren't aligned.  
-  
+   
 The other common problem is _communication among customers, developers and users,_ and poor reporting of the project status. Agile addresses these head-on. At its core, it's about communication. The team meets daily to identify problems, programmers work together ("pair"), and the customers are involved frequently during the development of features. In addition, software is delivered and reviewed frequently (usually every week), so the team-- even if there is some huge misunderstanding-- rights the ship before it can get too far off course.  
   
 
@@ -64,4 +65,4 @@ References:
 [http://www.agilemanifesto.org/](http://www.agilemanifesto.org/)  
 [http://www.agilealliance.org/show/2](http://www.agilealliance.org/show/2)  
 [http://www.it-cortex.com/Stat\_Failure\_Rate.htm](http://www.it-cortex.com/Stat_Failure_Rate.htm) This article aggregates several studies on software failure rates.[  
- http://spectrum.ieee.org/sep05/1685](http://spectrum.ieee.org/sep05/1685) Why Software Fails, Rober N. Charette, September 2005. Summarizes why projects fail.
+ http://spectrum.ieee.org/sep05/1685](http://spectrum.ieee.org/sep05/1685) Why Software Fails, Rober N. Charette, September 2005. Summarizes why projects fail. 

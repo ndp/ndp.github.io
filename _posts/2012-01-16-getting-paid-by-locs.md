@@ -4,6 +4,7 @@ title: "Getting paid by LOCs?"
 date: 2012-01-16
 comments: false
 url: /2012/01/getting-paid-by-locs.html
+permalink: /2012/01/getting-paid-by-locs.html
 tags:
  - software development
  - ruby
@@ -16,7 +17,7 @@ I don't get paid by the lines of code I write. But I've certainly joked about it
 
   
 
-This brings me to the boy scout rule: always leave the code nicer than when you started. This can be a little hard to quantify with a number: [test coverage](http://blog.james-carr.org/2009/10/01/beware-code-coverage-metrics/), [cyclomatic complexity](http://www.ibm.com/developerworks/java/library/j-cq03316/) and [coupling](http://clarkware.com/software/JDepend.html) metrics are all often used. But with a bloated codebase, a simple line count reduction may suffice to improve the codebase, although is not the [main](http://www.thoughtclusters.com/2011/04/refactoring-is-not-about-reducing-code/) [goal](http://www.refactoringredmine.com/refactoring-to-reduce-code/). In my casual joking about this with my teammates, they all liked it. But how?
+This brings me to the boy scout rule: always leave the code nicer than when you started. This can be a little hard to quantify with a number: [test coverage](http://blog.james-carr.org/2009/10/01/beware-code-coverage-metrics/), [cyclomatic complexity](http://www.ibm.com/developerworks/java/library/j-cq03316/) and [coupling](http://clarkware.com/software/JDepend.html) metrics are all often used. But with a bloated codebase, a simple line count reduction may suffice to improve the codebase, although is not the [main](http://www.thoughtclusters.com/2011/04/refactoring-is-not-about-reducing-code/)[goal](http://www.refactoringredmine.com/refactoring-to-reduce-code/). In my casual joking about this with my teammates, they all liked it. But how?
 
   
 

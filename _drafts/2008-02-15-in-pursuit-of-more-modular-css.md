@@ -4,6 +4,7 @@ title: "In Pursuit of More Modular CSS"
 date: 2008-02-15
 comments: false
 url: /2008/02/in-pursuit-of-more-modular-css.html
+permalink: /2008/02/in-pursuit-of-more-modular-css.html
 tags:
  - css
  - software development
@@ -43,11 +44,36 @@ Geographic Modularization
   
 What this means is that as you break your page into rectangles, don't only modularize the markup this way, but modularize the CSS this way as well.  
   
-This may sound obvious, but what happens naturally is the opposite. Usually we modularize based on the element, class or style. For example, we'll define what the H1 looks like for our site, and then as we build out more pages, define exceptions for the line-height, padding or what-not. Or we define what an <label> looks like, and then add exceptions depending on the context. It gets messy quickly.<br><br><span style="font-weight: bold;">An Example</span><br><br>Let's start with an example of the right way. Here's the user interface element:<br><br>Search ____________ [GO]<br><br>Let's call this the "siteSearch".<br><br><span style="font-style: italic;">Modularize the Markup </span><br>First, let's modularize the markup. This markup should be as simple as can be, except we make add a class or id to the outermost element so we can style it. (Add a class if there can be more than one per page, or an id if there's just one on the page.) I'll repeat it, because it's so important: <span style="font-style: italic;">Always add a class or id to the outermost element of your module.</span> Name it just like the module, so others know where it belongs. Put it in it's own file (depending on your view framework):<br><br><span style="font-weight: bold;">siteSearch.html</span><br><form action="/siteSearch.html" style="font-weight: bold;">id="siteSearch"&gt;<br><label>Search</label><br><input type="text"><br><input type="submit" value="Go"><br>
+This may sound obvious, but what happens naturally is the opposite. Usually we modularize based on the element, class or style. For example, we'll define what the H1 looks like for our site, and then as we build out more pages, define exceptions for the line-height, padding or what-not. Or we define what an <label> looks like, and then add exceptions depending on the context. It gets messy quickly.<br><br><span style="font-weight: bold;">An Example</span><br><br>Let's start
+      with an example of the right way. Here's the user interface element:<br><br>Search ____________ [
+      GO ]<br><br>Let's call this the "siteSearch".<br><br><span style="font-style:
+      italic;">Modularize the Markup </span><br>First, let's modularize the markup. This markup should
+      be as simple as can be, except we make add a class or id to the outermost element so we can style it. (Add a class
+      if there can be more than one per page, or an id if there's just one on the page.) I'll repeat it, because it's so
+      important: <span style="font-style: italic;">Always add a class or id to the outermost element of your
+      module.</span> Name it just like the module, so others know where it belongs. Put it in it's own file
+      (depending on your view framework):<br><br><span style="font-weight: bold;">siteSearch.html</span><br><form action="/siteSearch.html" style="font-weight: bold;">id="siteSearch"&gt;<br><label>Search</label><br><input type="text"><br><input type="submit" value="Go"><br>
 </form>
-<br><br>Modularize the CSS<br>Put all the CSS that pertains to this in its own file.<br><span style="font-weight: bold;">siteSearch.css</span><br>#siteSearch label { display: inline; padding: 0 10px; color: #555; }<br>#siteSearch input { ...<br><br><span style="font-style: italic;">Use the selector mechanism to scope all the style rules for the module</span>. Don't define or rely upon any style rules outside of this module. Don't define a rule with a generic "label" selector, otherwise it can interfere with other labels on the page. "Scope" it to the module that it is in.<br><br>Displaying the Module in Different Contexts<br><br><br>Defining "container" Modules<br><br><br><br>Let's start up with some simple markup to display a promotion for our a newsletter:<br><div>
+<br><br>Modularize the CSS<br>Put all the CSS that pertains to this in its own file.<br><span style="font-weight: bold;">siteSearch.css</span><br>#siteSearch label { display: inline; padding:
+      0 10px; color: #555; }<br>#siteSearch input { ...<br><br><span style="font-style:
+      italic;">Use the selector mechanism to scope all the style rules for the module</span>. Don't define or
+      rely upon any style rules outside of this module. Don't define a rule with a generic "label" selector, otherwise
+      it can interfere with other labels on the page. "Scope" it to the module that it is in.<br><br>Displaying
+      the Module in Different Contexts<br><br><br>Defining "container" Modules<br><br><br><br>Let's start up with some simple markup to display a promotion for our a newsletter:<br><div>
 <br><br><br><br><br>
 </div>
-<div style="border: 2px solid orange; padding: 5px; background-color: beige;">
-<br><ul>4.<br> Modularize geographically<br><br> Organize and break up the CSS using the same principles you use to organize the other code and markup. For example, if you are using JSPs and you create a tag file for the footer called footer.tag, place corresponding CSS rules in footer.css, and place that file in a path identical to the tag file.<br><br> This leads you to modularize CSS based on geographical areas of the page. This is a simple and understandable organizing principal. It also facilitates debugging-- there's one very clear place to look for selectors.<br><br> Unless trivial, it's best to create a css file for each page with custom selectors. For a page with its own styles, an embedded <style></style> element may be fine. Just remember that if the CSS is in a separate file, the browser can cache, which may be important.<br><br> The only variation on this "geographical" organization is forms. If you have a consistent form styling, it seems reasonable create a form.css to encapsulate it.<br><br><br><br>Recommended Approach</ul>
-</div></label>
+<div style="border: 2px
+      solid orange; padding: 5px; background-color: beige;">
+<br><ul>4.<br> Modularize
+      geographically<br><br> Organize and break up the CSS using the same principles you use to organize
+      the other code and markup. For example, if you are using JSPs and you create a tag file for the footer called
+      footer.tag, place corresponding CSS rules in footer.css, and place that file in a path identical to the tag file.<br><br> This leads you to modularize CSS based on geographical areas of the page. This is a simple and
+      understandable organizing principal. It also facilitates debugging-- there's one very clear place to look for
+      selectors.<br><br> Unless trivial, it's best to create a css file for each page with custom
+      selectors. For a page with its own styles, an embedded <style></style> element may be fine. Just
+      remember that if the CSS is in a separate file, the browser can cache, which may be important.<br><br>
+      The only variation on this "geographical" organization is forms. If you have a consistent form styling, it seems
+      reasonable create a form.css to encapsulate it.<br><br><br><br>Recommended
+      Approach</ul>
+</div>
+    </label>

@@ -4,6 +4,7 @@ title: "Scriptaculous Effects Demo"
 date: 2006-12-17
 comments: false
 url: /2006/12/i-threw-together-demo-of-scriptaculous.html
+permalink: /2006/12/i-threw-together-demo-of-scriptaculous.html
 tags:
  - demo
  - scriptaculous

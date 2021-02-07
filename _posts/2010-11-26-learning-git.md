@@ -4,6 +4,7 @@ title: "Learning Git?"
 date: 2010-11-26
 comments: false
 url: /2010/11/learning-git.html
+permalink: /2010/11/learning-git.html
 tags:
  - software development
  - design

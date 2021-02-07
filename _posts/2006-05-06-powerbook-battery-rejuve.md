@@ -4,6 +4,7 @@ title: "Powerbook Battery Rejuve"
 date: 2006-05-06
 comments: false
 url: /2006/05/powerbook-battery-rejuve.html
+permalink: /2006/05/powerbook-battery-rejuve.html
 tags:
  - apple
  - hardware

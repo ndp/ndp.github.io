@@ -4,6 +4,7 @@ title: "Should we use multiple input fields to prevent mistakes by users?"
 date: 2014-07-23
 comments: false
 url: /2014/07/password-confirmation-input-fields.html
+permalink: /2014/07/password-confirmation-input-fields.html
 tags:
  - experience
  - software development

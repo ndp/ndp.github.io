@@ -4,6 +4,7 @@ title: "Interesting Character Entities"
 date: 2011-05-03
 comments: false
 url: /2011/05/interesting-character-entities.html
+permalink: /2011/05/interesting-character-entities.html
 tags:
  - experience
  - entities

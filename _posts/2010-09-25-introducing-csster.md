@@ -4,6 +4,7 @@ title: "Introducing Csster"
 date: 2010-09-25
 comments: false
 url: /2010/09/introducing-csster.html
+permalink: /2010/09/introducing-csster.html
 tags:
  - css
  - unit testing

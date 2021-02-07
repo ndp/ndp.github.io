@@ -4,6 +4,7 @@ title: "First grade first"
 date: 2006-01-06
 comments: false
 url: /2006/01/first-grade-first.html
+permalink: /2006/01/first-grade-first.html
 tags:
  - style
  - coding
@@ -27,4 +28,4 @@ final DataSetRef dataSetRef = new DataSetRef(state, dataSet.getId());
  \_dataSetsNeedingCleanup.add(dataSetRef);
 ```
   
-a stack trace provided by the user tells me exactly what's wrong. This saves me a whole step in the debugging cycle!
+a stack trace provided by the user tells me exactly what's wrong. This saves me a whole step in the debugging cycle! 

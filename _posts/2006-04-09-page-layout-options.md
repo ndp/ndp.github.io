@@ -4,6 +4,7 @@ title: "Page layout options"
 date: 2006-04-09
 comments: false
 url: /2007/11/page-layout-options.html
+permalink: /2007/11/page-layout-options.html
 tags:
  - css
  - html

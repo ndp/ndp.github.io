@@ -4,6 +4,7 @@ title: "&what?"
 date: 2012-09-14
 comments: false
 url: /2012/09/i-recently-published-amp-what.html
+permalink: /2012/09/i-recently-published-amp-what.html
 tags:
  - css
  - experience

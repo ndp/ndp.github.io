@@ -4,6 +4,7 @@ title: "My Favorite Tech Interview Technique"
 date: 2014-02-10
 comments: false
 url: /2014/02/favotite-technical-interview-technique-pairing.html
+permalink: /2014/02/favotite-technical-interview-technique-pairing.html
 tags:
  - software development
  - career
@@ -50,4 +51,4 @@ From this simple task, I get many data points to analyze:
 - How facile is she with the tools in her environment?
 - What is she like to work with?
 - etc.
-I've also gotten to work on a couple interesting hobby projects. In the end, instead of having to divine her technical level from a series of questions or her presentation, she will tell me where she is at by the problem she selects. It's conceivable to cheat at this-- to solve the problem before you arrive and then walk your way through it-- but I like to think this is pretty easy to detect.
+I've also gotten to work on a couple interesting hobby projects. In the end, instead of having to divine her technical level from a series of questions or her presentation, she will tell me where she is at by the problem she selects. It's conceivable to cheat at this-- to solve the problem before you arrive and then walk your way through it-- but I like to think this is pretty easy to detect. 

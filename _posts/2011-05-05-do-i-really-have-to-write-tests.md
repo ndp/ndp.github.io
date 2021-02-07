@@ -4,6 +4,7 @@ title: "Do I really have to write tests?"
 date: 2011-05-05
 comments: false
 url: /2011/05/do-i-really-have-to-write-tests.html
+permalink: /2011/05/do-i-really-have-to-write-tests.html
 tags:
  - software development
  - consulting
@@ -39,4 +40,4 @@ I'm a big advocate of building from the inside out: identify these critical part
   
 **Other quality checks.&nbsp;** A team auto-deploying to the cloud needs more checks-- and tests-- than a team with a dedicated Q.A. team watching out for them.  
   
-There are other factors, but those are the important ones. Let's resist talking in absolutes, and do what is best for our project, customers and users.
+There are other factors, but those are the important ones. Let's resist talking in absolutes, and do what is best for our project, customers and users. 

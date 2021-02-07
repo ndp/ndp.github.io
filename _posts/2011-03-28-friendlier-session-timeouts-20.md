@@ -4,6 +4,7 @@ title: "Friendlier Session Timeouts 2.0"
 date: 2011-03-28
 comments: false
 url: /2011/03/friendlier-session-timeouts-20.html
+permalink: /2011/03/friendlier-session-timeouts-20.html
 tags:
  - sessions
  - software development
@@ -31,7 +32,10 @@ I Googled a bit and found lots of bug reports around this behavior. As this Jira
 I checked out my bank's solution. It looked like they implemented a whole timeout scheme in Javascript. Were they wacko? (No... but we'll get there.)  
   
 Of the hand full of ideas out there on the web, here's one solution ([of a hand full](http://www.sidesofmarch.com/index.php/archive/2005/01/30/friendly-session-timeouts-the-javascript-way/)) with the idea of timing the session in Javascript:  
-`<script language="javascript">function confirmLogoff() {  if (confirm("Your session will end in one minute.\n\nPress OK to continue for another ten minutes.")){  location.reload();  }}setTimeout("confirmLogoff()", );</script>`  
+`<script
+      language="javascript">function confirmLogoff() {  if
+      (confirm("Your session will end in one minute.\n\nPress OK to continue for another ten minutes.")){ 
+      location.reload();  }}setTimeout("confirmLogoff()", );</script>`  
   
 At first blush this looks like they might be on to something. Alas no. The confirmation will only work the brief period between the client and the server timeout. I'd argue it's even worse than no solution, since the messages promises something it can't deliver on, and loses the user's work-in-progress.  
   
@@ -40,10 +44,17 @@ Did I mention we have **quite a few pages with AJAX requests** on them? These co
 And why should just AJAX backed behaviors restart this timer? Opening a hidden panel may or may not go to the server (depending on an developer's whim), but should this whim this really affect the user's timeout? So we started considering implementations that ping the server as the user interacts. This was also dismissed as being complicated to implement efficiently (and potentially introducing some sort of security issue).  
   
 Finally where we "settled" (as in prom date), is implementing a timeout within Javascript, like my bank. It's a little more sophisticated: it's reset not only by the initial page load, but all sorts of user interactions. The code finally reduced down to:  
-`var clientSessionTimeout = function(timeoutMS, logoutFn) {  var lastTimeout;  var startSessionTimeout = function() {    if (lastTimeout) clearTimeout(lastTimeout);    lastTimeout = setTimeout(function() {          logoutFn();      }, timeoutMS);  };  // Watch for activity  $('body').click(startSessionTimeout).keydown(startSessionTimeout);  startSessionTimeout();};`  
+`var
+      clientSessionTimeout = function(timeoutMS, logoutFn) {  var lastTimeout; 
+      var startSessionTimeout = function() {    if (lastTimeout)
+      clearTimeout(lastTimeout);    lastTimeout = setTimeout(function() {         
+      logoutFn();      }, timeoutMS);  };  // Watch for activity 
+      $('body').click(startSessionTimeout).keydown(startSessionTimeout);  startSessionTimeout();};`  
   
 This is called with the 20-minute timeout, and implements it beautifully:  
-`    clientSessionTimeout(20 * 60 * 1000, function() {      document.location = '/timeout?return_to=' + document.location.href;    });`  
+`    clientSessionTimeout(20 * 60 *
+      1000, function() {      document.location =
+      '/timeout?return_to=' + document.location.href;    });`  
   
 The server side timeout is for redundancy. Our pages are all pretty focused, so I doubt any user will spend more than a couple minutes on any one of them. We picked a server-side session timeout of 40 minutes. The only way the Javascript timeout won't kick in first is if the user interacts with the page for more than this time with no server side interaction... possible, but not likely.  
   
@@ -53,4 +64,4 @@ After completing this compromise solution, I'm ready to spell out some ideal req
 \* warn the user (if possible) when the deadline approaches  
 \* this shouldn't open additional security vulnerabilities or server traffic  
   
-With some additional work, I'm sure an "ideal" solution can be developed. This compromise should get us most of the way there. Thanks to the rest of my team, and an interview candidate who provided some clear thinking on the matter.
+With some additional work, I'm sure an "ideal" solution can be developed. This compromise should get us most of the way there. Thanks to the rest of my team, and an interview candidate who provided some clear thinking on the matter. 

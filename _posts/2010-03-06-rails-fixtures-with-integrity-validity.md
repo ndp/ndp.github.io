@@ -4,6 +4,7 @@ title: "Rails Fixtures with Integrity & Validity"
 date: 2010-03-06
 comments: false
 url: /2010/03/rails-fixtures-with-integrity-validity.html
+permalink: /2010/03/rails-fixtures-with-integrity-validity.html
 tags:
  - unit testing
  - rails

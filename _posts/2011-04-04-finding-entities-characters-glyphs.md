@@ -4,6 +4,7 @@ title: "Finding entities, characters, glyphs"
 date: 2011-04-04
 comments: false
 url: /2011/04/finding-entities-characters-glyphs.html
+permalink: /2011/04/finding-entities-characters-glyphs.html
 tags:
  - software development
  - xp
@@ -26,7 +27,7 @@ Now, these little tools (and hacks) can be quicker to build out and easier to sh
   
 What makes things easier is there is so much data out there to build upon. As you'd expect, it takes the entity list of W3C. But I supplemented this with interesting Unicode characters, and a nice set from Remy Sharp.  
   
-[Check it out](http://amp-what.com/), bookmark it, and please send me feedback.<h2>Comments</h2>
+[Check it out](http://amp-what.com/), bookmark it, and please send me feedback. <h2>Comments</h2>
 <div class='comments'>
 <div class='comment'>
 <div class='author'>ndp</div>

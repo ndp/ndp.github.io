@@ -4,6 +4,7 @@ title: "Exploring Dependency Injection in Javascript"
 date: 2013-07-07
 comments: false
 url: /2013/07/javascript-dependency-injection.html
+permalink: /2013/07/javascript-dependency-injection.html
 tags:
  - software development
  - design
@@ -45,6 +46,7 @@ Now to call our service, we need it to be injected with its dependencies, which 
 
  <script src="https://gist.github.com/ndp/5915878.js?file=angularStyleInjectorSpec.coffee"></script> 
 #### What Angular Dependency Injection REALLY Looks Like
+ 
 
 Quickly you run into different ways to define functions within Angular. Since [Google's Closure Compile](https://developers.google.com/closure/compiler/docs/compilation_levels), and many other code compressors will rename parameters to save a few bytes, this technique doesn't work. So the solution worked out was to declare an array that lists the injected variables along with the function:
 
@@ -52,8 +54,11 @@ Quickly you run into different ways to define functions within Angular. Since [G
 
 This ends up looking pretty awkward to my eye, and I was wondering if there was a better way.
 
+ 
+
 Well, first I had to deconstruct how Angular does it.
 
+ 
 #### How the magic is implemented
 
 How this works is interesting. The secret behind all of this is something I found a little counter-intuitive: when you call `toString` on a function object, you get the actual text of the function. For example here is a useful function:
@@ -68,11 +73,11 @@ For DI, Angular needs to know the argument names. In order to figure this out, A
 
 The final piece is to put it together: figure out the arguments and then call the function with the correct services:
 
- <script src="https://gist.github.com/ndp/5915878.js?file=angularStyleInjector.coffee"></script> 
+<script src="https://gist.github.com/ndp/5915878.js?file=angularStyleInjector.coffee"></script> 
 
 For DI, you need some way to discover the objects that are injected. I think this works well as a separate concept, so I define a stub service locator, which given a name, returns the right service:
 
- <script src="https://gist.github.com/ndp/5915878.js?file=serviceLocator.coffee"></script>
+ <script src="https://gist.github.com/ndp/5915878.js?file=serviceLocator.coffee"></script> 
 #### Alternative Technique #1
  
 
@@ -84,11 +89,11 @@ The definition of the service is simpler. There's no need for nested functions r
 
 And the call is identical to the Angular style:
 
- <script src="https://gist.github.com/ndp/5915878.js?file=contextStyleInjectorCall.coffee"></script>
+ <script src="https://gist.github.com/ndp/5915878.js?file=contextStyleInjectorCall.coffee"></script> 
 
 The injector itself isn't more complicated than the angular one. Using building blocks in the other parts of the code:
 
- <script src="https://gist.github.com/ndp/5915878.js?file=contextStyleInjector.coffee"></script> 
+ <script src="https://gist.github.com/ndp/5915878.js?file=contextStyleInjector.coffee"></script>
 
 It depends on this function `members`, which looks through the whole function body for references off of `this`.
 
@@ -134,6 +139,8 @@ Dependency Injection will never be as important in Javascript as it is in Java, 
 For Angular, I see how Experiment #1 is an interesting technique. But there are three, or maybe four techniques already in use there, and to be honest, and adding another wouldn't help matters. That ship has sailed. I like the technique nonetheless.
 
 For Coffeescript or pseudo-class system, one of the object-oriented techniques will be natural. Experiment #3 would fit in very nicely with a BackBone app.
+
+ 
 
 I'm sure there are other ways to do this... this is my riffing on just one direction. What do you think?
 

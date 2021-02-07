@@ -4,6 +4,7 @@ title: "AlignColumn jQuery Plugin"
 date: 2013-04-09
 comments: false
 url: /2013/04/align-column-jquery-plugin.html
+permalink: /2013/04/align-column-jquery-plugin.html
 tags:
  - css
  - design

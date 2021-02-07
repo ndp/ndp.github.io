@@ -4,6 +4,7 @@ title: "Visual Undergrounding of Electrical Wires of Noe Valley"
 date: 2013-04-12
 comments: false
 url: /2013/04/virtual-electrical-undergrounding-photo-comparison.html
+permalink: /2013/04/virtual-electrical-undergrounding-photo-comparison.html
 tags:
  - analysis
  - design

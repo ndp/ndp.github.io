@@ -4,6 +4,7 @@ title: "Tips on Taking Autotest for a spin on OS X"
 date: 2009-08-13
 comments: false
 url: /2009/08/tips-on-taking-autotest-for-spin-on-os.html
+permalink: /2009/08/tips-on-taking-autotest-for-spin-on-os.html
 tags:
  - unit testing
  - rails
@@ -35,4 +36,4 @@ Second, I didn't find a complete listing of what your ~/.autotest should look li
 
   
   
-That's it! Definitely give it a shot. It's most convenient if you have another screen for the autotest (IDE integration would be nice). And an extra CPU wouldn't hurt, because it keeps my MBP CPU pegged much of the time.
+That's it! Definitely give it a shot. It's most convenient if you have another screen for the autotest (IDE integration would be nice). And an extra CPU wouldn't hurt, because it keeps my MBP CPU pegged much of the time. 

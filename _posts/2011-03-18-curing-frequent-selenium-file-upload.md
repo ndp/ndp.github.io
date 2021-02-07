@@ -4,6 +4,7 @@ title: "Curing Frequent Selenium File Upload Failures"
 date: 2011-03-18
 comments: false
 url: /2011/03/curing-frequent-selenium-file-upload.html
+permalink: /2011/03/curing-frequent-selenium-file-upload.html
 tags:
  - selenium
  - rails

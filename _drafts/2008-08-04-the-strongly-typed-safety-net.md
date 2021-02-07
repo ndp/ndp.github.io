@@ -4,6 +4,7 @@ title: "The Strongly Typed Safety Net"
 date: 2008-08-04
 comments: false
 url: /2008/08/the-strongly-typed-safety-net.html
+permalink: /2008/08/the-strongly-typed-safety-net.html
 tags:
  - ruby
  - java

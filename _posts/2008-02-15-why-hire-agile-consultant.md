@@ -4,6 +4,7 @@ title: "Working with Agile Developers"
 date: 2008-02-15
 comments: false
 url: /2008/02/why-hire-agile-consultant.html
+permalink: /2008/02/why-hire-agile-consultant.html
 tags:
  - xp
  - C5

@@ -4,6 +4,7 @@ title: "Updated Cheat Sheets"
 date: 2011-03-01
 comments: false
 url: /2011/03/updated-cheat-sheets.html
+permalink: /2011/03/updated-cheat-sheets.html
 tags:
  - design
  - cheatsheet

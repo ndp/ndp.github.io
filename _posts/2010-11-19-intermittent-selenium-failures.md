@@ -4,6 +4,7 @@ title: "Intermittent Selenium Failures"
 date: 2010-11-19
 comments: false
 url: /2010/11/intermittent-selenium-failures.html
+permalink: /2010/11/intermittent-selenium-failures.html
 tags:
  - selenium
  - javascript

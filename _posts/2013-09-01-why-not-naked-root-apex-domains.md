@@ -4,6 +4,7 @@ title: "Switching Away from Root Domains"
 date: 2013-09-01
 comments: false
 url: /2013/09/why-not-naked-root-apex-domains.html
+permalink: /2013/09/why-not-naked-root-apex-domains.html
 tags:
  - naked domains
  - software development
@@ -30,6 +31,7 @@ A few facts are clear to me:
   1. Cookies intended for one subdomain interfere with another. I've seen this with tracking cookies bleeding into to subdomains.
   2. Cookies are not shared by default. A particularly nasty class of bugs when not unifying on one domain: a users who logs in on the www domain is not logged in on the naked domain. Insert a Facebook connect step and really confuse people! 
   3. Requests will be bloated: for example, if your site is example.com, and you serve images at cdn.example.com, it may surprise you that every single image request receives all the cookies from the root domain. Remember, this also includes cookies other tools like Google Analytics has set.
+ 
 4. Serving naked domains is problematic on cloud services. The Heroku documentation explains, 
 
 > Zone apex domains (aka “naked”, “bare” or “root” domains), e.g.,example.com, using conventional DNS A-records are [not supported on Heroku](https://devcenter.heroku.com/articles/apex-domains).
@@ -56,7 +58,9 @@ I could leave my naked domain pointing where it was pointing before: to my LAMP 
 
 But it'd be simpler to keep fewer people involved. Since I was using Zerigo for DNS, and they would in fact route my naked domain to Heroku, I could solve it there. With my new Node app, the redirect was easy to add:
 
-> `// Redirect to canonical URL of www.amp-what.comapp.use(function(req, res, next) { if (req.host == 'amp-what.com') { res.redirect(301, 'http://www.amp-what.com' + req.originalUrl) } else { next() }})`
+> `// Redirect to canonical URL of www.amp-what.comapp.use(function(req, res, next) { if
+> (req.host == 'amp-what.com') { res.redirect(301, 'http://www.amp-what.com' + req.originalUrl)
+> } else { next() }})`
 
 For Rails apps, you can [redirect with the router,](http://stackoverflow.com/questions/4046960/how-to-redirect-without-www-using-rails-3-rack) but this feels messy. I'd like to reroute before the request gets into Rails. Using one of these middlewares look like good solutions:
 

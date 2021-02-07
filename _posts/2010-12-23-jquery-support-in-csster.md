@@ -4,6 +4,7 @@ title: "jQuery support in Csster"
 date: 2010-12-23
 comments: false
 url: /2010/12/jquery-support-in-csster.html
+permalink: /2010/12/jquery-support-in-csster.html
 tags:
  - browser
  - css

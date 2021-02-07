@@ -4,6 +4,7 @@ title: "Assert Changes and Fixture Test Helpers"
 date: 2010-01-26
 comments: false
 url: /2010/01/assert-changes-and-fixture-test-helpers.html
+permalink: /2010/01/assert-changes-and-fixture-test-helpers.html
 tags:
  - unit testing
  - rails
@@ -22,7 +23,8 @@ Since then, I have discovered similar functionality in shoulda and rspec. But if
 It's called "ayudante". To install,   
 
 ```
-gem install ndp-ayudante --source=http://gems.github.com
+gem install ndp-ayudante
+      --source=http://gems.github.com
 ```
   
 Also included in the gem are " **fixture helpers**". These make it easy to test for sets and lists of your fixture model objects, without the hassle of building up your own lists and sets.   
@@ -33,7 +35,8 @@ Here's how it works. If you have a model object and fixtures for CandyBars, it a
   
 
 ```
-result = CandyBar.find(:all, ... ) assert_list_of_candy_bars [:mars, :eminem], result
+result =
+      CandyBar.find(:all, ... ) assert_list_of_candy_bars [:mars, :eminem], result
 ```
   
-It also supports **assert\_set\_of\_candy\_bars** , so you can ignore the order of comparisons; and **assert\_contains\_candy\_bars** so you can make sure it results contain a subset. Enjoy!
+It also supports **assert\_set\_of\_candy\_bars** , so you can ignore the order of comparisons; and **assert\_contains\_candy\_bars** so you can make sure it results contain a subset. Enjoy! 

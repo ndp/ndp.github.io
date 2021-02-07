@@ -4,6 +4,7 @@ title: "Page-by-page Rewrite Refactor"
 date: 2010-05-27
 comments: false
 url: /2010/05/page-by-page-rewrite-refactor.html
+permalink: /2010/05/page-by-page-rewrite-refactor.html
 ---
 
 At work today, the question came up (again) about how to approach upgrading a legacy app. There were many great comments, falling in the range from writing UI testings and using incremental rewrites,&nbsp;all the way to talking the client out of it. (Talk them into a v2!) What's similar between them all is that they feel "big", and therefore risky.&nbsp;

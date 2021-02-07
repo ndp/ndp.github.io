@@ -4,6 +4,7 @@ title: "Implement Most Popular the Easy Way (hint: use Google Analytics, garb an
 date: 2010-02-06
 comments: false
 url: /2010/02/implement-most-popular-easy-way-hint.html
+permalink: /2010/02/implement-most-popular-easy-way-hint.html
 tags:
  - design
  - javascript

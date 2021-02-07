@@ -6,7 +6,9 @@ require 'fileutils'
 require 'optionparser'
 require 'date'
 require 'uri'
-require 'reverse_markdown'
+require_relative 'src/reverse_markdown_patch'
+require_relative 'src/post'
+require_relative 'src/comment'
 
 # usage: ruby import.rb my-blog.xml
 # my-blog.xml is a file from Settings -> Basic -> Export in blogger.
@@ -22,19 +24,6 @@ raise opts.banner if ARGV[0].nil?
 data = File.read ARGV[0]
 doc  = Nokogiri::XML(data)
 
-class CodeBlock < ReverseMarkdown::Converters::Base
-  def convert(node, state = {})
-    style = node.attribute('style')
-    if /font-family:.*courier.*monospace/ =~ style ||
-      (/white-space: pre-wrap/ =~ style &&
-        /font-family: .*source code pro/ =~ style)
-      "`#{node.text}`"
-    else
-      treat_children(node, state)
-    end
-  end
-end
-ReverseMarkdown::Converters.register :span, CodeBlock.new
 
 @posts  = {}
 @drafts = {}
@@ -93,129 +82,6 @@ def write(post, path, extension)
       file.write "</div>\n"
     end
 
-  end
-end
-
-class PostOrComment
-  def initialize(node)
-    @node = node
-  end
-
-  def content_as(extension)
-    extension == :md ? content_as_md : content_as_html
-  end
-
-  def content_as_md
-    ReverseMarkdown.convert(content, unknown_tags: :pass_through, github_flavored: true)
-  end
-
-  def content_as_html
-    "<div class='post'>\n#{content}</div>\n"
-  end
-
-end
-
-class Post < PostOrComment
-  attr_reader :comments
-
-  def initialize(node)
-    super
-    @comments = []
-  end
-
-  def add_comment(comment)
-    @comments.unshift comment
-  end
-
-  def title
-    @title ||= @node.at_css('title').content
-  end
-
-  def content
-    @node.at_css('content').content
-  end
-
-  def creation_date
-    @creation_date ||= creation_datetime.strftime("%Y-%m-%d")
-  end
-
-  def creation_datetime
-    @creation_datetime ||= Date.parse(@node.search('published').first.content)
-  end
-
-  #     <link rel='alternate' type='text/html' href='https://blog.ndpsoftware.com/2006/03/we-posted-on-craigslist.html'
-  #<link rel='alternate' type='text/html'
-  # href='https://blog.ndpsoftware.com/2017/02/test-pantry-test-data-factory.html'
-  # title='Introducing Test Pantry'/>
-  def permalink
-    return @permalink unless @permalink.nil?
-
-    link_node  = @node.at_css('link[rel=alternate]')
-    @permalink = link_node && link_node.attr('href')
-  end
-
-  def param_name
-    if permalink.nil?
-      title.split(/[^a-zA-Z0-9]+/).join('-').downcase
-    else
-      File.basename(URI(permalink).path, '.*')
-    end
-  end
-
-  def permalink_path
-    if permalink.nil?
-      "/#{creation_datetime.year}/#{creation_datetime.month.to_s.rjust(2, '0')}/#{param_name}.html"
-    else
-      permalink.gsub(/^https?:\/\/[^\/]+/, '')
-    end
-  end
-
-  def file_name
-    %{#{creation_date}-#{param_name}}
-    # permalink.split('/').last
-  end
-
-  def header
-    [
-      '---',
-      %{layout: post},
-      %{title: "#{title}"},
-      %{date: #{creation_datetime}},
-      %{comments: false},
-      %{url: #{permalink_path}},
-      tags,
-      '---'
-    ].compact.join("\n")
-  end
-
-  def categories
-    terms = @node.search('category[scheme="http://www.blogger.com/atom/ns#"]')
-    unless Array(terms).empty?
-      [
-        'categories:',
-        terms.map { |t| t.attr('term') && " - #{t.attr('term')}" }.compact.join("\n"),
-      ].join("\n")
-    end
-  end
-
-  def tags
-    terms = @node.search('category[scheme="http://www.blogger.com/atom/ns#"]')
-    unless Array(terms).empty?
-      [
-        'tags:',
-        terms.map { |t| t.attr('term') && " - #{t.attr('term')}" }.compact.join("\n"),
-      ].join("\n")
-    end
-  end
-end
-
-class Comment < PostOrComment
-  def author
-    @node.search('author name').first.content
-  end
-
-  def content
-    @node.search('content').first.content
   end
 end
 

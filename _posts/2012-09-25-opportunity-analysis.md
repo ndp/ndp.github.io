@@ -4,6 +4,7 @@ title: "Factor-based Opportunity Analysis"
 date: 2012-09-25
 comments: false
 url: /2012/09/opportunity-analysis.html
+permalink: /2012/09/opportunity-analysis.html
 tags:
  - career
  - analysis

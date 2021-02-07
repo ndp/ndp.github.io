@@ -4,6 +4,7 @@ title: "Introducing Test Pantry"
 date: 2017-02-19
 comments: false
 url: /2017/02/test-pantry-test-data-factory.html
+permalink: /2017/02/test-pantry-test-data-factory.html
 tags:
  - software development
  - unit testing
@@ -43,4 +44,4 @@ pantry.randomSequence() // --\> 6 ...
   
  This allows your tests to express the notion that they don't care what the data is, but at the same time make assertions about the results. You can definitely live without this, but removing some of the "randomness" makes writing tests quicker. More and more we're writing probabilistic code&nbsp;and having this at the core really speeds things up.  
   
-If you are writing ECMA/JavaScript, and writing tests-- and who's isn't--&nbsp;[check it out](https://github.com/ndp-software/test-pantry)!
+If you are writing ECMA/JavaScript, and writing tests-- and who's isn't--&nbsp;[check it out](https://github.com/ndp-software/test-pantry)! 

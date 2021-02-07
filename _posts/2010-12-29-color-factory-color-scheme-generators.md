@@ -4,6 +4,7 @@ title: "Color Factory: Color scheme generators"
 date: 2010-12-29
 comments: false
 url: /2010/12/color-factory-color-scheme-generators.html
+permalink: /2010/12/color-factory-color-scheme-generators.html
 tags:
  - javascript
  - color
@@ -40,4 +41,4 @@ Using these schemes could bring sanity to lots of charting libraries out there--
   
 I'm building a "color factory" to provide functions for these. Provide the functions one (or two) colors from your palette and get a cohesive "color scheme" that should work with it-- and even better-- be appropriate to the data. These are all found in what I call the [color factory](https://github.com/ndp/jsutils/blob/master/color_factory.js). It's nascent technology, and I'm interested in feedback.   
   
-In the next post, I'll dig into the Javascript functions that facilitate this.&nbsp;(All this is part of a generic [Javascript sketchbook](https://github.com/ndp/jsutils).)
+In the next post, I'll dig into the Javascript functions that facilitate this.&nbsp;(All this is part of a generic [Javascript sketchbook](https://github.com/ndp/jsutils).) 

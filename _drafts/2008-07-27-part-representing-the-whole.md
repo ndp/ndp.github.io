@@ -4,6 +4,7 @@ title: "Part representing the whole"
 date: 2008-07-27
 comments: false
 url: /2008/07/part-representing-the-whole.html
+permalink: /2008/07/part-representing-the-whole.html
 tags:
  - rails
  - ruby

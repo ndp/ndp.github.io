@@ -4,6 +4,7 @@ title: "8 Steps to Constructing a Better Software Engineering Homework Interview
 date: 2016-07-20
 comments: false
 url: /2016/07/coding-challenge-interview.html
+permalink: /2016/07/coding-challenge-interview.html
 tags:
  - software development
  - pairing
@@ -59,47 +60,66 @@ So, some advice for doing this right:
 
 4. Provide small scope. Several times I’ve seen homework that requires a full Rails app with several pages, a data import or API call. What you think is 2 hours can easily be 6. It is easy to write, but this can easily require a dozen different small projects. I completed one of these homework assignments, and looking back I created 20 distinct Git commits. Here’s a summary:
 
-` .rspec                                                |  2 ``++`
+ .rspec &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;2 ++
 
-` Gemfile                                               |  1 ``+`
+` Gemfile                                               |
+       1 `+
 
-` README.rdoc                                           | 59`
+` README.rdoc                                           |
+      59`
 
-` app/controllers/api_controller.rb                     | 43 ``++++++++++++++++++++++++++++++++++`
+` app/controllers/api_controller.rb                     |
+      43 `++++++++++++++++++++++++++++++++++
 
-` app/controllers/application_controller.rb             |  2 ``+-`
+` app/controllers/application_controller.rb             |
+       2 `+-
 
-` app/models/b *****.rb                                  |  3 ``+++`
+` app/models/b *****.rb                                  |
+       3 `+++
 
-` app/models/calculator.rb                              | 26 ``+++++++++++++++++++++`
+` app/models/calculator.rb                              |
+      26 `+++++++++++++++++++++
 
-` app/models/ ****.rb                                    |  3 ``+++`
+` app/models/ ****.rb                                    |
+       3 `+++
 
-` app/models/ **** _summary.rb                            | 34 ``+++++++++++++++++++++++++++`
+` app/models/ **** _summary.rb                            |
+      34 `+++++++++++++++++++++++++++
 
-` config/application.rb                                 |  2 ``++`
+` config/application.rb                                 |
+       2 `++
 
-` config/environments/development.rb                    |  2 ``++`
+` config/environments/development.rb                    |
+       2 `++
 
-` config/routes.rb                                      |  4 ``++++`
+` config/routes.rb                                      |
+       4 `++++
 
-` db/migrate/20160629143516_create_***.rb               | 10 ``++++++++`
+` db/migrate/20160629143516_create_***.rb               |
+      10 `++++++++
 
-` db/migrate/20160629144459_create_***.rb               | 11 ``+++++++++`
+` db/migrate/20160629144459_create_***.rb               |
+      11 `+++++++++
 
-` db/migrate/20160629151847_create_***.rb               | 12 ``++++++++++`
+` db/migrate/20160629151847_create_***.rb               |
+      12 `++++++++++
 
-` db/schema.rb                                          | 45 ``+++++++++++++++++++++++++++++++++++`
+` db/schema.rb                                          |
+      45 `+++++++++++++++++++++++++++++++++++
 
-` db/seeds.rb                                           | 30 ``++++++++++++++++++------`
+` db/seeds.rb                                           |
+      30 `++++++++++++++++++------
 
-` lib/tasks/summarize.rake                              | 11 ``+++++++++`
+` lib/tasks/summarize.rake                              |
+      11 `+++++++++
 
-` spec/calculator_spec.rb                      | 61 ``+++++++++++++++++++++++++++++++++++++++++`
+` spec/calculator_spec.rb                     
+      | 61 `+++++++++++++++++++++++++++++++++++++++++
 
-` spec/controllers/api_controller_spec.rb               | 44 ``++++++++++++++++++++++++++++++++++`
+` spec/controllers/api_controller_spec.rb               |
+      44 `++++++++++++++++++++++++++++++++++
 
-` spec/ ******* _summary_spec.rb                          | 51 ``+++++++++++++++++++++++++++++++++++++++`
+ spec/\*\*\*\*\*\*\*\_summary\_spec.rb &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 51 `+++++++++++++++++++++++++++++++++++++++`
 
 ` 28 files changed, 668 insertions(+), 23 deletions(-)`
   

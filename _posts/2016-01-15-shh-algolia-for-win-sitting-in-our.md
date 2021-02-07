@@ -4,6 +4,7 @@ title: ""
 date: 2016-01-15
 comments: false
 url: /2016/01/shh-algolia-for-win-sitting-in-our.html
+permalink: /2016/01/shh-algolia-for-win-sitting-in-our.html
 tags:
  - search
  - software development
@@ -47,7 +48,11 @@ Getting started was easy. They offer simple `ActiveRecord` integration that look
 
 My Rails integration was unsurprising:&nbsp;
 
-> `class Book < ActiveRecord::Base  include AlgoliaSearch    algoliasearch index_name: "Book_#{Rails.env}" do               attribute  :title, :author_name, :genre_name,                 :subject_names, :character_names,    ` &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **:isbn13**
+> `class
+> Book < ActiveRecord::Base  include AlgoliaSearch    algoliasearch index_name: "Book_#{Rails.env}" do   
+>            attribute 
+> :title, :author_name, :genre_name,                 :subject_names, :character_names,  
+>  ` &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **:isbn13**
 
 &nbsp; &nbsp; &nbsp; &nbsp; **def** subjects\_names  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; subjects.map(&:name)  
@@ -56,7 +61,7 @@ My Rails integration was unsurprising:&nbsp;
 
 > **end**
 
-This declares which values are indexed. This block instrument's ActiveRecord’s `save` methods to capture all changes. There's nothing to install on your machine: the development model is to store everything in the cloud (hence the Rails.env to keep the cloud index separate).
+This declares which values are indexed. This block instrument's ActiveRecord’s save methods to capture all changes. There's nothing to install on your machine: the development model is to store everything in the cloud (hence the Rails.env to keep the cloud index separate).
 
   
 
@@ -74,7 +79,9 @@ The documentation is very good. The Heroku page got me started, but when I decid
 
 On the query side, it’s also full-featured. They have solutions for browser-based queries in place, so it’s easy to integrate onto a page without touching your server:
 
-> `var helper = algoliasearchHelper(algolia, INDEX_NAME, PARAMS);helper.setQuery(query).search();helper.on('result', function (content, state) { ...`
+> **var**  **_helper_** = algoliasearchHelper(algolia, INDEX\_NAME, PARAMS);  
+> **_helper_**.setQuery(query).search();  
+> **_helper_**.on( **'result'** , **function** (content, state) { ...
 
   
 

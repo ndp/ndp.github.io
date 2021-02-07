@@ -4,6 +4,7 @@ title: "Pairing with Designers"
 date: 2010-01-09
 comments: false
 url: /2010/01/pairing-with-designers.html
+permalink: /2010/01/pairing-with-designers.html
 tags:
  - software development
  - design
@@ -76,4 +77,4 @@ This probably took less than an hour. This isn't very complicated, but it's hard
   
 I've certainly collaborated with designers before, poking around in Firebug until things looked good. But this was the first time I saw how clearly working closely produced a superior result. And we did it with no tedious measuring of text or dozens of time-consuming mockups.  
   
-What could have taken hours or days took minutes. We just sat down together, and, well, paired.
+What could have taken hours or days took minutes. We just sat down together, and, well, paired. 

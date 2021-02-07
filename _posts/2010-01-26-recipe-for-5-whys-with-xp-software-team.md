@@ -4,6 +4,7 @@ title: "Recipe for 5 Whys with an XP Software Team"
 date: 2010-01-26
 comments: false
 url: /2010/01/recipe-for-5-whys-with-xp-software-team.html
+permalink: /2010/01/recipe-for-5-whys-with-xp-software-team.html
 tags:
  - software development
  - xp
@@ -44,4 +45,4 @@ Some of the root causes we've gotten to recently:
 - we didn't ask for clarifications on the requirements
 - one engineer didn't understand the intent behind the code
 - nobody looked at the app on Internet Explorer 6
-Just like in agile reflections, the changes made coming out of these meetings stick with the team. During one session, the developers decided that there were just too many mistakes that someone else would have easily caught-- so they always needed two sets of eyes on every checkin. I'd advocated this before, but it was never applied consistently. To my surprise though, after the reflection, everyone was disciplined about this policy-- and our quality was much better.
+Just like in agile reflections, the changes made coming out of these meetings stick with the team. During one session, the developers decided that there were just too many mistakes that someone else would have easily caught-- so they always needed two sets of eyes on every checkin. I'd advocated this before, but it was never applied consistently. To my surprise though, after the reflection, everyone was disciplined about this policy-- and our quality was much better. 

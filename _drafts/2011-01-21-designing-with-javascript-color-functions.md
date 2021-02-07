@@ -4,6 +4,7 @@ title: "Designing with Javascript Color Functions"
 date: 2011-01-21
 comments: false
 url: /2011/01/designing-with-javascript-color-functions.html
+permalink: /2011/01/designing-with-javascript-color-functions.html
 ---
 
 In my last couple posts, I've introduced my Javascript color and color scheme functions. In this post I'll walk through how I used them when developing [my usability wheel](http://uxspoke.com/).  
