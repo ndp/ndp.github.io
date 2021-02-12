@@ -12,21 +12,13 @@ tags:
  - a/b testing
 ---
 
-(Also posted at [technology.stitchfix.com](http://technology.stitchfix.com/))  
-  
 At Stitch Fix, we’re working on our sign-up flow. During this process, we debated whether we should have a single password field, or, as many sites do, two— the second one being a “password confirmation”.  
   
 Some sites use the same technique with email and email confirmation.
 
-  
-
 I found quite a few articles that advocated certain practices around this, but I thought it would be useful to synthesize them in one place. At the end, I offer some recommendations. 
 
-  
-
 First off, there’s no clear best practice out there in the wild. Some popular sites (like Twitter) have a single password field, and others  (Google, Amazon), have two. A few big sites (Facebook, Amazon) also have a double “email” field. 
-
-  
 
 Here’s why there's variation – let’s a/b test the email field. We give half the people one field, and half of them two, and we'll look at two metrics: (1) conversion rate of the form, and (2) email address mistakes. If everything goes as predicted, both numbers go down, meaning the conversion rate goes down but accuracy goes up. Because every company would make this tradeoff differently, there can be no single answer for all. Conversion rates may be most important for one, while accurate emails most important to another.  
 
