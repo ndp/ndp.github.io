@@ -16,7 +16,7 @@ tags:
  - cheatsheet
 ---
 
-I spent another couple hours on [my character entity finder](http://ndpsoftware.com/&what/), and wanted to share some of the interesting things I've discovered. I made two main improvements:  
+I spent a couple hours on [my character entity finder](http://amp-what.com/), and wanted to share some interesting things I've discovered. I made two main improvements:  
 (1) lookup happens asynchronously, in small batches, so that it suffers less from "locking up". This allows much more flexible exploration.  
 (2) allow you to bookmark queries, so you can share interesting discoveries.  
   

@@ -10,7 +10,7 @@ permalink: /2011/01/designing-with-javascript-color-functions.html
 In my last couple posts, I've introduced my Javascript color and color scheme functions. In this post I'll walk through how I used them when developing [my usability wheel](http://uxspoke.com/).  
   
   
-I mentioned some color tools in my last post. My review is that ultimately they are pretty frustrating, as it's difficult to preview the colors in the balance that you might use on a page, and certainly not with the right colors being used for text and non-text. Really the only way to assess a scheme's ultimate appropriateness is to apply it to the design directly. For pure designers, the Adobe products offer great tools for exploring this, but tools for programmer/designers are a little lacking. I build some of my own tools for this project.  
+I mentioned some color tools in my last post. My review is that ultimately they are pretty frustrating, as it's difficult to preview the colors in the balance that you might use on a page, and certainly not with the right colors being used for text and non-text. Really the only way to assess a scheme's ultimate appropriateness is to apply it to the design directly. For pure designers, the Adobe products offer great tools for exploring this, but tools for programmer/designers are a little lacking. I build my own tools for this project.  
   
 **Let step back:** The original idea was to build an analog of the little cardboard "calculators" from the 70s and 80s. They were neat: there's some sort of frame with holes punched in specific locations, and then a free floating cardboard piece that fits inside it and slides. Sliding the pieces in relation to each exposes different data inside the holes. It's really just a big table of data, but the windows allow the data to be more approachable and the whole experience more fun. When trying to figure out how to implement this, I thought about the roulette wheels my kids love when we're are local fairs. Maybe it wouldn't be the right metaphor, but it would be more fun to implement.  
   
@@ -24,7 +24,7 @@ From there, I had a basic color scheme. With a good set of color functions, I co
   
   
   
-&nbsp;   
+    
   
   
 When I developed  

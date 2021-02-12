@@ -14,7 +14,7 @@ Five years ago, I was working at [Great Schools](http://greatschools.org), and g
   
 So, after working on SEO, I pursued another idea. Why not create something of real value to drive people to my site? I had an idea and created some "cheat sheets" to help me with my own development. I created them, and then posted them where I could to get some inbound links. Shortly thereafter, someone at O'Reilly found my page and linked to it, and all of a sudden I was getting hundreds of page views per day. So that was my lesson: _If I provide something of value, people will come._ That was five years ago. Even though technology changes fast, I still have a bit of tail from those original cheat sheets.   
   
-Last night, I decided that since of 80% of the people hitting my site are seeing those pages, I should take a look at them and see what impression they might be making. I really don't have a "goal" of driving traffic anywhere else, but I might as well make them look as good as I can. So I cleaned up the visual design and fixed some of the editing.   
+Last night, I decided that since of 80% of the people hitting my site are seeing those pages, I should take a look at them and see what impression they might be making. I really don't have a "goal" of driving traffic anywhere else, but I might as well make them look as good as I can. So I cleaned up the visual design and fixed the editing.   
   
 Check out the spruced up pages here: [Hibernate Mapping](http://ndpsoftware.com/HibernateMappingCheatSheet.html) and [JSPx Cheatsheet](http://ndpsoftware.com/JSPXMLCheatSheet.html).
 

@@ -13,16 +13,16 @@ tags:
  - tdd
 ---
 
-So I'm a bit of a CSS nerd. For years, I've been complaining that there's not enough "engineer" cycles given to CSS. I've written endless blog posts about how to organize your CSS. Blank stares when I ask interview candidates "how do you structure your CSS?" &nbsp;Well, now we can [write CSS in Javascript](http://github.com/ndp/csster)&nbsp;with Csster, and maybe-- just maybe-- the world has been set right.  
+So I'm a bit of a CSS nerd. For years, I've been complaining that there's not enough "engineer" cycles given to CSS. I've written endless blog posts about how to organize your CSS. Blank stares when I ask interview candidates "how do you structure your CSS?"  Well, now we can [write CSS in Javascript](http://github.com/ndp/csster) with Csster, and maybe-- just maybe-- the world has been set right.  
   
   
-In 2000, I ventured into teaching at[City College](http://ccsf.edu/). To be honest, I'd missed the dot com boom and didn't know anything about the web. I was really nervous,&nbsp;so checked out every book the&nbsp;school library had about web development, and studied (and learned) thoroughly. Since then, I built quite a few web sites for people, non-profits and businesses,&nbsp;and developed a certain amount of dexterity with CSS. CSS has evolved a bit in the last ten years,&nbsp;but this firm foundation of understanding of the cascade and such has served me well.  
+In 2000, I ventured into teaching at[City College](http://ccsf.edu/). To be honest, I'd missed the dot com boom and didn't know anything about the web. I was really nervous, so checked out every book the school library had about web development, and studied (and learned) thoroughly. Since then, I built quite a few web sites for people, non-profits and businesses, and developed a certain amount of dexterity with CSS. CSS has evolved a bit in the last ten years, but this firm foundation of understanding of the cascade and such has served me well.  
   
 Not to go off into a rant, but lots of CSS ends up a mess. I always felt like it, like C++, needed more restrictions and guidelines to turn out maintainable. I tried to enforce various guidelines with my teams.   
   
-In the last year, there's been a renewed interested &nbsp;in CSS and the tooling around it. With&nbsp;the advent of tools like SASS, it's starting to receive the engineering attention it's always&nbsp;deserved.  
+In the last year, there's been a renewed interested  in CSS and the tooling around it. With the advent of tools like SASS, it's starting to receive the engineering attention it's always deserved.  
   
-I was a little hesitant to endorse Sass (or even try it). CSS already has too many "degrees of freedom"--&nbsp;more flexibility seemed like a bad idea. It would make the problem worse.&nbsp;I poo-pooed it.  
+I was a little hesitant to endorse Sass (or even try it). CSS already has too many "degrees of freedom"-- more flexibility seemed like a bad idea. It would make the problem worse. I poo-pooed it.  
   
 Okay, stop laughing.  
   
@@ -34,4 +34,4 @@ It was a bit of an idea that I just throw out, but over the weekend I pursued a 
   
 In the last couple weeks I've used it extensively in my current project and it's great. Being in a real programming language really does make CSS nice.
 
-Check out the&nbsp;[main project page](http://github.com/ndp/csster)&nbsp;on github.
+Check out the [main project page](http://github.com/ndp/csster) on github.

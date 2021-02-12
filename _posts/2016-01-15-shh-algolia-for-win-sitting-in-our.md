@@ -15,9 +15,9 @@ tags:
  - prototyping
 ---
 
-## Shh!&nbsp;Algolia for the Win
+## Shh! Algolia for the Win
 
-Sitting in our dining room, discussing our kids’ room full of books, I decided to regale our kids with a story about the old days of the library: rows of “card catalogs," little pieces of paper to jot down call numbers, etc. This got them very excited, and they love building things, so they were gearing up to re-create just such a system in their bedroom.&nbsp;
+Sitting in our dining room, discussing our kids’ room full of books, I decided to regale our kids with a story about the old days of the library: rows of “card catalogs," little pieces of paper to jot down call numbers, etc. This got them very excited, and they love building things, so they were gearing up to re-create just such a system in their bedroom. 
 
   
   
@@ -26,11 +26,11 @@ I waved my hands, “No, no, no, that’s not the point.” I’d show them the 
 
   
 
-Of course with [Rails](http://rails.org/) and [Heroku](https://www.heroku.com/) and my N years of experience, it was just an hour from idea to live, fully-functional app&nbsp;on the internet. We had CRUD screens for books, subjects, authors and even characters. I stood up and dusted&nbsp;my hands off proudly. Then my eldest daughter put on her PM hat, and reminded me of the requirements: “It’s just a search box.”&nbsp;
+Of course with [Rails](http://rails.org/) and [Heroku](https://www.heroku.com/) and my N years of experience, it was just an hour from idea to live, fully-functional app on the internet. We had CRUD screens for books, subjects, authors and even characters. I stood up and dusted my hands off proudly. Then my eldest daughter put on her PM hat, and reminded me of the requirements: “It’s just a search box.” 
 
   
 
-“Yeah, I know,” I said. “Soon.”&nbsp;
+“Yeah, I know,” I said. “Soon.” 
 
   
 
@@ -46,18 +46,18 @@ Getting started was easy. They offer simple `ActiveRecord` integration that look
 
   
 
-My Rails integration was unsurprising:&nbsp;
+My Rails integration was unsurprising: 
 
 > `class
 > Book < ActiveRecord::Base  include AlgoliaSearch    algoliasearch index_name: "Book_#{Rails.env}" do   
 >            attribute 
 > :title, :author_name, :genre_name,                 :subject_names, :character_names,  
->  ` &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **:isbn13**
+>  `             **:isbn13**
 
-&nbsp; &nbsp; &nbsp; &nbsp; **def** subjects\_names  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; subjects.map(&:name)  
-&nbsp; &nbsp; &nbsp; &nbsp; **end**  
-**&nbsp; &nbsp; &nbsp; &nbsp; ...**  
+        **def** subjects\_names  
+          subjects.map(&:name)  
+        **end**  
+**        ...**  
 
 > **end**
 
@@ -65,11 +65,11 @@ This declares which values are indexed. This block instrument's ActiveRecord’s
 
   
 
-You can index whatever you want. Intuitively, each of those attribute symbols is a method that is called on the book object, and the result is stored in the index. You can write synthetic attributes, like `subject_names` is above, by writing your own method.&nbsp;
+You can index whatever you want. Intuitively, each of those attribute symbols is a method that is called on the book object, and the result is stored in the index. You can write synthetic attributes, like `subject_names` is above, by writing your own method. 
 
   
 
-There are also facets. Although I didn't use these, they look more naturally integrated than they are in Solr and Elastic Search, where they feel like an add-on.&nbsp;
+There are also facets. Although I didn't use these, they look more naturally integrated than they are in Solr and Elastic Search, where they feel like an add-on. 
 
   
 
@@ -89,7 +89,7 @@ I was able to get my daughter’s “search box” working almost immediately, w
 
   
 
-But there was one big surprise. I set up an index and indexed all 91 books (that were available in my seed spreadsheet). I saw the HTTP requests going through to create the index, and their website’s dashboard has a log and complete metrics. They also have a console webpage where you can test out your index. But my indexes didn’t appear. Wha? Not just the indexed items, but the indexes themselves. &nbsp;I tried the Ruby API and raw HTTP requests, with no success. But other API calls said it had created the index. Any query call reported that there was no index, and the dashboard was empty. It felt really broken.&nbsp;
+But there was one big surprise. I set up an index and indexed all 91 books (that were available in my seed spreadsheet). I saw the HTTP requests going through to create the index, and their website’s dashboard has a log and complete metrics. They also have a console webpage where you can test out your index. But my indexes didn’t appear. Wha? Not just the indexed items, but the indexes themselves.  I tried the Ruby API and raw HTTP requests, with no success. But other API calls said it had created the index. Any query call reported that there was no index, and the dashboard was empty. It felt really broken. 
 
   
 

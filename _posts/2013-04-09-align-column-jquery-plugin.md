@@ -16,7 +16,7 @@ tags:
  - jQuery
 ---
 
-I recently released a new jQuery plugin [Align Column](https://github.com/ndp/align-column)that&nbsp; aligns HTML table columns based on the (U.S.) decimal point – or whatever you want. Here's a brief story of why I wrote it.
+I recently released a new jQuery plugin [Align Column](https://github.com/ndp/align-column)that  aligns HTML table columns based on the (U.S.) decimal point – or whatever you want. Here's a brief story of why I wrote it.
 
   
 My first job in Silicon Valley was to build the "ultimate" publishing platform during the early desktop publishing days. From this experience, I received in-depth mentoring on page layout, and I learned to enjoy the fine details (even though the company didn't enjoy success). After moving away from word processors, though, I didn't dabble much in typography. I recently picked up a copy of [The Elements of Typographic Style](http://www.amazon.com/gp/product/0881792063/ref=as_li_qf_sp_asin_tl?p%20ie=UTF8&camp=1789&creative=9325&creativeASIN=0881792063&linkCode=as2&tag=ndso-20) ![](http://www.assoc-amazon.com/e/ir?t=ndso-20&l=as2&o=1&a=0881792063) and really enjoyed it.
@@ -31,10 +31,10 @@ Finally we're coming out of that hole. The concept of responsive design is final
 Part of this Renaissance is a host of new tools to give us more control over that medium-- we now have the ability to embed nearly any digital font. Yes, we had options to provide the user with any typeface all along, but the convenience of downloadable fonts makes it usable on a daily basis. So now that we are rendering nicer fonts, we need to upgrade our typography. That's one reason I was reading [The Elements of Typographic Style](http://www.amazon.com/gp/product/0881792063/ref=as_li_qf_sp_asin_tl?p%20ie=UTF8&camp=1789&creative=9325&creativeASIN=0881792063&linkCode=as2&tag=ndso-20).
   
 
-The decimal alignment problem sparked my interest. It's simple: a column of numbers is easier to compare if they are aligned on decimal points instead of "right aligned". The usual workaround is to add extra zeroes and use a typeface with fixed-width numbers. This is a reasonable compromise, but does not work with significant digits of numbers must be expressed. In scientific tables, `10.0` is quite different from `10.000`.&nbsp; I did a little research and found that there were some abandoned CSS3 properties to solve this, but really no good solution.
+The decimal alignment problem sparked my interest. It's simple: a column of numbers is easier to compare if they are aligned on decimal points instead of "right aligned". The usual workaround is to add extra zeroes and use a typeface with fixed-width numbers. This is a reasonable compromise, but does not work with significant digits of numbers must be expressed. In scientific tables, `10.0` is quite different from `10.000`.  I did a little research and found that there were some abandoned CSS3 properties to solve this, but really no good solution.
   
 
-My&nbsp; jQuery plugin [$.alignColumn()](https://raw.github.com/ndp/align-column) does the trick. Just tell it which columns contain decimal numbers and it can align them. For example, it changes:
+My  jQuery plugin [$.alignColumn()](https://raw.github.com/ndp/align-column) does the trick. Just tell it which columns contain decimal numbers and it can align them. For example, it changes:
   
 
  ![](https://raw.github.com/ndp/align-column/master/examples/decimals-right.png)

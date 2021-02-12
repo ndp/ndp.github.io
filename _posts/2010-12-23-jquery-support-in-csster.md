@@ -34,6 +34,6 @@ It's also allows the "nesting" of regular Csster:
 
 > $('.hd').csster({ ul: { margin: 10, li: { margin: 0, padding: 5 }}});
 
-Although it warrants its own post, I added a little note about how to implement clean browser-compatible patches. In the example, csster&nbsp; supports the "opacity" property name in IE by writing a simple Csster plugin that run only within the IE environment and applies the patch. Much nicer than subtler raw CSS solutions... more to come.  
+Although it warrants its own post, I added a little note about how to implement clean browser-compatible patches. In the example, csster  supports the "opacity" property name in IE by writing a simple Csster plugin that run only within the IE environment and applies the patch. Much nicer than subtler raw CSS solutions... more to come.  
   
 Check it out: [http://github.com/ndp/csster](http://github.com/ndp/csster)

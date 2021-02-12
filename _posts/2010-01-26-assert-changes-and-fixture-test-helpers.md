@@ -12,7 +12,7 @@ tags:
  - agile
 ---
 
-About a year ago I posted some [test helpers for checking pre- and post-conditions during a test](http://blog.carbonfive.com/2009/04/testing/assert_changes-and-assert_no_changes-in-ruby). I called them " **assert\_changes**" and " **assert\_no\_changes**".&nbsp; They took a ruby expression to evaluate, a block, and did what you expected:
+About a year ago I posted some [test helpers for checking pre- and post-conditions during a test](http://blog.carbonfive.com/2009/04/testing/assert_changes-and-assert_no_changes-in-ruby). I called them " **assert\_changes**" and " **assert\_no\_changes**".  They took a ruby expression to evaluate, a block, and did what you expected:
 
 ```
 o.answer = 'yes' assert_changes 'o.answer' => ['yes','no'] do o.answer = 'no' end

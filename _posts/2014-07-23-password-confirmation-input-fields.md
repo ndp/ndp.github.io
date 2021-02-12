@@ -20,19 +20,19 @@ Some sites use the same technique with email and email confirmation.
 
   
 
-I found quite a few articles that advocated certain practices around this, but I thought it would be useful to synthesize them in one place. At the end, I offer some recommendations.&nbsp;
+I found quite a few articles that advocated certain practices around this, but I thought it would be useful to synthesize them in one place. At the end, I offer some recommendations. 
 
   
 
-First off, there’s no clear best practice out there in the wild. Some popular sites (like Twitter) have a single password field, and others &nbsp;(Google, Amazon), have two. A few big sites (Facebook, Amazon) also have a double “email” field.&nbsp;
+First off, there’s no clear best practice out there in the wild. Some popular sites (like Twitter) have a single password field, and others  (Google, Amazon), have two. A few big sites (Facebook, Amazon) also have a double “email” field. 
 
   
 
-Here’s why there's variation – let’s a/b test the email field. We give half the people one field, and half of them two, and we'll look at two metrics: (1) conversion rate of the form, and (2) email address mistakes. If everything goes as predicted, both numbers go down, meaning the conversion rate goes down but accuracy goes up. Because every company would make this tradeoff differently, there can be no single answer for all. Conversion rates may be most important for one, while accurate emails most important to another. &nbsp;
+Here’s why there's variation – let’s a/b test the email field. We give half the people one field, and half of them two, and we'll look at two metrics: (1) conversion rate of the form, and (2) email address mistakes. If everything goes as predicted, both numbers go down, meaning the conversion rate goes down but accuracy goes up. Because every company would make this tradeoff differently, there can be no single answer for all. Conversion rates may be most important for one, while accurate emails most important to another.  
 
   
 
-Let's see if we can reason our way to an answer. Does using two fields ever make sense? For email fields, does a second field really reduce errors? For those of you out there that are careful with what you type, the duplication is unnecessary, and busywork. For those of us who copy and paste, this won’t catch an error, nor will it catch errors for the people who mistype their email in the same way habitually (you know who you are). It will just catch the small percentage that are left, who type their email address correct only about 50% of the time or more.&nbsp;
+Let's see if we can reason our way to an answer. Does using two fields ever make sense? For email fields, does a second field really reduce errors? For those of you out there that are careful with what you type, the duplication is unnecessary, and busywork. For those of us who copy and paste, this won’t catch an error, nor will it catch errors for the people who mistype their email in the same way habitually (you know who you are). It will just catch the small percentage that are left, who type their email address correct only about 50% of the time or more. 
 
   
 
@@ -44,11 +44,11 @@ I also think there’s also a subtle psychological effect here. When I see a dou
 
   
 
-**Passwords** , however, are masked, so should we be treating them differently? In the olden days, I’d type in my password, and was not sure if I got it right, since none of the characters were echoed back to me. So the second password field allowed me to type it a little more carefully again, and then see that I got it right (twice!).&nbsp;
+**Passwords** , however, are masked, so should we be treating them differently? In the olden days, I’d type in my password, and was not sure if I got it right, since none of the characters were echoed back to me. So the second password field allowed me to type it a little more carefully again, and then see that I got it right (twice!). 
 
   
 
-Password fields are nicer now. Most browsers will show you the character as you type it, and only fade it out after the next character, or some amount of time. Newer versions of IE even have a “peek” mode, where the password can be shown in its full glory. By &nbsp;the time we're at the end of the first password field these days, we're pretty confident in what I typed.
+Password fields are nicer now. Most browsers will show you the character as you type it, and only fade it out after the next character, or some amount of time. Newer versions of IE even have a “peek” mode, where the password can be shown in its full glory. By  the time we're at the end of the first password field these days, we're pretty confident in what I typed.
 
   
 
@@ -64,5 +64,5 @@ So is there an answer here? A few learnings and recommendations:
 
 - Start out with a single input field. This is nicer for your users, and there’s no overwhelming evidence that duplicate fields are better.
 - If you have problems with lots of people not knowing their passwords, make your “Forgot your password?” flow nice and self-service. If you still aren’t satisfied, A/B test a confirmation field, but don’t be surprised if the answer isn’t obvious.
-- If you have problems with bad email addresses, make sure you are doing what validation you can do. At Stitch Fix we eliminated a significant number of email bounces by improving our email validation. Beyond that, for more robust sites, consider an “email confirmation” flow.&nbsp;
+- If you have problems with bad email addresses, make sure you are doing what validation you can do. At Stitch Fix we eliminated a significant number of email bounces by improving our email validation. Beyond that, for more robust sites, consider an “email confirmation” flow. 
   

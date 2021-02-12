@@ -13,9 +13,9 @@ tags:
 
 I've worked on software with designers for 15 years, ever since software had a visual design. Usually this involves being "handed off" designs, or providing "feedback", via email. Only occasionally have I worked side-by-side to solve visual design and interaction problems.  
   
-Reflecting back, this seems sad, since working together has all the advantages of pair programming-- it's fun and educational, &nbsp;often much faster, and you can produce a superior result.&nbsp;
+Reflecting back, this seems sad, since working together has all the advantages of pair programming-- it's fun and educational,  often much faster, and you can produce a superior result. 
   
-There are many blog posts about the merits of pair programming, but none about pairing between programmers with a designer. &nbsp;Since Carbon Five values pairing and collaboration so heavily, I've been trying to do it on all my projects. On my most recent project for the [National Campaign](http://thenc.org/), I've had the pleasure of "pairing" with several designers.  
+There are many blog posts about the merits of pair programming, but none about pairing between programmers with a designer.  Since Carbon Five values pairing and collaboration so heavily, I've been trying to do it on all my projects. On my most recent project for the [National Campaign](http://thenc.org/), I've had the pleasure of "pairing" with several designers.  
   
 The first day of the project was refreshing-- I sat side by side with Jef and we broke apart his Illustrator designs, reassembled them in HTML, and fluidly passed ideas and png files back and forth. He was standing next to me, we were sharing a dropbox, and it was very exciting.  
   
@@ -23,11 +23,11 @@ Five months in, a recent experience left Suzanna (our current designer) and me i
 
   
 
-The task was a quick page redesign-- we have 17 detail pages utilizing the same basic template, each about a [different](http://bedsider.org/methods/the_pill) [contraception](http://bedsider.org/methods/the_ring) [method](http://bedsider.org/methods/male_condom) (it's a site about birth control). From early user testing, we'd learned what wasn't working, and had reached consensus on the set of problems we should try to fix.&nbsp;Suzanna synthesized the feedback and produced a mock-up-- a single PNG screen mock-up representing all 17 pages. Pretty traditional so far. Among other things, the new design called for altering the main photo from its prominent placement in a rectangle taking up half the page, to a smaller photo that is elegantly wrapped by the initial paragraphs of text.  
+The task was a quick page redesign-- we have 17 detail pages utilizing the same basic template, each about a [different](http://bedsider.org/methods/the_pill) [contraception](http://bedsider.org/methods/the_ring) [method](http://bedsider.org/methods/male_condom) (it's a site about birth control). From early user testing, we'd learned what wasn't working, and had reached consensus on the set of problems we should try to fix. Suzanna synthesized the feedback and produced a mock-up-- a single PNG screen mock-up representing all 17 pages. Pretty traditional so far. Among other things, the new design called for altering the main photo from its prominent placement in a rectangle taking up half the page, to a smaller photo that is elegantly wrapped by the initial paragraphs of text.  
   
-Traditionally, this doesn't go well: Some of the methods are quite small (the size of a match stick), whereas others, like the female condom, take up 6 inches or so (depending on how you measure).&nbsp;They have different shapes and visual weights, so it's going to be hard to get one design that works for all of them.  
+Traditionally, this doesn't go well: Some of the methods are quite small (the size of a match stick), whereas others, like the female condom, take up 6 inches or so (depending on how you measure). They have different shapes and visual weights, so it's going to be hard to get one design that works for all of them.  
   
-Suzanna specified a reasonable size for the image, taking this into account as much as possible. She develops a compromise based on lots of factors, including a &nbsp;guess about how a browser might wrap text. The developer would follow the spec as close as possible, and either wouldn't notice or say anything if there were visual problems.  
+Suzanna specified a reasonable size for the image, taking this into account as much as possible. She develops a compromise based on lots of factors, including a  guess about how a browser might wrap text. The developer would follow the spec as close as possible, and either wouldn't notice or say anything if there were visual problems.  
   
 Often the process stops there. You have a few pages that look good, and the rest various degrees of bad. Everybody argues that they did their job, and they did.  
   
@@ -41,12 +41,12 @@ I probed, "What about that image-- it's so tall and narrow. You want that to sti
   
 "Naw... Well, maybe. Why don't we just build the images with 20px "cushion" that the image can bleed into, in case they need to extend?"  
   
-"Sure," I said. &nbsp;I'll use negative margins to break out of the grid (a little):  
+"Sure," I said.  I'll use negative margins to break out of the grid (a little):  
 
-> #photo&nbsp;{  
-> &nbsp; float: left;  
-> &nbsp; height: 180px;&nbsp;width: 180px;  
-> &nbsp; margin: 0 0 -5px -20px;  
+> #photo {  
+>   float: left;  
+>   height: 180px; width: 180px;  
+>   margin: 0 0 -5px -20px;  
 > }
 
 Even if we'd stopped there, our implementation would be an improvement over a traditional outcome without the negative margin bleed. Suzanna could now have shadows extend into the margins, which will be a nice visual effect.  
@@ -60,7 +60,7 @@ I was in the midst of placing the image and realized I could add one CSS rule th
 
 Ten minutes later Suzanna came over to my desk, "I finished the images and they're in [your drop box](https://www.dropbox.com/). I had to make a couple other ones different sizes."  
   
-She'd named them consistently with the old names, so I just copied the files over. We compared my implementation with Suzanna's PNG mockup. Close, but not close enough.&nbsp;Suzanna sat down next to me and we pushed a few pixels around, getting the margins right with the browser's font metrics-- the line heights were slightly different she needed an adjustment. A quick check on Windows as well, and it was perfect.  
+She'd named them consistently with the old names, so I just copied the files over. We compared my implementation with Suzanna's PNG mockup. Close, but not close enough. Suzanna sat down next to me and we pushed a few pixels around, getting the margins right with the browser's font metrics-- the line heights were slightly different she needed an adjustment. A quick check on Windows as well, and it was perfect.  
   
 Then we looked at the odd size images she'd discovered, and we tweaked those sizes and margins as well. Some of them needed a little margin adjustment as well. No problem-- we just flipped back and forth between browsers and CSS files making everything perfect. (She didn't actually need to make any measurements as we just used our eyes.)  
   

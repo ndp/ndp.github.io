@@ -12,12 +12,12 @@ tags:
  - tdd
 ---
 
-A new developer on the project changed the symbolic name of one fixture record&nbsp; and&nbsp;broke a whole bunch of tests in unexpected ways. Pairing, we discovered a some interesting stuff.  
+A new developer on the project changed the symbolic name of one fixture record  and broke a whole bunch of tests in unexpected ways. Pairing, we discovered a some interesting stuff.  
   
-First, if you've never dug into them, it's critical to understand how symbollically named&nbsp;fixtures work. We rely on them heavily, but only yesterday read the code.&nbsp;If you have a fixture like:  
+First, if you've never dug into them, it's critical to understand how symbollically named fixtures work. We rely on them heavily, but only yesterday read the code. If you have a fixture like:  
 bill:
 
-&nbsp; full\_name: ...
+  full\_name: ...
 
   
 
@@ -25,7 +25,7 @@ And another fixture:
 
 socks:
 
-&nbsp; owner: bill
+  owner: bill
 
   
 
@@ -40,18 +40,18 @@ Nifty. I assumed (incorrectly), that there was some sort of lookup of records in
 Once we discovered that, we asked, "wouldn't be nice if there was a test that checked the integrity of the fixtures?" With a little work, we had just such a test, which relies on the validation system:  
  describe "fixture integrity" do
 
-&nbsp; ActiveRecord::Base.send(:subclasses).each do |cls|
+  ActiveRecord::Base.send(:subclasses).each do |cls|
 
-&nbsp; &nbsp; it "each fixture for class #{cls} should be valid" do
+    it "each fixture for class #{cls} should be valid" do
 
-&nbsp; &nbsp; &nbsp; cls.find\_each do |record|
+      cls.find\_each do |record|
 
-&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;record.valid?.should(equal(true),"Invalid fixture for #{cls}:\n &nbsp;#{record.errors.full\_messages.join("\n")}\n#{record.inspect}")  
-&nbsp;&nbsp; &nbsp; &nbsp;end
+        record.valid?.should(equal(true),"Invalid fixture for #{cls}:\n  #{record.errors.full\_messages.join("\n")}\n#{record.inspect}")  
+      end
 
-&nbsp; &nbsp; end
+    end
 
-&nbsp; end
+  end
 
 end
 
@@ -60,9 +60,9 @@ end
 Unfortunately that passed until we added a the appropriate validator  
 class Child \< ActiveRecord::Base
 
-&nbsp; validates\_presence\_of :parent
+  validates\_presence\_of :parent
 
-&nbsp; ...
+  ...
   
 (Make sure you validate "parent", not "parent\_id". "parent\_id" will be set-- it just won't point to anything.)  
 

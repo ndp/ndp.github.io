@@ -22,7 +22,7 @@ Using GA you can completely outsource the data collection. For the statistical a
   
 If you are already using GA, you're done-- you're collecting data. If not, you simply need to create an account and start using it.   
   
-Fortunately, using RESTful conventions, most using actions end up being "page views" of some sort. But there might be other steps you want to take. For example, we had a page that served up content via Ajax, and I hadn't bothered to instrument them with GA yet.&nbsp; I added one line of Javascript to the Ajax callback:&nbsp; pageTracker.\_trackPageview(questionLink);&nbsp; And it can get more complicated: if your definition of popularity involves something beyond your pages, you'll have to dive into the event tracking or custom variables of GA (which I haven't done).   
+Fortunately, using RESTful conventions, most using actions end up being "page views" of some sort. But there might be other steps you want to take. For example, we had a page that served up content via Ajax, and I hadn't bothered to instrument them with GA yet.  I added one line of Javascript to the Ajax callback:  pageTracker.\_trackPageview(questionLink);  And it can get more complicated: if your definition of popularity involves something beyond your pages, you'll have to dive into the event tracking or custom variables of GA (which I haven't done).   
   
 It's worth pointing out that if you don't use GA on a project, you need figure out what data to collect and how to store it. This involves the business owners expressing their requirements, and the developers debating which database table to use and how general a solution to build. You can imagine this can be a small sink-hole if you're not careful.  
   
@@ -37,24 +37,24 @@ Although you really don't need a deep understanding of [the API](http://code.goo
 _Install the Rails Gem_  
 You'll need to get "garb"-- not as in trash, but as in Google Analytics for Ruby. Install it:
 
-&nbsp; gem install garb
+  gem install garb
 or  
 
-&nbsp; config.gem 'garb' # in environment.rb
-&nbsp; rake gems:install  
+  config.gem 'garb' # in environment.rb
+  rake gems:install  
   
 _Profile Access_  
   
 
-&nbsp; require 'garb'
+  require 'garb'
 
-&nbsp; def self.create\_profile(acct, username, password)
+  def self.create\_profile(acct, username, password)
 
-&nbsp;&nbsp;&nbsp; Garb::Session.login(username, password)
+    Garb::Session.login(username, password)
 
-&nbsp;&nbsp;&nbsp; Garb::Profile.first(acct)
+    Garb::Profile.first(acct)
 
-&nbsp; end
+  end
   
 _Retrieving the Data_  
   
@@ -65,20 +65,20 @@ To retrieve the data, you generate a report. For this, you'll need:
 - **sort** : one of the metrics
 - **filter** : since I was only looking for the question's show action, I filtered out all other pages. The final code for us looks like:
 
-> &nbsp; def self.report\_results(profile)  
-> &nbsp;&nbsp;&nbsp; report = Garb::Report.new(profile)  
-> &nbsp;&nbsp;&nbsp; report.metrics :pageviews  
-> &nbsp;&nbsp;&nbsp; report.dimensions :page\_path  
-> &nbsp;&nbsp;&nbsp; report.sort :pageviews  
-> &nbsp;&nbsp;&nbsp; report.filters do  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; contains(:page\_path, 'questions')  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does\_not\_contain(:page\_path, 'edit')  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does\_not\_contain(:page\_path, 'new')  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does\_not\_match(:page\_path, '/questions')  
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; does\_not\_match(:page\_path, '/questions/')  
-> &nbsp;&nbsp;&nbsp; end  
-> &nbsp;&nbsp;&nbsp; report.results  
-> &nbsp; end
+>   def self.report\_results(profile)  
+>     report = Garb::Report.new(profile)  
+>     report.metrics :pageviews  
+>     report.dimensions :page\_path  
+>     report.sort :pageviews  
+>     report.filters do  
+>       contains(:page\_path, 'questions')  
+>       does\_not\_contain(:page\_path, 'edit')  
+>       does\_not\_contain(:page\_path, 'new')  
+>       does\_not\_match(:page\_path, '/questions')  
+>       does\_not\_match(:page\_path, '/questions/')  
+>     end  
+>     report.results  
+>   end
 
 You can also add date ranges on this... by default it follows the GA conventions of returning the last month's worth, which is what we wanted.  
   
@@ -89,20 +89,20 @@ If you ask for a long report, you'll need to page the results. Refer to the garb
 _Saving/Updating the data_  
   
 
-&nbsp; def self.update\_page\_views(report\_results)
-&nbsp;&nbsp;&nbsp; report\_results.each do |row|  
+  def self.update\_page\_views(report\_results)
+    report\_results.each do |row|  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if /\/questions\/(\d+)/.match(row.page\_path)
+      if /\/questions\/(\d+)/.match(row.page\_path)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; q = Question.find\_by\_id(Regexp.last\_match(1).to\_i)
+        q = Question.find\_by\_id(Regexp.last\_match(1).to\_i)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; q.update\_attribute(:pageviews,row.pageviews.to\_i) unless q.nil?
+        q.update\_attribute(:pageviews,row.pageviews.to\_i) unless q.nil?
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end
+      end
 
-&nbsp;&nbsp;&nbsp; end
+    end
 
-&nbsp; end
+  end
   
 This logic can be tested using MockRow described above:  
 
@@ -110,7 +110,7 @@ This logic can be tested using MockRow described above:
 
 class MockRow \< Struct.new(:pageviews, :page\_path);end
 
-...&nbsp;
+... 
 
 Question.update\_page\_views [MockRow.new('50',"/questions/333")]
   
@@ -121,9 +121,9 @@ Getting this scheduled and run with the correct credentials is the last piece of
 As you can see, there's nothing that tricky about this. A pair of us had this up and going in a couple hours (although we did spend time getting the DelayedJob running). There are a few important benefits:  
 
 - It's a cleaner architectural with less server load than doing it yourself. You don't need to pollute fundamentally read-only operations with database writes.
-- Better metrics. GA can give you a more sophisticated metric than you could do easily. For example, it's easy to collect raw page views, but collecting unique page views or sessions is a bit more work.&nbsp; 
+- Better metrics. GA can give you a more sophisticated metric than you could do easily. For example, it's easy to collect raw page views, but collecting unique page views or sessions is a bit more work.  
 - You can change what metrics you use in an ad-hoc basis. For example, you can decide to only count posts from the last week in the most popular, and it's a simple code change. More interesting, you 
-- Can eliminate or at least reduce developer and testers from metrics discussions. You won't have to be there to answer "can we make the most popular pages the ones that people spend the most time on?" If it's in GA, you can us it.&nbsp; If the product owner understands GA, she can figure out how to define "most popular" to produce the results she wants. 
+- Can eliminate or at least reduce developer and testers from metrics discussions. You won't have to be there to answer "can we make the most popular pages the ones that people spend the most time on?" If it's in GA, you can us it.  If the product owner understands GA, she can figure out how to define "most popular" to produce the results she wants. 
 - If you have already been running your site for a while, but are adding most popular support, you may already have a rich set of data on hand. This wouldn't be possible if you rolled your own.
 I think this will be a core part of any new site I develop. It's so convenient to have access to this rich data set without any of the burden of collecting it. I hope it works out as well for you,  
   

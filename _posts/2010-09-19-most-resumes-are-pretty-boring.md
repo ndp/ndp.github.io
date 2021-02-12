@@ -18,7 +18,7 @@ tags:
 Most resumes are pretty boring: text descriptions of each job, reverse chronological. Every once in a while you find a programmer who "gets creative", rendering their whole resume in C++ syntax or a mindmap. (We are hiring and got one of the creative ones yesterday-- well, I'm not sure _what_ it was, but it managed to communicate I'd never want that person working on a user interface.)  
   
 I started to wonder what visualizations would be useful to a reader of a resume.   
-Although I think [linkedin](http://www.linkedin.com/in/ndpsoftware) does a darn fine job, here was one idea I sketched out with my new library [Csster](http://github.com/ndp/csster). &nbsp;I took some inspiration with recent work I've been doing with IDEO, as well as a summer of being surrounded by modern art in the Baltics.  
+Although I think [linkedin](http://www.linkedin.com/in/ndpsoftware) does a darn fine job, here was one idea I sketched out with my new library [Csster](http://github.com/ndp/csster).  I took some inspiration with recent work I've been doing with IDEO, as well as a summer of being surrounded by modern art in the Baltics.  
   
 
 | [![](http://2.bp.blogspot.com/-H3rbqY4T-yA/T_EDGfGhgcI/AAAAAAAABF4/1Lz2AVcxSs0/s400/Screen+Shot+2012-07-01+at+7.06.56+PM.png)](http://2.bp.blogspot.com/-H3rbqY4T-yA/T_EDGfGhgcI/AAAAAAAABF4/1Lz2AVcxSs0/s1600/Screen+Shot+2012-07-01+at+7.06.56+PM.png) |
