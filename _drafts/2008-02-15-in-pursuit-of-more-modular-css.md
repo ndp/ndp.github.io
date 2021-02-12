@@ -24,7 +24,7 @@ But when I went back to my masterpiece six months later, it looked like a tangle
 
 ## Getting Organized
   
-So then got more organized. The basics are easy: follow naming conventions and keep it simple. XHTML arrived with a movement towards web standards. Instead of using HTML tags willy nilly, I now use "semantic markup". The basics of this are to use mark-up that describes its intent, instead of its display. For example, a tag like \<h1\> describes the purpose of its content (a heading), whereas a \<i\> tag only says how to draw it (and not that it's a book title). These basic guidelines got me quite a bit further.  
+So then got more organized. The basics are easy: follow naming conventions and keep it simple. XHTML arrived with a movement towards web standards. Instead of using HTML tags willy nilly, I now use "semantic markup". The basics of this are to use mark-up that describes its intent, instead of its display. For example, a tag like &lt;h1&gt; describes the purpose of its content (a heading), whereas a &lt;i&gt; tag only says how to draw it (and not that it's a book title). These basic guidelines got me quite a bit further.  
   
 Anyone who's stuck with a project for over a year can attest that even with these rules, the CSS becomes a difficult area, often costly to maintain or change. It's not uncommon for changes to one page to inadvertently affect other pages. Or CSS developers just "get slower" as project matures... (whereas actually you'd expect a development team to get faster as they build more of the framework).  
   

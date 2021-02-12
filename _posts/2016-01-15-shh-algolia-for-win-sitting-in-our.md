@@ -48,19 +48,19 @@ Getting started was easy. They offer simple `ActiveRecord` integration that look
 
 My Rails integration was unsurprising: 
 
-> `class
-> Book < ActiveRecord::Base  include AlgoliaSearch    algoliasearch index_name: "Book_#{Rails.env}" do   
->            attribute 
-> :title, :author_name, :genre_name,                 :subject_names, :character_names,  
->  `             **:isbn13**
+```ruby
+class  Book < ActiveRecord::Base
+  include AlgoliaSearch
+  
+  algoliasearch index_name: "Book_#{Rails.env}" do
+  attribute :title, :author_name, :genre_name, :subject_names, :character_names, :isbn13
 
-        **def** subjects\_names  
-          subjects.map(&:name)  
-        **end**  
-**        ...**  
-
-> **end**
-
+  def subjects_names  
+    subjects.map(&:name)  
+  end  
+  ...
+end
+```
 This declares which values are indexed. This block instrument's ActiveRecord’s save methods to capture all changes. There's nothing to install on your machine: the development model is to store everything in the cloud (hence the Rails.env to keep the cloud index separate).
 
   
@@ -79,36 +79,22 @@ The documentation is very good. The Heroku page got me started, but when I decid
 
 On the query side, it’s also full-featured. They have solutions for browser-based queries in place, so it’s easy to integrate onto a page without touching your server:
 
-> **var**  **_helper_** = algoliasearchHelper(algolia, INDEX\_NAME, PARAMS);  
-> **_helper_**.setQuery(query).search();  
-> **_helper_**.on( **'result'** , **function** (content, state) { ...
-
-  
-
+```javascript
+var  helper = algoliasearchHelper(algolia, INDEX_NAME, PARAMS);
+helper.setQuery(query).search();
+helper.on( 'result' , function (content, state) { ...
+```
 I was able to get my daughter’s “search box” working almost immediately, with a minimum of additional tools. The search results have highlighting and facets built in. Nice.
-
-  
 
 But there was one big surprise. I set up an index and indexed all 91 books (that were available in my seed spreadsheet). I saw the HTTP requests going through to create the index, and their website’s dashboard has a log and complete metrics. They also have a console webpage where you can test out your index. But my indexes didn’t appear. Wha? Not just the indexed items, but the indexes themselves.  I tried the Ruby API and raw HTTP requests, with no success. But other API calls said it had created the index. Any query call reported that there was no index, and the dashboard was empty. It felt really broken. 
 
-  
-
 There was a clue, though. Each API call returns a job ID. I realized that everything was being queued up to run in the background. No problem, but how long should it take? It had been 10 minutes. I checked their status page but there were no alerts. It might have been a bad moment for their servers— or maybe indexing 91 books on a free account just doesn't get priority. Well, Rome’s Library Management System wasn’t built in a day, so I shut my laptop and went to bed.
-
-  
 
 When I awoke in the morning, my jobs had run and I had nice search results:
 
-  
-
 [![](http://3.bp.blogspot.com/-9HuqMfzQ83c/VpmQTC13r0I/AAAAAAAALzA/BpAPWw8tdL4/s320/Screen%2BShot%2B2015-12-29%2Bat%2B5.58.36%2BPM.png)](http://3.bp.blogspot.com/-9HuqMfzQ83c/VpmQTC13r0I/AAAAAAAALzA/BpAPWw8tdL4/s1600/Screen%2BShot%2B2015-12-29%2Bat%2B5.58.36%2BPM.png)
-  
-
-  
 
 The search results are quite good from the get go. It really does instantaneous search. It also does “near” searches, stemming and all sorts of things I’m conditioned to having to take on as individual projects. For example, here’s a search for “Fate," which pulls up similar words:
-
-  
 
 [![](http://4.bp.blogspot.com/-07TYipqc8jw/VpmQZ0cx27I/AAAAAAAALzM/4O3dN6DwGLk/s320/Screen%2BShot%2B2015-12-29%2Bat%2B5.55.51%2BPM.png)](http://4.bp.blogspot.com/-07TYipqc8jw/VpmQZ0cx27I/AAAAAAAALzM/4O3dN6DwGLk/s1600/Screen%2BShot%2B2015-12-29%2Bat%2B5.55.51%2BPM.png)
   
@@ -117,19 +103,6 @@ Overall, I’m a big thumbs up. Give [Algolia](https://www.algolia.com/) a shot.
   
 My only criticisms, which I've touched on above, are:
 
-  
-
 (1) The Ruby API— and the API in general— is a leaky abstraction, as it tucks away the asynchronous processing. I'm not sure about this design choice, since it was obviously designed to be asynchronous from the beginning.
 
 (2) I wasn’t able to see what jobs were running or get estimates about when they would be done. In anything but a toy project, these stats are critical.
-
-  
-
-  
-
-  
-
-  
-
-  
-

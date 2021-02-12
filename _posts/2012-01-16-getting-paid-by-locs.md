@@ -46,7 +46,7 @@ Usage is pretty simple. Just download it and point it at a local directory with 
 
 $ ./gitlc.rb -r . -p
 
-[["ndp", {:net=\>657, :adds=\>26579, :deletes=\>25922}]]
+[["ndp", {:net=>657, :adds=\>26579, :deletes=\>25922}]]
 
   
 
@@ -56,21 +56,21 @@ As you can see, I had a 25K of code, which I abandoned quickly (thanks node). Fo
 
 ./gitlc.rb -p -r ../ruby-build/
 
-[["sam", {:net=\>499, :adds=\>639, :deletes=\>140}],
+[["sam", {:net=>499, :adds=>639, :deletes=>140}],
 
- ["jeremy", {:net=\>33, :adds=\>50, :deletes=\>17}],
+ ["jeremy", {:net=>33, :adds=>50, :deletes=>17}],
 
- ["josh", {:net=\>21, :adds=\>41, :deletes=\>20}],
+ ["josh", {:net=>21, :adds=>41, :deletes=>20}],
 
- ["jesse", {:net=\>16, :adds=\>21, :deletes=\>5}],
+ ["jesse", {:net=>16, :adds=>21, :deletes=>5}],
 
- ["guilleig", {:net=\>11, :adds=\>53, :deletes=\>42}],
+ ["guilleig", {:net=>11, :adds=>53, :deletes=>42}],
 
- ["bensie", {:net=\>6, :adds=\>6, :deletes=\>0}],
+ ["bensie", {:net=>6, :adds=>6, :deletes=>0}],
 
- ["chris", {:net=\>6, :adds=\>29, :deletes=\>23}],
+ ["chris", {:net=>6, :adds=>29, :deletes=>23}],
 
- ["sstephenson", {:net=\>5, :adds=\>5, :deletes=\>0}],
+ ["sstephenson", {:net=>5, :adds=>5, :deletes=>0}],
 
  ...
 

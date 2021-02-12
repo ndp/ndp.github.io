@@ -28,7 +28,7 @@ This difference is that Csster creates a "rule" and inserts it into the head, wh
   
 It's convenient to use it in the midst of jQuery work, such as:  
 
-> $('.sidebar').wrapAll('\<div\>').addClass('ready').csster({backgroundColor: '#ffeedd'});
+> $('.sidebar').wrapAll('<div>').addClass('ready').csster({backgroundColor: '#ffeedd'});
 
 It's also allows the "nesting" of regular Csster:  
 

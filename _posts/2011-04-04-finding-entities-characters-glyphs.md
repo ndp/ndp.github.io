@@ -19,7 +19,7 @@ tags:
  - visualization
 ---
 
-[My latest "mini-project"](http://amp-what.com/), a few hours in, solves the annoying problem of trying to remember entity numbers or names. For example, our last project used the entity &raquo; (»), and it seemed like it took me two years to remember it. Now, with this tool, I can just type "\>\>" and the character, symbol and number appear. I tried to make it "mobile friendly", and may experiment with packaging it as an "app".  
+[My latest "mini-project"](http://amp-what.com/), a few hours in, solves the annoying problem of trying to remember entity numbers or names. For example, our last project used the entity &raquo; (»), and it seemed like it took me two years to remember it. Now, with this tool, I can just type ">>" and the character, symbol and number appear. I tried to make it "mobile friendly", and may experiment with packaging it as an "app".  
   
 I'm intrigued by "mini-projects"... something I can put together in a few minutes or hours and provide value to someone. It's a long-time obsession: in the 90s when I got my first laptop, I tested myself to see what I put together on my 22 minute BART ride from Oakland to 24th Street. It was fun, but I never creating anything of general interest.  
   

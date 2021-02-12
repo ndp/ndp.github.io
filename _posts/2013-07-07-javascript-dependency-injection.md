@@ -16,25 +16,28 @@ tags:
  - coding
 ---
 
-Over the last month I've been wrapping my head around Angular JS. I ended up exploring Dependency Injection, and thought I'd share my experiments.
+Over the last month I've been wrapping my head around Angular JS. I ended up exploring Dependency Injection in depth, and I'd like to share my experiments.
 
-Angular uses dependency injection everywhere. Dependency Injection, or DI, means instead of using or looking up a service in the global name space, it is passed into the code, or "injected." In the early 2000s in the Java world, when the Spring dependency injection framework came out, there was much rejoicing. A very basic example shows the principal:
+Angular uses dependency injection everywhere. Dependency Injection, or "DI", means instead of using or looking up a service in the global name space, it is passed in to the code, or "injected." In the early 2000s in the Java world, when the Spring dependency injection framework came out, there was much rejoicing. A very basic example shows the principal:
 
 <script src="https://gist.github.com/ndp/5915878.js?file=example.coffee"></script>
 
 `console` is passed in, instead of being referenced off the global object. The advantages are:
 
-1. A different console can be substituted. This is great for configuration, as you can write use a file-based logger without any change to client code. This is also good for testing, as you can very easily send in a mock console. But for the testing use case, it is less critical in Javascript than Java, because in Javascript it's straightforward to [replace nearly any function.](https://github.com/pivotal/jasmine/wiki/Spies)
-2. We are not accessing some global value anymore, so the code is more modular. It can run in any environment, whether it has a global console or not. And if we want to change what console does in one part of the code and not the other, we have that level of control.
+1. A different console can be substituted. This is great for configuration, as you can write use a file-based logger without any change to client code. 
+2. This is also good for testing, as you can very easily send in a mock console. But for the testing use case, it is less critical in Javascript than Java, because in Javascript it's straightforward to [replace nearly any function.](https://github.com/pivotal/jasmine/wiki/Spies)
+3. We are not accessing some global value anymore, so the code is more modular. It can run in any environment, whether it has a global console or not. And if we want to change what console does in one part of the code and not the other, we have that level of control.
 
 The disadvantage is simply that you need to find the service and inject it. Since passing services in everywhere becomes burdensome, DI frameworks automate this injection.
 
 If you're familiar with the nodejs/require, you might think it's equivalent, but it's not. The require asks for a specific global resource explicitly. DI gives a level of indirection and allows plug in different resources.
 
- 
+
 #### What Angular Dependency Injection Looks Like
 
-Within Angular, dependencies are injected using function parameters. This is a reasonable, functional language choice. Angular is responsible for calling the function with those dependencies injected. Let's say you have a couple services: <script src="https://gist.github.com/ndp/5915878.js?file=services.coffee"></script>
+Within Angular, dependencies are injected using function parameters. This is a reasonable, functional language choice. Angular is responsible for calling the function with those dependencies injected. Let's say you have a couple services: 
+
+<script src="https://gist.github.com/ndp/5915878.js?file=services.coffee"></script>
 
 Here's a third service that uses them:
 
@@ -46,7 +49,7 @@ Now to call our service, we need it to be injected with its dependencies, which 
 
  <script src="https://gist.github.com/ndp/5915878.js?file=angularStyleInjectorSpec.coffee"></script> 
 #### What Angular Dependency Injection REALLY Looks Like
- 
+
 
 Quickly you run into different ways to define functions within Angular. Since [Google's Closure Compile](https://developers.google.com/closure/compiler/docs/compilation_levels), and many other code compressors will rename parameters to save a few bytes, this technique doesn't work. So the solution worked out was to declare an array that lists the injected variables along with the function:
 
@@ -58,7 +61,7 @@ This ends up looking pretty awkward to my eye, and I was wondering if there was 
 
 Well, first I had to deconstruct how Angular does it.
 
- 
+
 #### How the magic is implemented
 
 How this works is interesting. The secret behind all of this is something I found a little counter-intuitive: when you call `toString` on a function object, you get the actual text of the function. For example here is a useful function:
@@ -79,7 +82,7 @@ For DI, you need some way to discover the objects that are injected. I think thi
 
  <script src="https://gist.github.com/ndp/5915878.js?file=serviceLocator.coffee"></script> 
 #### Alternative Technique #1
- 
+
 
 So I wondered is there a more concise way to do this dependency injection. Creating a whole new function just to set the injected variables seemed like overkill. I started noodling... a thing about Angular you notice right off is the `$scope` object. It's an injected parameter that is used to communicate between the controller and views. By having `$scope`, most code doesn't use the `this` context object much. Could we simply call the service with all the injected parameters in a `this` context object? (Yes, there are newer Angular approaches that use it more than most of the sample code, but let's not worry about that, shall we?)
 
@@ -104,8 +107,8 @@ It depends on this function `members`, which looks through the whole function bo
 In this implementation I'm not telling it what to inject, following the Angular technique of sucking them out of the source code automatically. I see a couple advantages over Angular's:
 
 1. The definition is simpler, without functions returning functions. Although identifying injected services is harder.
-2. This technique is less susceptible to the drawbacks, as [Google's Closure Compile](https://developers.google.com/closure/compiler/docs/compilation_levels) will not rename properties in the SIMPLE\_OPTIMIZATIONS mode.
- 
+2. This technique is less susceptible to the drawbacks, as [Google's Closure Compile](https://developers.google.com/closure/compiler/docs/compilation_levels) will not rename properties in the SIMPLE_OPTIMIZATIONS mode.
+
 #### Experiment #2: Objects
 
 JavaScript has dual nature. It has functions, but it also has objects. So let's look at using an object as the base for injection.
@@ -122,7 +125,7 @@ We will do what we just did in Experiment #1, but once for each function of an o
 
 We find all the functions and then from there find all the needed services, and inject them into the object.
 
- 
+
 #### Experiment #3: Explicit Objects
 
 The magic hunting around for function names isn't that comfortable, we can be explicit. In this definition of an object will simply indicate the names of the services that are required, so it's clear they need to be injected:

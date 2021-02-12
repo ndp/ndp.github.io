@@ -16,7 +16,7 @@ tags:
 
 Visualization of agile practices running here:  
   
-[http://ndpsoftware.com/agile\_methods/agile\_methods.html](http://ndpsoftware.com/agile_methods/agile_methods.html) (If it seems to draw garbage all over the screen, refresh the page. More on that later.)  
+[http://ndpsoftware.com/agile_methods/agile_methods.html](http://ndpsoftware.com/agile_methods/agile_methods.html) (If it seems to draw garbage all over the screen, refresh the page. More on that later.)  
   
 What it shows is the main concepts of 5 different agile viewpoints: XP, Scrum, the Agile Manifesto, Lean and Getting Real. Important words for a practice are "attracted" to (gravitationally) to the practices that mention them in their canonical definition.
 
@@ -35,8 +35,8 @@ So I identified a primary source for each practice. This is arbitrary but not ca
   
 1. XP: [http://www.extremeprogramming.org/](http://www.extremeprogramming.org/)  
 2. Agile Manifesto: [http://agilemanifesto.org/](http://agilemanifesto.org/), [http://agilemanifesto.org/principles.html](http://agilemanifesto.org/principles.html)  
-3. Scrum: Agile Software Development with Scrum, Chapter 9; and [http://en.wikipedia.org/wiki/Scrum\_(development)](http://en.wikipedia.org/wiki/Scrum_(development))  
-4. Lean Software: [http://en.wikipedia.org/wiki/Lean\_software\_development](http://en.wikipedia.org/wiki/Lean_software_development)  
+3. Scrum: Agile Software Development with Scrum, Chapter 9; and [http://en.wikipedia.org/wiki/Scrum_(development)](http://en.wikipedia.org/wiki/Scrum_(development))  
+4. Lean Software: [http://en.wikipedia.org/wiki/Lean_software_development](http://en.wikipedia.org/wiki/Lean_software_development)  
 5. Getting Real: from page 2 of the book  
   
   
@@ -52,7 +52,7 @@ Next I needed a tool in which to implement my visualization. You can license the
   
 Actually, there was a little engineering involved. I knew I would update the spreadsheet (and I wanted to add other practices potentially), so instead of converting the spreadsheet directly to the Javascript, I wrote a Ruby script that takes the spreadsheet and generates JSON data structures. The structures are then fed into a small engine I wrote, and the graphic is created.  
   
-Code available [http://github.com/ndp/agile\_methods](http://github.com/ndp/agile_methods)  
+Code available [http://github.com/ndp/agile_methods](http://github.com/ndp/agile_methods)  
   
   
   

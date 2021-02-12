@@ -59,9 +59,9 @@ This is called with the 20-minute timeout, and implements it beautifully:
 The server side timeout is for redundancy. Our pages are all pretty focused, so I doubt any user will spend more than a couple minutes on any one of them. We picked a server-side session timeout of 40 minutes. The only way the Javascript timeout won't kick in first is if the user interacts with the page for more than this time with no server side interaction... possible, but not likely.  
   
 After completing this compromise solution, I'm ready to spell out some ideal requirements:  
-\* session timeout with no interaction after 20 minutes  
-\* any interaction on the page should reset the timeout  
-\* warn the user (if possible) when the deadline approaches  
-\* this shouldn't open additional security vulnerabilities or server traffic  
+* session timeout with no interaction after 20 minutes  
+* any interaction on the page should reset the timeout  
+* warn the user (if possible) when the deadline approaches  
+* this shouldn't open additional security vulnerabilities or server traffic  
   
 With some additional work, I'm sure an "ideal" solution can be developed. This compromise should get us most of the way there. Thanks to the rest of my team, and an interview candidate who provided some clear thinking on the matter. 

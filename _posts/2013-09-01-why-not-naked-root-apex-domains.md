@@ -64,7 +64,7 @@ But it'd be simpler to keep fewer people involved. Since I was using Zerigo for 
 
 For Rails apps, you can [redirect with the router,](http://stackoverflow.com/questions/4046960/how-to-redirect-without-www-using-rails-3-rack) but this feels messy. I'd like to reroute before the request gets into Rails. Using one of these middlewares look like good solutions:
 
-- [rack-force\_domain](https://github.com/cwninja/rack-force_domain)
+- [rack-force_domain](https://github.com/cwninja/rack-force_domain)
 - [rack-canonical-host](https://github.com/tylerhunt/rack-canonical-host)
 
 If you have Nginx, it is also easy to insert. If you're using SSL, you'll want to insert the redirect before redirecting the user to SSL, to prevent having to deal with SSL issues for the naked domain. Check out [my coworker's Jon's notes](http://jonathandean.com/2012/10/properly-handling-naked-domains-and-ssl-on-heroku/) if you're fighting SSL certs.

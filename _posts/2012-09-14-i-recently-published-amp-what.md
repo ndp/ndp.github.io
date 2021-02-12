@@ -19,7 +19,7 @@ tags:
 ---
 
   
-I recently published [amp-what.com](http://amp-what.com/). I created it to solve a problem I have:  trying to remember (or google) character entity numbers or names. For example, our last project used the entity » (»). Try googling this if you don't remember the name! Now, with this tool, I can just type "\>\>" and the character, symbol and number appear.  
+I recently published [amp-what.com](http://amp-what.com/). I created it to solve a problem I have:  trying to remember (or google) character entity numbers or names. For example, our last project used the entity » (»). Try googling this if you don't remember the name! Now, with this tool, I can just type ">>" and the character, symbol and number appear.  
   
 It turned out to be surprisingly fun to play with. I discovered [chess pieces](http://amp-what.com/#q=chess), [planet symbols](http://amp-what.com/#q=planet), all sorts of boxes. There are a surprising number of icons to play with. What have you found that surprise you?  
   

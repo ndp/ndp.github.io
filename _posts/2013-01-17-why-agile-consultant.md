@@ -64,5 +64,5 @@ _Expect from us: working software_.
 References:  
 [http://www.agilemanifesto.org/](http://www.agilemanifesto.org/)  
 [http://www.agilealliance.org/show/2](http://www.agilealliance.org/show/2)  
-[http://www.it-cortex.com/Stat\_Failure\_Rate.htm](http://www.it-cortex.com/Stat_Failure_Rate.htm) This article aggregates several studies on software failure rates.[  
+[http://www.it-cortex.com/Stat_Failure\_Rate.htm](http://www.it-cortex.com/Stat_Failure_Rate.htm) This article aggregates several studies on software failure rates.[  
  http://spectrum.ieee.org/sep05/1685](http://spectrum.ieee.org/sep05/1685) Why Software Fails, Rober N. Charette, September 2005. Summarizes why projects fail. 

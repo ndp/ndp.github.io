@@ -15,19 +15,21 @@ tags:
 A new developer on the project changed the symbolic name of one fixture record  and broke a whole bunch of tests in unexpected ways. Pairing, we discovered a some interesting stuff.  
   
 First, if you've never dug into them, it's critical to understand how symbollically named fixtures work. We rely on them heavily, but only yesterday read the code. If you have a fixture like:  
+
+```
 bill:
 
-  full\_name: ...
-
-  
+  full_name: ...
+```
 
 And another fixture:
 
+```
 socks:
 
   owner: bill
 
-  
+```  
 
 Rails magically inserts bill's ID into socks' record. (Before this feature, developers had to manually manage their IDs and keeping fixtures working well was less fun.)  
    
@@ -38,15 +40,16 @@ Nifty. I assumed (incorrectly), that there was some sort of lookup of records in
    
   
 Once we discovered that, we asked, "wouldn't be nice if there was a test that checked the integrity of the fixtures?" With a little work, we had just such a test, which relies on the validation system:  
+ ```
  describe "fixture integrity" do
 
   ActiveRecord::Base.send(:subclasses).each do |cls|
 
     it "each fixture for class #{cls} should be valid" do
 
-      cls.find\_each do |record|
+      cls.find_each do |record|
 
-        record.valid?.should(equal(true),"Invalid fixture for #{cls}:\n  #{record.errors.full\_messages.join("\n")}\n#{record.inspect}")  
+        record.valid?.should(equal(true),"Invalid fixture for #{cls}:\n  #{record.errors.full_messages.join("\n")}\n#{record.inspect}")  
       end
 
     end
@@ -54,34 +57,17 @@ Once we discovered that, we asked, "wouldn't be nice if there was a test that ch
   end
 
 end
-
-  
+```
 
 Unfortunately that passed until we added a the appropriate validator  
-class Child \< ActiveRecord::Base
 
-  validates\_presence\_of :parent
+```
+class Child < ActiveRecord::Base
 
+  validates_presence_of :parent
   ...
-  
-(Make sure you validate "parent", not "parent\_id". "parent\_id" will be set-- it just won't point to anything.)  
+```
 
-  
+(Make sure you validate "parent", not "parent_id". "parent_id" will be set-- it just won't point to anything.)  
+
 That's it. A simple test and you won't risk your fixtures floating too far from the data structure you expect. Thanks to Lowell Kirsh and Jonah for pairing on this.
-<h2>Comments</h2>
-<div class='comments'>
-<div class='comment'>
-<div class='author'>ndp</div>
-<div class='content'>
-@Alon -- that's right. I fixed the example. Sorry for the confusion.
-
-</div>
-</div>
-<div class='comment'>
-<div class='author'>Alon Salant</div>
-<div class='content'>
-I wouldn't normally use 'owner\_id: bill'. I'd use 'owner: bill' and rely on Rails to know that 'owner' is a relationship and it should be adding the value to 'owner\_id' in the database. This the ole 'foxy fixtures' behavior introduced in Rails 2 at some point. I believe the behavior will be the same that you describe.
-
-</div>
-</div>
-</div>

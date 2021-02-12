@@ -12,7 +12,7 @@ tags:
  - agile
 ---
 
-About a year ago I posted some [test helpers for checking pre- and post-conditions during a test](http://blog.carbonfive.com/2009/04/testing/assert_changes-and-assert_no_changes-in-ruby). I called them " **assert\_changes**" and " **assert\_no\_changes**".  They took a ruby expression to evaluate, a block, and did what you expected:
+About a year ago I posted some [test helpers for checking pre- and post-conditions during a test](http://blog.carbonfive.com/2009/04/testing/assert_changes-and-assert_no_changes-in-ruby). I called them " **assert_changes**" and " **assert_no_changes**".  They took a ruby expression to evaluate, a block, and did what you expected:
 
 ```
 o.answer = 'yes' assert_changes 'o.answer' => ['yes','no'] do o.answer = 'no' end
@@ -31,7 +31,7 @@ Also included in the gem are " **fixture helpers**". These make it easy to test 
   
 On [goBalto](http://www.gobalto.com), Ingar had created something like it for testing Sphinx search results. We had sets of fixtures, and we wanted to make sure a search returned certain results-- sometimes contains, sometimes exact. Sometimes we didn't care exactly what the order was so we wanted set comparisons. Or we didn't care about extra items.  
   
-Here's how it works. If you have a model object and fixtures for CandyBars, it adds test helper methods for **assert\_list\_of\_candy\_bars** (using #method\_missing). Like all xUnit asserts, you pass the expected values (a list of symbols identifying the fixture objects), and the value you are testing.  
+Here's how it works. If you have a model object and fixtures for CandyBars, it adds test helper methods for **assert_list_of_candy_bars** (using #method_missing). Like all xUnit asserts, you pass the expected values (a list of symbols identifying the fixture objects), and the value you are testing.  
   
 
 ```
@@ -39,4 +39,4 @@ result =
       CandyBar.find(:all, ... ) assert_list_of_candy_bars [:mars, :eminem], result
 ```
   
-It also supports **assert\_set\_of\_candy\_bars** , so you can ignore the order of comparisons; and **assert\_contains\_candy\_bars** so you can make sure it results contain a subset. Enjoy! 
+It also supports **assert_set_of_candy_bars** , so you can ignore the order of comparisons; and **assert_contains_candy_bars** so you can make sure it results contain a subset. Enjoy! 

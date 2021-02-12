@@ -56,7 +56,7 @@ But that's not the end of the story. I walked back to my desk and implemented th
 She interrupted me five minutes later, "This one's taller, is that okay?"  
 I was in the midst of placing the image and realized I could add one CSS rule that would handle this. "Sure!"  
 
-> #photo.the\_pill { height: 241px; margin-bottom: -20px; }
+> #photo.the_pill { height: 241px; margin-bottom: -20px; }
 
 Ten minutes later Suzanna came over to my desk, "I finished the images and they're in [your drop box](https://www.dropbox.com/). I had to make a couple other ones different sizes."  
   
@@ -68,10 +68,10 @@ While we were at it, we ran through the all 17 pages, just as a quick check. The
 
 > #photo.diaphragm { height: 195px; margin-bottom: -20px; }  
 > #photo.withdrawal { height: 201px; margin-bottom: -40px;}  
-> #photo.depo\_provera { height: 189px; margin-bottom: -20px; }  
+> #photo.depo_provera { height: 189px; margin-bottom: -20px; }  
 > #photo.iud { margin-top: 5px; height: 226px; margin-bottom: -60px; }  
-> #photo.the\_ring { margin-bottom: -20px; }   
-> #photo.cervical\_cap { width: 195px; height: 192px; margin-right: -15px; margin-bottom: -20px; }
+> #photo.the_ring { margin-bottom: -20px; }   
+> #photo.cervical_cap { width: 195px; height: 192px; margin-right: -15px; margin-bottom: -20px; }
 
 This probably took less than an hour. This isn't very complicated, but it's hard to imagine how tedious this would have been if we hadn't paired to reach the final result. Plus, each page really looked great-- the image tucked in "just right."  
   

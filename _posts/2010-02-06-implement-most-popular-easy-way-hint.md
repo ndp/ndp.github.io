@@ -22,7 +22,7 @@ Using GA you can completely outsource the data collection. For the statistical a
   
 If you are already using GA, you're done-- you're collecting data. If not, you simply need to create an account and start using it.   
   
-Fortunately, using RESTful conventions, most using actions end up being "page views" of some sort. But there might be other steps you want to take. For example, we had a page that served up content via Ajax, and I hadn't bothered to instrument them with GA yet.  I added one line of Javascript to the Ajax callback:  pageTracker.\_trackPageview(questionLink);  And it can get more complicated: if your definition of popularity involves something beyond your pages, you'll have to dive into the event tracking or custom variables of GA (which I haven't done).   
+Fortunately, using RESTful conventions, most using actions end up being "page views" of some sort. But there might be other steps you want to take. For example, we had a page that served up content via Ajax, and I hadn't bothered to instrument them with GA yet.  I added one line of Javascript to the Ajax callback:  pageTracker._trackPageview(questionLink);  And it can get more complicated: if your definition of popularity involves something beyond your pages, you'll have to dive into the event tracking or custom variables of GA (which I haven't done).   
   
 It's worth pointing out that if you don't use GA on a project, you need figure out what data to collect and how to store it. This involves the business owners expressing their requirements, and the developers debating which database table to use and how general a solution to build. You can imagine this can be a small sink-hole if you're not careful.  
   
@@ -48,7 +48,7 @@ _Profile Access_
 
   require 'garb'
 
-  def self.create\_profile(acct, username, password)
+  def self.create_profile(acct, username, password)
 
     Garb::Session.login(username, password)
 
@@ -60,43 +60,43 @@ _Retrieving the Data_
   
 To retrieve the data, you generate a report. For this, you'll need:  
 
-- **dimensions** : I just asked for page\_path. If you ask for just one dimension, you can think of it as the row headers in the table you get back.
+- **dimensions** : I just asked for page_path. If you ask for just one dimension, you can think of it as the row headers in the table you get back.
 - **metrics:** I just asked for the pageviews-- it's the values that go in the row cells returned. You can also ask for bounces, visits, entrances, exits, etc. You can envision a complex definition of popularity that's the pageviews but you could subtract off bounces and exits ([or any of the fields](http://code.google.com/apis/analytics/docs/gdata/gdataReferenceDimensionsMetrics.html)).
 - **sort** : one of the metrics
 - **filter** : since I was only looking for the question's show action, I filtered out all other pages. The final code for us looks like:
 
->   def self.report\_results(profile)  
+>   def self.report_results(profile)  
 >     report = Garb::Report.new(profile)  
 >     report.metrics :pageviews  
->     report.dimensions :page\_path  
+>     report.dimensions :page_path  
 >     report.sort :pageviews  
 >     report.filters do  
->       contains(:page\_path, 'questions')  
->       does\_not\_contain(:page\_path, 'edit')  
->       does\_not\_contain(:page\_path, 'new')  
->       does\_not\_match(:page\_path, '/questions')  
->       does\_not\_match(:page\_path, '/questions/')  
+>       contains(:page_path, 'questions')  
+>       does_not_contain(:page_path, 'edit')  
+>       does_not_contain(:page_path, 'new')  
+>       does_not_match(:page_path, '/questions')  
+>       does_not_match(:page_path, '/questions/')  
 >     end  
 >     report.results  
 >   end
 
 You can also add date ranges on this... by default it follows the GA conventions of returning the last month's worth, which is what we wanted.  
   
-This function returns an array of Structs, with two properties in each struct: pageviews and page\_path.   
+This function returns an array of Structs, with two properties in each struct: pageviews and page_path.   
   
 If you ask for a long report, you'll need to page the results. Refer to the garb documentation to see how to do this.  
   
 _Saving/Updating the data_  
   
 
-  def self.update\_page\_views(report\_results)
-    report\_results.each do |row|  
+  def self.update_page_views(report_results)
+    report_results.each do |row|  
 
-      if /\/questions\/(\d+)/.match(row.page\_path)
+      if /\/questions\/(\d+)/.match(row.page_path)
 
-        q = Question.find\_by\_id(Regexp.last\_match(1).to\_i)
+        q = Question.find_by_id(Regexp.last_match(1).to_i)
 
-        q.update\_attribute(:pageviews,row.pageviews.to\_i) unless q.nil?
+        q.update_attribute(:pageviews,row.pageviews.to_i) unless q.nil?
 
       end
 
@@ -108,11 +108,11 @@ This logic can be tested using MockRow described above:
 
   
 
-class MockRow \< Struct.new(:pageviews, :page\_path);end
+class MockRow &lt; Struct.new(:pageviews, :page_path);end
 
 ... 
 
-Question.update\_page\_views [MockRow.new('50',"/questions/333")]
+Question.update_page_views [MockRow.new('50',"/questions/333")]
   
 Getting this scheduled and run with the correct credentials is the last piece of the puzzle, which I'm not covering here; see cron, DelayedJob and your host.  
   
