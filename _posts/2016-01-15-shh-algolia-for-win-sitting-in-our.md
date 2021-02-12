@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ""
+title: "Shh! Algolia for the Win"
 date: 2016-01-15
 comments: false
 url: /2016/01/shh-algolia-for-win-sitting-in-our.html
@@ -15,36 +15,22 @@ tags:
  - prototyping
 ---
 
-## Shh! Algolia for the Win
-
 Sitting in our dining room, discussing our kids’ room full of books, I decided to regale our kids with a story about the old days of the library: rows of “card catalogs," little pieces of paper to jot down call numbers, etc. This got them very excited, and they love building things, so they were gearing up to re-create just such a system in their bedroom. 
 
-  
   
 
 I waved my hands, “No, no, no, that’s not the point.” I’d show them the modern way: it's all online now. I'd toss together an Online Library Management System to help them share their books. Believe it or not, they weren’t excited-- but they agreed. Yeah, a search box would be neat.
 
-  
 
 Of course with [Rails](http://rails.org/) and [Heroku](https://www.heroku.com/) and my N years of experience, it was just an hour from idea to live, fully-functional app on the internet. We had CRUD screens for books, subjects, authors and even characters. I stood up and dusted my hands off proudly. Then my eldest daughter put on her PM hat, and reminded me of the requirements: “It’s just a search box.” 
 
-  
-
 “Yeah, I know,” I said. “Soon.” 
-
-  
 
 She'll be a hard-driving PM when she grows up. It was time to get search working. I looked at [the current options available as Heroku plugins](https://elements.heroku.com/addons#search). There were the old standards: Lucene, Solr, Elastic Search. I’d used them each on a couple projects and knew what they’d involve. I’d have to spend some time for them to provide nice results– tuning, weighting and very careful indexing. Do-able, but a lot like work.
 
-  
-
 There was an option that intrigued me. [Algolia](https://elements.heroku.com/addons/algoliasearch) promised to be the “next generation," offering good searches from the first keystroke, with in-browser integration. This is something I explored a bit with [&What](http://amp-what.com/), Algolia offered a small (& free) plan, so I was off and running.
 
-  
-
 Getting started was easy. They offer simple `ActiveRecord` integration that looks similar to Elastic Search and Solr gems. (You’re not limited to this-- there are several integrations in a host of languages. And of course the whole thing is just a JSON restful API, so you can write your own integration, if you want.)
-
-  
 
 My Rails integration was unsurprising: 
 
@@ -63,11 +49,7 @@ end
 ```
 This declares which values are indexed. This block instrument's ActiveRecord’s save methods to capture all changes. There's nothing to install on your machine: the development model is to store everything in the cloud (hence the Rails.env to keep the cloud index separate).
 
-  
-
 You can index whatever you want. Intuitively, each of those attribute symbols is a method that is called on the book object, and the result is stored in the index. You can write synthetic attributes, like `subject_names` is above, by writing your own method. 
-
-  
 
 There are also facets. Although I didn't use these, they look more naturally integrated than they are in Solr and Elastic Search, where they feel like an add-on. 
 
