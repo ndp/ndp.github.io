@@ -20,6 +20,7 @@
 
 title: NDP Software Blog
 email: andy@ndpsoftware.com
+author: Andrew J. Peterson
 description: >- # this means to ignore newlines until "baseurl:"
   Thoughts on day-to-day software craftsmanship.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -55,6 +56,3 @@ plugins:
 #   - vendor/ruby/
 show_excerpts: true
 header_pages:
-  - about.markdown
-  - "[NDP Software](https://www.ndpsoftware.com)"
-  - "[&what](https://www.amp-what.com)"

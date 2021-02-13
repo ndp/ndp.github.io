@@ -4,3 +4,4 @@
 
 layout: home
 ---
+> Welcome to my blog. I've moved it from blogger.com to Github pages.
