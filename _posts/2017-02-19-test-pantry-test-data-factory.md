@@ -19,11 +19,11 @@ tags:
 ---
 
 
-On two recent Javascript data-based projects, we needed to build test data. For many years I've used [Thoughtbot's Factory Girl](https://github.com/thoughtbot/factory_girl) for Ruby, but couldn't find the equivalent for Javascript. There are several, but I found the syntax picky, and it didn't seem like they offered enough benefits to use them. In Javascript, because of the nice object literal format, it's pretty easy to just hard-code  test data yourself, and that must be what most people do. But as I built out more and more tests, I saw how a tool would help. So I created [Test Pantry](https://github.com/ndp-software/test-pantry).  
+On two recent Javascript data-based projects, we needed to data to feed into our tests. For many years I've used [Thoughtbot's Factory Girl](https://github.com/thoughtbot/factory_girl) for Ruby, but couldn't find the equivalent for Javascript. There are several, but I found the syntax baroque, and the benefits didn't justify the complexity. And of course in Javascript, because of the nice object literal format, it's pretty easy to just hard-code  test data yourself. And that must be what most people do. But as I built out more and more tests, I saw how a tool would help. So I created [Test Pantry](https://github.com/ndp-software/test-pantry).  
 
-Test Pantry takes care of problems you run into when you do it yourself. Common fields or behaviors can be reptitive or error prone using object literals. Let's say all objects have unique IDs. Writing this into every single factory method is a bit tedious. Test Pantry allows you to define a single factory/trait such as `has-id`, and mix it into any of your model objects.  
+Test Pantry takes care of problems you run into when you do it yourself. **Common fields** or will appear across multiple object literals. Let's say all objects have unique IDs. Writing this into every single factory method is a bit tedious. Test Pantry allows you to DRY these up, and define a single factory trait and mix it into any of your model objects.  
 
-Another hassle is having to create networks of objects, with relationships to each other. More than a couple objects and this quickly grows complex. Test Pantry provides a couple tools to make this easier.  
+Another hassle is having to create a network of objects, with inter-dependent relationships. With more than a couple objects, this grows complex. Test Pantry provides a couple tools to make this easier.  
 
 Finally, I incorporated a unique feature to test data factories: seedable random data. Test Pantry will generate random values, but each factory has its own "seed" that causes a predictable sequence to be emitted. From the docs:  
 
