@@ -1,10 +1,6 @@
 ndp.github.io
 =============
-## todo
-
-  - [x] figure out why google analytics doesn't fire
-  - [ ] use markdown instead of html
-  - [ ] bad character(s/encoding)
+Source for blog.ndpsoftware.com
 
 ## Development
 

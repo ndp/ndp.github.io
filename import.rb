@@ -1,4 +1,9 @@
+# Convert a blogger/blogspot export into Markdown-based jekyl website.
+# The normal Jekyl imports don't handle the markdown conversion.
 # Based on https://gist.github.com/juniorz/1564581
+#
+# This is run-once code, so it's pretty light on comments and any sort
+# of error handling.
 
 require 'rubygems'
 require 'nokogiri'
@@ -10,7 +15,6 @@ require_relative 'src/reverse_markdown_patch'
 require_relative 'src/post'
 require_relative 'src/comment'
 
-# usage: ruby import.rb my-blog.xml
 # my-blog.xml is a file from Settings -> Basic -> Export in blogger.
 opts        = OptionParser.new
 opts.banner = "Usage: ruby import.rb [-f md|html] [blogger-export-file.xml]\n."
@@ -46,11 +50,10 @@ def add(node)
   when 'comment'
     reply_to = node.children.find { |c| c.name == 'in-reply-to' }
     post_id  = reply_to.attr('ref')
-    #post_id = node.search('thr').first.attr('ref')
     @posts[post_id].add_comment(Comment.new(node))
   when 'template', 'settings', 'page'
   else
-    raise 'dunno ' + type
+    raise 'Do not understand exported node of type: ' + type
   end
 end
 
@@ -63,7 +66,6 @@ def write(post, path, extension)
   File.open(File.join(path, "#{post.file_name}.#{extension}"), 'w') do |file|
     file.write post.header
     file.write "\n\n"
-    #file.write "<h1>{{ page.title }}</h1>\n"
     file.write post.content_as(extension)
 
     unless post.comments.empty?
@@ -85,19 +87,13 @@ def write(post, path, extension)
   end
 end
 
-entries = {}
-
-doc.search('entry').each do |entry|
-  add entry
-end
+doc.search('entry').each { |entry| add entry }
 
 puts "** Writing PUBLISHED posts"
 FileUtils.rm_rf('_posts')
 Dir.mkdir("_posts") unless File.directory?("_posts")
 
-@posts.each do |id, post|
-  write post, '_posts', extension
-end
+@posts.each { |id, post| write post, '_posts', extension }
 
 puts "\n"
 puts "** Writing DRAFT posts"
@@ -105,6 +101,4 @@ puts "** Writing DRAFT posts"
 FileUtils.rm_rf('_drafts')
 Dir.mkdir("_drafts") unless File.directory?("_drafts")
 
-@drafts.each do |id, post|
-  write post, '_drafts', extension
-end
+@drafts.each { |id, post| write post, '_drafts', extension }
