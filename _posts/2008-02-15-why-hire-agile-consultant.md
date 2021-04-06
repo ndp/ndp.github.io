@@ -13,7 +13,7 @@ tags:
  - expectations
 ---
 
-I recently joined [Carbon Five](http://carbonfive.com/), a small agile consulting company specializing in boot-strapping start-ups. I got a chance to work with C5 over the last year (as a client), and I learned that the expectations of working with us are very different than working with other consulting companies.
+I recently joined [Carbon Five](https://carbonfive.com/), a small agile consulting company specializing in boot-strapping start-ups. I got a chance to work with C5 over the last year (as a client), and I learned that the expectations of working with us are very different than working with other consulting companies.
 
 ## What is agile
 
