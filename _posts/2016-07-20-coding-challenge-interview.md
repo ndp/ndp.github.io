@@ -40,9 +40,9 @@ The motivations for using this technique make sense, but the candidate may not s
 I'd recommend against these take-home assignments. But if you must, some advice for doing this right:
 
 
-1. *Put it in the right place in the hiring process.* You’re asking the candidate for her time, so make sure it will seem worth it. This needs to come after the initial HR screen, after the first technical screen, and importantly, after someone has sold the job and company to the candidate. Otherwise you are asking a large time commitment and all but the most needy will drop out. 
+1. *Do it at the right time in the hiring process.* You’re asking the candidate for her time, so make sure it will seem worth it. This needs to come after the initial HR screen, after the first technical screen, and importantly, after someone has sold the job and company to the candidate. Otherwise you are asking a large time commitment and all but the most needy will drop out. 
 
-2. *Skip it when it makes sense.* It’s important to *remember what you are trying to assess* with this homework. If you won’t learn anything, don’t ask the candidate to do it. It aggravates me to be asked to build a somewhat standard Rails application and implement a couple basic CRUD screens. My immediate reaction is that they are looking for a junior candidate without a proven track record, and I should move on. A couple ideas:
+2. *Skip it sometimes.* It’s important to *remember what you are trying to assess* with this homework. If you won’t learn anything, don’t ask the candidate to do it. It aggravates me to be asked to build a somewhat standard Rails application and implement a couple basic CRUD screens. My immediate reaction is that they are looking for a junior candidate without a proven track record, and I should move on. A couple ideas:
 
    * Have part of the hiring process that reviews the candidates Github repository, and assess if the take-home test is necessary. My resume shows that I’m an accomplished programmer, and my Github page has thousands of lines of code (of varying languages and quality). I certainly have my weaknesses, but building a standard Rails app won’t reveal them. 
    * Considers using this assessment for junior engineers, and tailor it to work well for this. I've always seen that companies have one exercise-- one exercise to rule them all. They don't have different exercises for different programming positions. It's seems incredibly hard to design an assessment that will work for a wide variety of positions, and I'm skeptical that any of these do this effectively. 
@@ -52,44 +52,15 @@ I'd recommend against these take-home assignments. But if you must, some advice 
 
 3. *Provide clear time limits.* If the candidate isn’t given a time limit, you are going to get a wide range of responses, with the quality distribution based largely on how much time people have. You’ll be filtering for unemployed people and people that are already sold on the job. 
 
-   I have seen a technical solution for this, but I don't like it: the candidate is issued an API key that was valid for only two hours. This keeps the time commitment, but puts the interviewee in stressful, race-like environment, which (ironically) is something the exercise tries to avoid. (Engineers are almost never asked to code like we play speed chess.) It's just one data point, but when I took this test, the time limit threw me off, and the homework was representative my work. I’d prefer a much smaller task that can't get out of hand.
+   I have seen a technical solution for this, but I don't like it: the candidate is issued an API key that was valid for only two hours. This keeps the time commitment, but puts the interviewee in stressful, race-like environment, which (ironically) is something the exercise tries to avoid. If you want to use this approach, make sure you want to filter for engineers that can code to the clock. I'm not slow, but I've never been timed in this was, so when I first did this, the time-pressure limit threw me off, and the homework was not representative of my work. I’d prefer a much smaller task that can't get out of hand. Therefore...
 
-4. *Provide a small scope.* Several times I’ve seen homework that requires a full Rails app with several pages, a data import or API call. What you think is 2 hours can easily be 6. It is easy to write, but this can easily require a dozen different small projects. I completed one of these homework assignments, and looking back I created 20 distinct Git commits. Here’s a summary:
+4. *Provide a small scope.* Several times I’ve seen homework that requires a full Rails app with several pages, a data import or API call. What you think is 2 hours can easily be 6. It is easy to write, but this can easily require a dozen different small projects. I completed one of these homework assignments, and looking back I created 20 distinct Git commits: `28 files changed, 668 insertions(+), 23 deletions(-)`  That's a lot of code to churn out and evaluate. Aim for something that can be solved in a JSBin in 20 to 30 minutes. <img src="https://2.bp.blogspot.com/-mv3g1jptcnM/V5AYgIURXnI/AAAAAAAANI4/rP7SzYF33M8FVVJnZ3XzNLCDhxBtC4oqgCLcB/s1600/Screen%2BShot%2B2016-07-20%2Bat%2B5.32.17%2BPM.png" align="right" />
 
-```
- .rspec                                                |   2 ++
- Gemfile                                               |   1 
- README.rdoc                                           |  59
- app/controllers/api_controller.rb                     |  43 ++++++++++++++++++++++++++++++++++
- app/controllers/application_controller.rb             |   2 +-
- app/models/b *****.rb                                 |   3 +++
- app/models/calculator.rb                              |  26 +++++++++++++++++++++
- app/models/ ****.rb                                   |   3 +++
- app/models/ **** _summary.rb                          |  34 +++++++++++++++++++++++++++
- config/application.rb                                 |  2 ++
- config/environments/development.rb                    |  2 ++
- config/routes.rb                                      |  4 ++++
- db/migrate/20160629143516_create_***.rb               | 10 ++++++++
- db/migrate/20160629144459_create_***.rb               | 11 +++++++++
- db/migrate/20160629151847_create_***.rb               | 12 ++++++++++
- db/schema.rb                                          | 45 +++++++++++++++++++++++++++++++++++
- db/seeds.rb                                           | 30 ++++++++++++++++++------
- lib/tasks/summarize.rake                              | 11 +++++++++
- spec/calculator_spec.rb                               | 61 +++++++++++++++++++++++++++++++++++++++++
- spec/controllers/api_controller_spec.rb               | 44 ++++++++++++++++++++++++++++++++++
- spec/******/_summary_spec.rb                          | 51 +++++++++++++++++++++++++++++++++++++++
- 28 files changed, 668 insertions(+), 23 deletions(-)
-```
-
-Studies of yesteryear found that engineers averaged 10 bug-free lines of code per day. Even if it’s 100 these days, this is at least a couple hundred lines of code. Big assignments are too much. Aim for something that can be solved in a JSBin in 20 to 30 minutes. 
-
-<img src="https://2.bp.blogspot.com/-mv3g1jptcnM/V5AYgIURXnI/AAAAAAAANI4/rP7SzYF33M8FVVJnZ3XzNLCDhxBtC4oqgCLcB/s1600/Screen%2BShot%2B2016-07-20%2Bat%2B5.32.17%2BPM.png" align="right" />
-
-5. *Provide clear evaluation criteria.* State exactly how you are going to evaluate the homework as part of instructions. Include clear statements about how much refactoring, test coverage, etc is expected. Without this, *you'll be judging candidates (at least partially) on how much their background and values match yours*. This is another factor that can inhibit diversity. I was part of the grading of these assignments, and I can say that the grading was inconsistent; it just introduced randomness into the hiring process.
-   Don't use the words "production quality" without more definition of what that means. I worked at a very fast-growing start-up, and "production quality" evolved monthly based on our traffic. It was prototyped code at the beginning and highly fault-tolerant two years later. Don't punish a candidate for not knowing your culture, unless that's part of the job.
+5. *Provide clear evaluation criteria.* State exactly how you are going to evaluate the homework as part of instructions. Include clear statements about how much refactoring, test coverage, etc is expected. There are two problems here. The first is that without a fixed rubric, the grades will vary randomly depending on which evaluator. Second, by evaluating "good" and "bad" based on your own company's culture, you'll be judging candidates (at least partially) on *how much their background and values match yours*. This is yet another factor that can inhibit diversity. 
+   Don't use the words "production quality" without more definition of what that means. At a fast-growing start-up, "production quality" evolves monthly. "Prototype" code is fine in the beginning, but two years later it must be highly fault-tolerant. Both are "production". Don't punish a candidate for not knowing your culture.
 
 
-6. With this clear criteria, *provide the candidate with feedback and close the loop*. Take 5 minutes and loop back with the candidate— whether she did well or not. From my experience, when the interview processes ends, it end abruptly. This leaves little room for learning. Everyone talks about having great interview processes, but I’ve yet to see this be anything but what amounts to a `boolean false`. Consistently creating this communication will be hard, but it will keep you honest and help you improve your evaluations. 
+6. With this clear criteria, *provide the candidate with feedback and close the loop*. Take 5 minutes and loop back with the candidate— whether she did well or not. From my experience, when the interview processes ends, it ends abruptly. This leaves little room for learning. Everyone talks about having great interview processes, but I’ve yet to see this be anything but what amounts to a `boolean false`. Consistently creating this communication will be hard, but it will keep you honest and help you improve your evaluations. 
 
   
 
@@ -101,12 +72,13 @@ Studies of yesteryear found that engineers averaged 10 bug-free lines of code pe
 
   
 
-I’ve probably interviewed over a hundred candidates and pair programmed with over a hundred. Although it’s been overwhelmingly positive, I know there are people out there working as programmers without the expected skills. And I agree  there’s a need to filter them out before spending a whole team’s time with in-person interviews. At the same time, we need to remember all we’ve learned about building great software: we want a great user experience. The great UX feels simple, clear and includes a process for constant improvement. So can an interview process.
+I’ve interviewed over a hundred candidates and pair programmed with over a hundred as well. Although it’s been overwhelmingly positive, I know there are people out there working as programmers without the requisite skills. And I acknowledge there’s a need to filter them out before spending a whole team’s time with in-person interviews. At the same time, we need to remember all we’ve learned about building great software: we want a great user experience. The great UX feels simple, clear and includes a process for constant improvement. So can an interview process.
+
+--
 
 Special thanks to Jim “the engineer” Fung for tolerating my tirades on this subject and giving me feedback on early versions of this essay.
 
 
-I think this can be solved by actually coding during the interview (see [this post](http://blog.ndpsoftware.com/2014/02/favotite-technical-interview-technique-pairing.html) for one possible activity).
 
 
 
