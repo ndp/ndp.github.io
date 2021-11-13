@@ -14,6 +14,15 @@ Here's a simple example of a React component test. There are lots of examples of
   - waiting on a promise
   - mocking
 
+The following example works as of November 11, 2021 with this setup:
+
+```sh
+$ npx create-react-app react-testing
+...
+$ cd react-testing
+$ yarn test
+```
+---
 We'll start out with the component:
 
 {% gist 24b0bbac24ba40d750e62fd30bf2c936 Tile.jsx %}
