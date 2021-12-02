@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Why not use "*" version numbers?"
+title: "Why not use * version numbers?"
 date: 2021-12-02
 tags:
 - software development
@@ -13,7 +13,7 @@ Like ya'll, when I run `yarn outdated`, I want to quickly update the outdated pa
 
 Additionally, after a little while, a version number in `package.json` like `^1.0.2` provides little information. It tells me is what the version was _when I first added the package._ It's information that will by definition become stale. It's historical information available in git. It's non-information and I don't want it.
 
-My preference is just to list all my dependencies with a `*` version. When I run `yarn install`, yarn **guarantees** to get the latest version that is compatible with all my other packages:
+My preference is just to list all my dependencies with a `*` version. When I run `yarn install`, yarn _guarantees_ to get the latest version that is compatible with all my other packages:
 
 > [If yarn.lock is absent, or is not enough to satisfy all the dependencies listed in package.json (for example, if you manually add a dependency to package.json), Yarn looks for the newest versions available that satisfy the constraints in package.json. The results are written to yarn.lock.](https://classic.yarnpkg.com/en/docs/cli/install)
 
