@@ -21,6 +21,8 @@ Herein are some techniques, not definitive. If it's not obvious from the title, 
 3. Play first in "Incognito" mode.
 4. I was driving with my child and they did the wordle on their phone. I asked them to give it to me verbally. I did great, and when I played on my computer later, I did even better.
 5. Solve the day's puzzle in whatever time it takes. After you click "Share", just edit the block of text it gives you. It looks like an image, but it's really just text ([of unicode characters](https://www.amp-what.com/unicode/search/large%20square)).
+6. I'm sure there are excellent social media feeds of the current day's word.
+6. Google will point you to some ad-rich sites with the answer (and today's crossword answers).
 6. Now we get to more serious hacks. Open the Javascript console and type `new wordle.bundle.GameApp().solution` and the solution will appear.
 7. If you don't want to type, in turns out Wordle uses a database on your machine called "Local Storage" to keep track of things:
    1. In Chrome with the wordle site up, choose "Developer Tools" from the View menu. 
