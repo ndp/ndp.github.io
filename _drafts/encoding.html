@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Untitled</title>
+	<style>
+		table td {
+			border: 1px solid black;
+			border-right: 1px;
+			border-top: 0px;
+			padding: 1px 3px;
+			text-align: center;
+			background-color: #eee;
+		}
+		samp {
+			padding: 1em;
+			display: block;
+			background-color: #eee;
+		}
+	</style>
+</head>
+<body>
+
+<h1>Tracking Down and Fixing Encoding Problems</h1>
+<p>There are many places in a simple web application for text to become scrambled. You may have run into encoding issues, fiddled with some settings or HTML attributes, and gotten everything to work. This may have worked fine, or you may have had similar problems pop up again, months later. This article explains what's really going on, so you can fix these problems once and for all.
+</p>
+
+<h2>What do you mean, encoding problem?</h2>
+
+<p>The most common manifestation of encoding problems is characters that look like garbage on a web page:
+<example>
+<samp>&#8220;Corky&#8221; Bob&#8217;s Ribs</samp> becomes <samp>â€œCorkyâ€ Bobâ€™s Ribs
+</samp></example> or <samp>&#8201;Corky&#8201; Bob&#8201;s Ribs
+</samp></example>
+Or perhaps <samp>espa&#241;ol</samp> becomes <samp>espa?ol</samp>. Occassionally it's obvious that the text is displaying wrong, but other times it's subtle and overlooked&#x2014; at least for a while.</p>
+
+<p>
+Now that you can recognize the problem, what's exactly is an encoding problem? 
+It's complicated if you try to understand the subtle and complex distinctions between character encoding, character sets, code pages, encoding schemes, and the like. The important thing to keep in mind is that <i>each character needs a number to represent</i> it. And with different character encodings, different numbers represent different characters.   
+
+<dfn>An encoding explains what numbers represent what characters and symbols.</dfn>
+ (If you want to know more details, see the links at the end of the article.) 
+
+<table cellspacing="0" cellpadding="0">
+	<tr>
+		<td>65</td>
+		<td>78</td>
+		<td>68</td>
+		<td>89</td>
+	</tr>
+	<tr>
+		<td>A</td>
+		<td>N</td>
+		<td>D</td>
+		<td>Y</td>
+	</tr>
+</table>
+
+So there's nothing tricky there. Since the triumph of ASCII (and the decline of EBCDIC), numbers under 128 always represent the same characters. So this "encoding" of letters is going to work with pretty much any encoding system:
+</p><p>
+"<code>A</code>" is mapped to <code>65</code>. <code>65</code> is mapped back to "<code>A</code>". </p>
+<p>There's not much to go wrong.</p>
+<p>When you venture into numbers above 127, things get trickier. There are many different systems in use:
+
+<ul>
+<li>CP437 (DOSLatinUS) was the default with the IBM PC. Most of the characters above 127 were to draw primitive graphics.</li>
+<li>DOSLatin1, the DOS character set supporting non-English languages, also known as CP850.</li>
+<li>ISO-8859-1 character set (also called Latin-1), which is an ISO standard for Western European languages, mostly used on Unix and Linux.
+</li>
+<li><a href="ftp://ftp.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP1252.TXT" target="_blank">WinLatin1</a>, the typical Windows default. It's also known as Code Page 1252 (or CP1252), and is a variation of ISO-8859-1.
+</li>
+<li>
+Many others-- too numerous to mention-- to support different languages and different vendors.
+</li>
+</ul>
+
+If we represent a character using the DOS character set, and we mistakenly display it with the Windows or Unix character set, it won't look right.
+
+<table cellspacing="0" cellpadding="0">
+	<tr>
+		<td>code</td>
+		<td>DOSLatinUS</td>
+		<td>WinLatin1</td>
+	</tr>
+	<tr>
+		<td>0x81</td>
+		<td>&#xFC;</td>
+		<td>undefined</td>
+	</tr>
+	<tr>
+		<td>0x82</td>
+		<td>&eacute;</td>
+		<td>&#x201A;</td>
+	</tr>
+	<tr>
+		<td>0x9c</td>
+		<td>&#xA3;</td>
+		<td>&#x153;</td>
+	</tr>
+	<tr>
+		<td>0xe3</td>
+		<td>&#x3C0;</td>
+		<td>&#xE3;</td>
+	</tr>
+	<tr>
+		<td>0xe9</td>
+		<td>&theta;</td>
+		<td>&eacute;</td>
+	</tr>
+	<tr>
+		<td>0xf2</td>
+		<td>&#x2265;</td>
+		<td>&#xF2;</td>
+	</tr>
+	<tr>
+		<td>0xf7</td>
+		<td>&#x2248;</td>
+		<td>&#x00f7;</td>
+	</tr>
+</table>
+
+Consider this excerpt:
+
+<table cellspacing="0" cellpadding="0">
+	<tr>
+		<td>151</td>
+		<td>191</td>
+		<td>81</td>
+		<td>117</td>
+		<td>101</td>
+		<td>157</td>
+		<td>152</td>
+	</tr>
+	<tr>
+		<td>&#x91;</td>
+		<td>&#191;</td>
+		<td>&#81;</td>
+		<td>u</td>
+		<td>e</td>
+		<td>&#x97;</td>
+		<td>&#x92;</td>
+	</tr>
+</table>
+
+The inverted question mark, character 191
+
+http://www.cs.tut.fi/~jkorpela/chars/test8.htm
+
+
+<a href="http://en.wikipedia.org/wiki/Character_encoding" target="_blank">Wikipedia on Character_encoding</a>
+
+<span>&#128;</span>
+<span>&#129;</span>
+<span>&#130;</span>
+<span>&#131;</span>
+<span>&#132;</span>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>References</h2>
+<ul>
+<li>[KUBOTA 2003] Kubota, Tomohiro. <a href="http://www.debian.org/doc/manuals/intro-i18n/ch-coding.en.html" target="_blank">Important Concepts for Character Coding Systems</a> This chapter defines i18n concepts precisely and more in depth.</li>
+
+
+</body>
+</html>
