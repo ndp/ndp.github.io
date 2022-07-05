@@ -14,7 +14,7 @@ I needed to help a student at @techtonica write a test for a React component. It
 
 ## What I Found
 
-So I jumped back in to testing React after a couple of years. (I've been noodling on [Thoreau](https://github.com/ndp/thoreau), [gauge](https://gauge.org/) and [Playwright](https://playwright.dev/). Last time I'd written React, it we used Enzyme and Jest. I weathered the transition from Jasmine to native-Jest tests. Jumping back in, I was surprised and disappointed at how many stumbling blocks piled up:
+So I jumped back in to testing React after a couple of years. (I've been noodling on [Thoreau](https://github.com/ndp/thoreau), [gauge](https://gauge.org/) and [Playwright](https://playwright.dev/). Last time I'd written React, we used Enzyme and Jest. I weathered the transition from Jasmine to native-Jest tests. Jumping back in, I was surprised and disappointed at how many stumbling blocks had piled up:
 
 - incompatible Jest configuration changes, [version 23 or 24](https://testing-library.com/docs/react-testing-library/setup#jest-24-or-lower-and-defaults) or [version 27](https://testing-library.com/docs/react-testing-library/setup#jest-27)? 
 - abandonment of Enzyme (but 1000s of examples abound)
@@ -25,7 +25,6 @@ So I jumped back in to testing React after a couple of years. (I've been noodlin
 - `render('huh?')` Documentation is confusing because half the examples feature setup/teardown blocks to place the rendered component in the DOM, and the other half seem to skip this step. (Or maybe they just don't show it.) The surprise is that the code examples are using two different `render` methods from different libraries. Gotcha! If you're not tuned into this, you'll miss it.  The generically named "React Testing Library" is responsible, with it's own `render` method that obviates the need for this setup and teardown code. Progress, but too subtle for someone trying to digest all the documentation and libraries. 
   To make this slightly more confusing, it's a commonly recommended practice to override (one of) the `render` methods in the test setup code, to inject application-specific context, adding a third version of what `render` might mean. Readers are suitably confused when they see `render` in a test.
 - I also discovered that `react-testing-library` re-exports all `dom-testing-library` utilities. In this case, the same names mean the same thing. Good luck if you skip the last sentence of paragraph 4: "so, in the next examples, we will import from @testing-library/react instead of @testing-library/dom." 
-- Before hooks, high-level components (HLCs) separated concerns, making it easier to test code. Hooks mushed everything together. The hook itself is easy to test because it isn't embedded in a class, but its actual behavior on a page is more difficult to verify. It seemed like testing hooks would require much more extensive testing setup, and I resisted hooks initially, waiting for the testing patterns to emerge. I can't find them!
 
 ## Orientation
 
