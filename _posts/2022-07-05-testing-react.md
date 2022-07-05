@@ -10,8 +10,6 @@ tags:
 - sheetshow
 ---
 
-# Testing React is Testing Me
-
 I needed to help a student at @techtonica write a test for a React component. It wasn't trivial, as it called a backend API for its data, but it shouldn't have been as hard as it was. 
 
 ## What I Found
