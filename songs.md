@@ -1,0 +1,58 @@
+---
+layout: page
+title: Songs Repertoire
+---
+- [ ] a child is born
+- [ ] a fine romance
+- [ ] a foggy day
+- [ ] all blues
+- [ ]  all of me
+- [ ] all of you
+- [ ] all the things you are
+- [ ] april in paris
+- [ ] as time goes by
+- [ ] autumn in NY
+- [ ] autumn leaves (Gm)
+- [ ] back in the chicken shack
+- [ ] beautiful love
+- [ ] bessies' blues
+- [ ] bewitched
+- [ ] black orpheas
+- [ ] blue bossa
+- [ ] blue monk
+- [ ] body & soul
+- [ ] canon (mingus)
+- [ ] come sunday
+- [ ] darn that dream
+- [ ] dear old stockholm
+- [ ] dolphin dance
+- [ ] don't get around much any more
+- [ ] easy living
+- [ ] for harry carney
+- [ ] freddie freeloader
+- [ ] girl from impanema
+- [ ] god bless the child
+- [ ] green dolphin street
+- [ ] how high the moon
+- [ ] in a sentimental mood (first set only)  (ballad)
+- [ ] i should care
+- [ ] lament (ballad)
+- [ ] las vegas tango
+- [ ] long ago & far away
+- [ ] misterioso (not head)
+- [ ] misty
+- [ ] moment's notice
+- [ ] my funny valentine
+- [ ] my romance
+- [ ] nica's dream
+- [ ] night & day
+- [ ] noddin' ya head blues (mingus)
+- [ ] recordame
+- [ ] satin doll
+- [ ] stella by starlight
+- [ ] st. james infirmary (Dm)
+- [ ] summertime
+- [ ] they can't take that away form me
+- [ ] up jumped spring 
+- [ ] warm canto (mal waldron)
+- [ ] watermelon man
