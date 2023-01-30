@@ -2,57 +2,63 @@
 layout: page
 title: Songs Repertoire
 ---
-- [ ] a child is born
-- [ ] a fine romance
-- [ ] a foggy day
-- [ ] all blues
-- [ ]  all of me
-- [ ] all of you
-- [ ] all the things you are
-- [ ] april in paris
-- [ ] as time goes by
-- [ ] autumn in NY
-- [ ] autumn leaves (Gm)
+- [ ] a child is born *RB1*
+- [ ] a fine romance *RB1*
+- [ ] a foggy day *RB1*
+- [ ] all blues *RB1*
+- [ ]  all of me *RB1*
+- [ ] all of you *RB1*
+- [ ] all the things you are *RB1*
+- [ ] april in paris *RB1*
+- [ ] as time goes by *RB1*
+- [ ] autumn in NY *RB1*
+- [ ] autumn leaves (Gm) *RB1*
 - [ ] back in the chicken shack
-- [ ] beautiful love
-- [ ] bessies' blues
-- [ ] bewitched
-- [ ] black orpheas
-- [ ] blue bossa
-- [ ] blue monk
-- [ ] body & soul
+- [ ] beautiful love *RB1*
+- [ ] bernie's tune *NewReal1 17*
+- [ ] bessies' blues *RB1*
+- [ ] bewitched *RB1*
+- [ ] black orpheas *RB1*
+- [ ] blue bossa *RB1*
+- [ ] blue monk *RB1*
+- [ ] body & soul *RB1*
 - [ ] canon (mingus)
-- [ ] come sunday
-- [ ] darn that dream
-- [ ] dear old stockholm
-- [ ] dolphin dance
-- [ ] don't get around much any more
-- [ ] easy living
+- [ ] come sunday *RB1*
+- [ ] darn that dream *RB1*
+- [ ] dear old stockholm *RB1*
+- [ ] dolphin dance *RB1*
+- [ ] don't get around much any more *RB1*
+- [ ] easy living *RB1*
+- [ ] Fly Me to the Moon *RB2-106*
 - [ ] for harry carney
-- [ ] freddie freeloader
-- [ ] girl from impanema
-- [ ] god bless the child
-- [ ] green dolphin street
-- [ ] how high the moon
-- [ ] in a sentimental mood (first set only)  (ballad)
-- [ ] i should care
-- [ ] lament (ballad)
-- [ ] las vegas tango
-- [ ] long ago & far away
+- [ ] freddie freeloader *RB1*
+- [ ] girl from impanema *RB1*
+- [ ] god bless the child *RB1*
+- [ ] Georgia *RB2-119*
+- [ ] green dolphin street *RB1*
+- [ ] how high the moon *RB1*
+- [ ] in a sentimental mood (first set only)  (ballad) *RB1*
+- [ ] i should care *RB1*
+- [ ] lament (ballad) *RB1*
+- [ ] las vegas tango *RB1*
+- [ ] long ago & far away *RB1*
 - [ ] misterioso (not head)
-- [ ] misty
-- [ ] moment's notice
-- [ ] my funny valentine
-- [ ] my romance
-- [ ] nica's dream
-- [ ] night & day
+- [ ] misty *RB1*
+- [ ] moment's notice *RB1*
+- [ ] my funny valentine *RB1*
+- [ ] my romance *RB1*
+- [ ] nica's dream *RB1*
+- [ ] night & day *RB1*
 - [ ] noddin' ya head blues (mingus)
-- [ ] recordame
-- [ ] satin doll
-- [ ] stella by starlight
+- [ ] recordame *RB1*
+- [ ] satin doll *RB1*
+- [ ] stella by starlight *RB1*
 - [ ] st. james infirmary (Dm)
-- [ ] summertime
-- [ ] they can't take that away form me
-- [ ] up jumped spring 
+- [ ] st. thomas *RB2-315*
+- [ ] stormy weather *RB2-287*
+- [ ] summertime (C or Bb) *RB2*
+- [ ] tenderly *RB2-362*
+- [ ] they can't take that away from me *RB1*
+- [ ] up jumped spring  *RB1*
 - [ ] warm canto (mal waldron)
-- [ ] watermelon man
+- [ ] watermelon man RB2-334
