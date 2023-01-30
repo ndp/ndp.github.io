@@ -2,9 +2,19 @@
 layout: page
 title: Reading Log
 ---
+### The Color Storm by Damian Dibben
+
+Fun read about a painter in Renaissance Venice with a little mystery and a little romance.
+Read January 2022
+
 ### The Innovators by Walter Isaacson
 
-### A People's History of the United States
+Great first chapter about early computer (pre-)history, and good through the rest of it, although it seemed a little patchy to be called definitive. Lots of interesting stories, though, and filled in some of my own personal holes.
+Read December 2022
+
+### A People's History of the United States by Howard Zinn
+
+Interesting retelling of this country's history, with more of a focus on "the people". Good stuff, but somehow more recognizable than I expected. 
 
 ### System Error 
 by Rob Reich 
@@ -25,7 +35,7 @@ Really enjoyable and occassionally hilarious story.
 November 2022
 
 ### Ten Tomatoes that Changed the World by William Alexander
-Enjoyable stories about ... tomatoes 
+Enjoyable stories about ... tomatoes. The situation with Italian tomatoes and the politics of it is interesting to hear about.
 November 2022
 
 ### After Steve by Tripp Mickle
@@ -34,6 +44,7 @@ Despite the click-baity title, it was a very positive book mainly about Jonathan
 
 AUDIOBOOK
 ### [Two Wheels Good: The History and Mystery of the Bicycle](https://sfpl.overdrive.com/media/6659721) by [Jody Rosen](https://sfpl.overdrive.com/search/creatorId?query=97288&sortBy=newlyadded) Read October 2022
+Lots of great stories about the bicycle's rather rocky start and continued history.
 
 ### [Why We Swim](https://sfpl.overdrive.com/media/5373743) by [Bonnie Tsui](https://sfpl.overdrive.com/search/creatorId?query=189853&sortBy=newlyadded). Read October 2022
 
@@ -61,7 +72,7 @@ i’m finish up the walter isaacson book on Steve Jobs (tonight, so I can go). i
 
 ### _A Mind at Play: How Claude Shannon Invented the Information Age_, by Rob Goodman. Read July 2022
 
-### _The Anomaly_, Hervé Le Tellier.. Read June 2022
+### _The Anomaly_, Hervé Le Tellier. Read June 2022
 
 ### _In Hitler's Munich_, Michael Brenner. Read June 2022
 
