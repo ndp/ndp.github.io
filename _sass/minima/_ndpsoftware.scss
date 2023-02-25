@@ -1,32 +1,72 @@
+h1, h2, h3, h4, h5 {
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
+}
+
+.post-list-heading {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 13px;
+}
+
+.post-meta {
+  font-style: italic;
+  font-size: 16px;
+}
+
+.svg-icon {
+  fill: black;
+}
+
+.social-media-list li span {
+font-size:16px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
+}
+
+.social-media-list li .svg-icon {
+    transform: translate(4px, 6px);
+}
+
+p, li {
+font-style: italic;
+}
+
+code {
+  font-style: normal;
+}
+
 .site-header {
     border: none;
 }
 
 .site-title {
-    margin: 30px 0 5px;
+    margin: -1px -20px 5px;
     display: inline-block;
-    font: normal 55px/55px "ImpactLabel", verdana;
-    color: #930 !important;
-    background-color: #FFFFEE;
-    box-shadow: 5px 0px 50px #666644;
-    padding: 0;
+    box-shadow: 1px 0px 5px #666644;
+    padding: 0 20px 0 30px;
+    font: normal 40px/40px "ImpactLabelReversed", verdana;
+    color: white !important;
+    background-color: #930;
+  text-align: center;
+}
+@media (min-width: 600px) {
+ .site-title {
+    margin: 30px 0 5px;
+    text-align: left;
+    font: normal 55px/55px "ImpactLabelReversed", verdana;
+ }
 }
 
-.site-title::before,
-.site-title::after {
-    content: "\0000a0"
+.site-title:hover {
+  text-decoration: none;
 }
-
-.site-footer {
-    //background-color: $grey-color-light;
-}
-
 pre {
     padding: 5px 15px;
     font-family: 'source code pro', monospace;
     background-color: white;
     border: none;
-    box-shadow: 1px 2px 5px #666644;
+    box-shadow: 1px 1px 2px #666644;
 }
 
 code {
@@ -44,4 +84,17 @@ p code,
 li code {
     box-shadow: none;
     background-color: transparent;
+}
+
+
+.site-nav .page-link {
+    font-size: 10px;
+    color: $grey-color-light;
+  }
+
+@media screen and (max-width: 600px) {
+.site-nav {
+  top: 1px;
+  right: 1px;
+}
 }
