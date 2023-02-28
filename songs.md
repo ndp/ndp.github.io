@@ -2,63 +2,66 @@
 layout: page
 title: Songs Repertoire
 ---
-- [ ] a child is born *RB1*
-- [ ] a fine romance *RB1*
-- [ ] a foggy day *RB1*
-- [ ] all blues *RB1*
-- [ ]  all of me *RB1*
-- [ ] all of you *RB1*
-- [ ] all the things you are *RB1*
-- [ ] april in paris *RB1*
-- [ ] as time goes by *RB1*
-- [ ] autumn in NY *RB1*
-- [ ] autumn leaves (Gm) *RB1*
+- [ ] a child is born *RealBk1 2*
+- [ ] a fine romance *RealBk1 3*
+- [ ] a foggy day *RealBk1 6*
+- [ ] all blues *RealBk1 13*
+- [ ]  all of me *RealBk1 16*
+- [ ] all of you *RealBk1 17*
+- [ ] all the things you are *RealBk1 18*
+- [ ] april in paris *RealBk1 26*
+- [ ] as time goes by *RealBk1 31*
+- [ ] autumn in NY *RealBk1 33*
+- [ ] autumn leaves (Gm) *RealBk1 36*
 - [ ] back in the chicken shack
-- [ ] beautiful love *RB1*
-- [ ] bernie's tune *NewReal1 17*
-- [ ] bessies' blues *RB1*
-- [ ] bewitched *RB1*
-- [ ] black orpheas *RB1*
-- [ ] blue bossa *RB1*
-- [ ] blue monk *RB1*
-- [ ] body & soul *RB1*
+- [ ] beautiful love *RealBk1 39*
+- [ ] bernie's tune *RealBk3 24, JazzFake 55*
+- [ ] bessies' blues *RealBk1 42*
+- [ ] bewitched *RealBk1 43*
+- [ ] black and tan fantasy *RealBk2 28*
+- [ ] black orpheas *RealBk1 49*
+- [ ] blue bossa *RealBk1 51*
+- [ ] blue monk *RealBk1 54*
+- [ ] body & soul *RealBk1 59*
 - [ ] canon (mingus)
-- [ ] come sunday *RB1*
-- [ ] darn that dream *RB1*
-- [ ] dear old stockholm *RB1*
-- [ ] dolphin dance *RB1*
-- [ ] don't get around much any more *RB1*
-- [ ] easy living *RB1*
-- [ ] Fly Me to the Moon *RB2-106*
-- [ ] for harry carney
-- [ ] freddie freeloader *RB1*
-- [ ] girl from impanema *RB1*
-- [ ] god bless the child *RB1*
-- [ ] Georgia *RB2-119*
-- [ ] green dolphin street *RB1*
-- [ ] how high the moon *RB1*
-- [ ] in a sentimental mood (first set only)  (ballad) *RB1*
-- [ ] i should care *RB1*
-- [ ] lament (ballad) *RB1*
-- [ ] las vegas tango *RB1*
-- [ ] long ago & far away *RB1*
-- [ ] misterioso (not head)
-- [ ] misty *RB1*
-- [ ] moment's notice *RB1*
-- [ ] my funny valentine *RB1*
-- [ ] my romance *RB1*
-- [ ] nica's dream *RB1*
-- [ ] night & day *RB1*
+- [ ] come sunday *RealBk1 88*
+- [ ] darn that dream *RealBk1 103*
+- [ ] dear old stockholm *RealBk1 108*
+- [ ] dindi *RealBk2 75*
+- [ ] dolphin dance *RealBk1 122*
+- [ ] don't get around much any more *RealBk1 122*
+- [ ] easy living *RealBk1 127*
+- [ ] fly Me to the Moon *RealBk2 106*
+- [ ] for harry carney *JazzLTD 126*
+- [ ] freddie freeloader *RealBk1 164*
+- [ ] girl from impanema *RealBk1 171*
+- [ ] georgia *RealBk2 119*
+- [ ] god bless the child *RealBk1 173*
+- [ ] green dolphin street *RealBk1 179*
+- [ ] how high the moon *RealBk1 202*
+- [ ] in a sentimental mood (first set only)  (ballad) *RealBk1 223*
+- [ ] i should care *RealBk1 237*
+- [ ] lament (ballad) *RealBk1 257*
+- [ ] las vegas tango *RealBk1 258*
+- [ ] long ago & far away *RealBk1 272*
+- [ ] misterioso (not head) *Library 189*
+- [ ] misty *RealBk1 296*
+- [ ] moment's notice *RealBk1 299*
+- [ ] my funny valentine *RealBk1 308*
+- [ ] my romance *NewReal1 229*
+- [ ] nica's dream *RealBk1 319*
+- [ ] night & day *RealBk1 320*
 - [ ] noddin' ya head blues (mingus)
-- [ ] recordame *RB1*
-- [ ] satin doll *RB1*
-- [ ] stella by starlight *RB1*
-- [ ] st. james infirmary (Dm)
-- [ ] st. thomas *RB2-315*
-- [ ] stormy weather *RB2-287*
-- [ ] summertime (C or Bb) *RB2*
-- [ ] tenderly *RB2-362*
-- [ ] they can't take that away from me *RB1*
-- [ ] up jumped spring  *RB1*
+- [ ] the preacher *RealBk2 300*
+- [ ] recordame *RealBk1 359*
+- [ ] satin doll *RealBk1 367*
+- [ ] stella by starlight *RealBk1 408*
+- [ ] st. james infirmary *Colorado 199*
+- [ ] st. thomas *RealBk2 315*
+- [ ] stormy weather *RealBk3 287*
+- [ ] summertime (C or Bb) *RealBk2 323*
+- [ ] tenderly *RealBk2 362*
+- [ ] they can't take that away from me *RealBk1 427*
+- [ ] up jumped spring  *RealBk1 440*
 - [ ] warm canto (mal waldron)
-- [ ] watermelon man RB2-334
+- [ ] watermelon man *RealBk3 334*
