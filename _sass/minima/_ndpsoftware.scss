@@ -9,6 +9,9 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 13px;
 }
 
+.post-title {
+line-height: 1.1;
+}
 .post-meta {
   font-style: italic;
   font-size: 16px;
@@ -18,22 +21,8 @@ h1, h2, h3, h4, h5 {
   fill: black;
 }
 
-.social-media-list li span {
-font-size:16px;
-    font-family: 'Nunito', sans-serif;
-    font-style: normal;
-}
-
-.social-media-list li .svg-icon {
-    transform: translate(4px, 6px);
-}
-
 p, li {
 font-style: italic;
-}
-
-code {
-  font-style: normal;
 }
 
 .site-header {
@@ -61,6 +50,19 @@ code {
 .site-title:hover {
   text-decoration: none;
 }
+
+.site-nav .page-link {
+    font-size: 10px;
+    color: $grey-color-light;
+  }
+
+@media screen and (max-width: 600px) {
+.site-nav {
+  top: 1px;
+  right: 1px;
+}
+}
+
 pre {
     padding: 5px 15px;
     font-family: 'source code pro', monospace;
@@ -70,6 +72,7 @@ pre {
 }
 
 code {
+  font-style: normal;
     padding: 5px 5px;
     margin: 5px -3px;
     font-family: 'source code pro', monospace;
@@ -87,14 +90,14 @@ li code {
 }
 
 
-.site-nav .page-link {
-    font-size: 10px;
-    color: $grey-color-light;
-  }
 
-@media screen and (max-width: 600px) {
-.site-nav {
-  top: 1px;
-  right: 1px;
+.social-media-list li span {
+font-size:16px;
+    font-family: 'Nunito', sans-serif;
+    font-style: normal;
 }
+
+.social-media-list li .svg-icon {
+    transform: translate(4px, 6px);
 }
+
