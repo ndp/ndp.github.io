@@ -101,3 +101,29 @@ font-size:16px;
     transform: translate(4px, 6px);
 }
 
+.task-list {
+  columns: 2;
+  margin-left: 0;
+}
+.task-list li {
+  display: block;
+}
+.task-list li input {
+  margin-right: 10px;
+}
+.task-list li em {
+  margin-right: 10px;
+  color: gray;
+}
+.task-list li em::before {
+content: '['
+}
+.task-list li em::after {
+content: ']'
+}
+
+@media print {
+body>header, body>footer {
+  display: none;
+}
+}
