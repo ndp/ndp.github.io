@@ -101,9 +101,11 @@ font-size:16px;
     transform: translate(4px, 6px);
 }
 
+@media (min-width: 700px) {
 .task-list {
   columns: 2;
   margin-left: 0;
+}
 }
 .task-list li {
   display: block;
