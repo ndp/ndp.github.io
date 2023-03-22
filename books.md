@@ -2,6 +2,8 @@
 layout: page
 title: Reading Log
 ---
+### The Taiga Syndrome by Christina Rivera Garza
+
 ### The Color Storm by Damian Dibben
 
 Fun read about a painter in Renaissance Venice with a little mystery and a little romance.
