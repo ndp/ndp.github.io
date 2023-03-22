@@ -23,7 +23,7 @@ The problem I'm solving is simple: we're building an interaction that plays musi
 
  
 
-```source
+```js
 const octaves = [110, 220, 440, 880, 1760, 3520]
 ```
 
@@ -34,7 +34,7 @@ This is OK, but not as maintainable as it should be. To change the key of the no
 
 Turns out that this can be done with an old fashion `for` loop.
 
-```source
+```js
 constoctaves = buildOctaves(110, 4000) // "110" is base/bass note
 
 function buildOctaves(lo, hi) { 
@@ -47,7 +47,7 @@ function buildOctaves(lo, hi) {
 
 That works. It's not super because of all the noise there-- the temporary `const` and the `for`-loop hide the `* 2` which is the essence of it. Does recursive work better? No, but sometimes you don't know until you try:
 
-```source
+```js
 function buildOctavesRecursive(lo, hi) {
   return (function next(f) {
   if (f < hi) {
@@ -66,7 +66,7 @@ I’ve been using RxJS lately, and thought about using it. It's great at generat
 
 I liked the idea of using the spread (`...`) operator to execute the loop, to get rid of the `while` construct. I find some examples of [building generators online](/ndp/dizzidotz/blob/master), and after realizing I don't need to use `[Symbol.iterator]`, I get: 
 
-```source
+```js
 function buildOctaves(lo, hi) { // from Generator, take II
  constiterator = function* () {
    let a = lo
@@ -81,7 +81,7 @@ function buildOctaves(lo, hi) { // from Generator, take II
 
 I still have a while loop, but this is readable and transparent about the intent of the code. I even like the inlined version:
 
-```source
+```js
 function buildOctavesGenerator(lo, hi) {
  return [...(function* () {
    let a = lo
@@ -120,12 +120,12 @@ To get at the most readable code, often you need to start with the final desired
 
  
 
-```source
+```js
 function buildOctaves(lo, hi) {
  const octaveIter = doubleIter(lo)
- const notes =whileLessThan(octaveIter, hi)  
+ const notes =      whileLessThan(octaveIter, hi)
  return [...notes]
-} 
+}
 ```
 
  
@@ -138,48 +138,42 @@ The doubling iterator is obvious:
 
  
 
-```source
+```js
 const doubleIter = function* (x) {
  while (true) {
- yield x
- x *= 2
+   yield x
+   x *= 2
  }
 }
 ```
 
 Nice! And the `whileLessThan` can be:
 
- 
-
-```source
+```js
 const whileLessThan= function*(it, max) {
- for (x of it) {
- if (x < max)
- yield x;
- else
- return
- }
+  for (x of it) {
+    if (x < max)
+      yield x;
+    else
+      return
+  }
 }
 ```
 
- 
-
 This is okay, but I realized that this function is doing two different things, and parameterizing the loop with a function allows us to do the same thing with functional composition:
 
- 
-
-```source
-const takeWhile =function* (it, fn) {
- for (x of it) {
- if (fn(x))
- yield x;
- else
- return
- }
+```js
+const takeWhile = function* (it, fn) {
+  for (x of it) {
+    if (fn(x))
+      yield x;
+    else
+      return
+  }
 }
 
-const whileLessThan =function(it, max) {
- return takeWhile(it, (x) => x < max)
+const whileLessThan = function(it, max) {
+  return takeWhile(it, (x) => x < max)
 }
 ```
 
@@ -188,8 +182,6 @@ const whileLessThan =function(it, max) {
 
 
 For me, since the last few functions I extracted are semantically clear and can be moved into a library, the decomposed solution using the latest Javascript generators really is the best one. It provides the clearest abstraction of logic as well as the easiest refactor paths.
-
- 
 
 What do you think?
 

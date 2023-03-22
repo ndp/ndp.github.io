@@ -14,8 +14,7 @@ tags:
 ---
 
 So I'm a bit of a CSS nerd. For years, I've been complaining that there's not enough "engineer" cycles given to CSS. I've written endless blog posts about how to organize your CSS. Blank stares when I ask interview candidates "how do you structure your CSS?"  Well, now we can [write CSS in Javascript](http://github.com/ndp/csster) with Csster, and maybe-- just maybe-- the world has been set right.  
-  
-  
+
 In 2000, I ventured into teaching at[City College](http://ccsf.edu/). To be honest, I'd missed the dot com boom and didn't know anything about the web. I was really nervous, so checked out every book the school library had about web development, and studied (and learned) thoroughly. Since then, I built quite a few web sites for people, non-profits and businesses, and developed a certain amount of dexterity with CSS. CSS has evolved a bit in the last ten years, but this firm foundation of understanding of the cascade and such has served me well.  
   
 Not to go off into a rant, but lots of CSS ends up a mess. I always felt like it, like C++, needed more restrictions and guidelines to turn out maintainable. I tried to enforce various guidelines with my teams.   

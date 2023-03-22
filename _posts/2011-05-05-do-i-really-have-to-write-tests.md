@@ -38,6 +38,6 @@ I'm a big advocate of building from the inside out: identify these critical part
   
 **Team size.** A lone developer focusing on one project will have less of a need for tests than a larger team all sharing a codebase. Yes, with luck, the project will grow into something larger, but there's also an important "just-in-time" theme to agile. This is not an excuse for skipping testing, but is a factor to consider.  
   
-**Other quality checks. ** A team auto-deploying to the cloud needs more checks-- and tests-- than a team with a dedicated Q.A. team watching out for them.  
+**Other quality checks.** A team auto-deploying to the cloud needs more checks-- and tests-- than a team with a dedicated Q.A. team watching out for them.  
   
 There are other factors, but those are the important ones. Let's resist talking in absolutes, and do what is best for our project, customers and users. 

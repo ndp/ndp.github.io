@@ -12,7 +12,7 @@ tags:
 ---
 
 I've worked on software with designers for 15 years, ever since software had a visual design. Usually this involves being "handed off" designs, or providing "feedback", via email. Only occasionally have I worked side-by-side to solve visual design and interaction problems.  
-  
+
 Reflecting back, this seems sad, since working together has all the advantages of pair programming-- it's fun and educational,  often much faster, and you can produce a superior result. 
   
 There are many blog posts about the merits of pair programming, but none about pairing between programmers with a designer.  Since Carbon Five values pairing and collaboration so heavily, I've been trying to do it on all my projects. On my most recent project for the [National Campaign](http://thenc.org/), I've had the pleasure of "pairing" with several designers.  

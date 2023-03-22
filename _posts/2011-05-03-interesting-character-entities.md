@@ -16,9 +16,11 @@ tags:
  - cheatsheet
 ---
 
-I spent a couple hours on [my character entity finder](http://amp-what.com/), and wanted to share some interesting things I've discovered. I made two main improvements:  
-(1) lookup happens asynchronously, in small batches, so that it suffers less from "locking up". This allows much more flexible exploration.  
-(2) allow you to bookmark queries, so you can share interesting discoveries.  
+I spent a couple hours on [my character entity finder](http://amp-what.com/), and wanted to share some interesting things I've discovered. 
+
+I made two main improvements:  
+  (1) lookup happens asynchronously, in small batches, so that it suffers less from "locking up". This allows much more flexible exploration.  
+  (2) allow you to bookmark queries, so you can share interesting discoveries.  
   
 To recap, I built this tool to find all the weird quotes:  
   
@@ -37,4 +39,3 @@ The currency symbols aren't easily found with a single query, but you can build 
 [http://amp-what.com/#q=/currency|euro|dollar|pound/](http://amp-what.com/#q=/currency|euro|dollar|pound/)  
   
 It's surprisingly fun to play around with. Give it a spin.
-

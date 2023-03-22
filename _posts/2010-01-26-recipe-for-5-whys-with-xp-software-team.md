@@ -13,7 +13,7 @@ tags:
 ---
 
 5 Whys is a great way to get at the root of quality problems. On my last three projects, when I felt like code quality was dropping, I ran a "5 Whys" session. I have found it adds variety, solves a very specific problem, and plugs right in as an alternative to an [agile reflection](http://blog.carbonfive.com/2009/12/agile/recipe-for-simple-agile-retrospectives).  
-  
+
 It's not in every agile software team's bag of tricks. Asking around our fairy savvy office, I discovered it's far from universal. In the ["State of Agile" report from Version One](http://www.versionone.com/whitepapers.asp), which includes survey results from 2500 software developers, it wasn't mentioned. Since I haven't seen it show up that much in other agile writings, I thought I'd share my experiences here.  
   
 **What is "5 Whys"?** I picked up "5 Whys" from the lean software movement, which sprang from Toyota manufacturing. You can read about its history on [wikipedia](http://en.wikipedia.org/wiki/5_Whys), but it's pretty simple: at the end of the assembly line, when a widget comes out with a problem, you stop the line and ask "Why?" Whatever the reason, you ask the "Why?" again. Repeat at least 5 times. The goal is to discover the "root cause" of the defect, and fix the root cause, not just some symptom. Wikipedia has a good example around car repair. Here's a software example:

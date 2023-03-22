@@ -15,6 +15,7 @@ tags:
 
 As we discovered today, coding up friendly session time-outs involves more than meets the eye. As you know, a session time-out logs the user out after a period of inactivity. But interactions with web sites, and "inactivity," have changed over the last 10-15 years.  
   
+
 We have a fairly plain Rails app, and we're implementing a series of security fixes in anticipation of an audit. In what seemed like a simple "1-pointer", we were asked to remove the "Remember Me" checkbox from our application, and force the user to be logged out after 20 minutes.   
   
 For the first pass, we simply set the session timeout to 20 minutes and removed the checkbox (and the underlying implementation). Easy eh?  

@@ -10,7 +10,9 @@ tags:
  - cheatsheet
 ---
 
-Five years ago, I was working at [Great Schools](http://greatschools.org), and got interested in SEO. I started running all sorts of experiments on [my own site](http://ndpsoftware.com), to understand how I could affect things. I reorganized the URLs, added keywords, and followed all the standard recommendations. I quickly realized little tweaks to URLs, meta tags, and optimizing keyword density wasn't going to help much. These types of changes really are "optimizations"-- they'll give you a small percentage increase, but they are not game changers. If you've got millions of visitors, a 1% may mean real money, but if you're me, it doesn't matter.   
+Five years ago, I was working at [Great Schools](http://greatschools.org), and got interested in SEO. I started running all sorts of experiments on [my own site](http://ndpsoftware.com), to understand how I could affect things. I reorganized the URLs, added keywords, and followed all the standard recommendations. 
+
+I quickly realized little tweaks to URLs, meta tags, and optimizing keyword density wasn't going to help much. These types of changes really are "optimizations"-- they'll give you a small percentage increase, but they are not game changers. If you've got millions of visitors, a 1% may mean real money, but if you're me, it doesn't matter.   
   
 So, after working on SEO, I pursued another idea. Why not create something of real value to drive people to my site? I had an idea and created some "cheat sheets" to help me with my own development. I created them, and then posted them where I could to get some inbound links. Shortly thereafter, someone at O'Reilly found my page and linked to it, and all of a sudden I was getting hundreds of page views per day. So that was my lesson: _If I provide something of value, people will come._ That was five years ago. Even though technology changes fast, I still have a bit of tail from those original cheat sheets.   
   

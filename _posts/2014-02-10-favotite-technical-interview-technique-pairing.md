@@ -15,7 +15,7 @@ tags:
 Inspired by the fun at hack nights around town, I've stumbled upon my new favorite interview exercise. I've been meaning to write this up for a couple months, and just stumbled onto [a very similar idea](http://germanforblack.com/post/52224250893/the-perfect-code-interview) by a fella named Ben Schwarz.  
   
 tl;dr -- have the candidate bring in an open source project and hack on it together.  
-  
+
   
 The tech interview is challenging, especially if you're administering it. At [Stitch Fix](http://technology.stitchfix.com/), we've been talking about how to spend our 30-60 minutes to get the best read on a software engineering candidate. Here are a few popular techniques we've used, and you probably have too:
 

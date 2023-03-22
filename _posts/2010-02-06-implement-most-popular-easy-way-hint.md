@@ -13,7 +13,7 @@ tags:
 ---
 
 Over the last few years I've implemented "most popular" posts, questions, lists, companies, users, pages, searches, cities, and who knows what else. It's not difficult. I've always implemented this myself-- using a few columns in an SQL database, but found something didn't smell right. We already have this free tool-- [Google Analytics (GA)](http://www.google.com/analytics/)-- which is collecting usage data on my site. Why would I want to store this data redundantly?  
-  
+
 In this post, I'll walk you through what we did on my most recent project for the [National Campaign](http://www.thenationalcampaign.org/). There are three steps: collecting the raw data, processing it into statistics, and displaying it to the user.  
   
 Using GA you can completely outsource the data collection. For the statistical analysis, you gain flexibility-- more on that later. Finally, I won't talk at all about displaying the results to users-- that's up to you.  
