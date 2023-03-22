@@ -38,7 +38,7 @@ Triste NewReal1 370
 ...
 ```
 To make this usable in a modern app, it would be easier if it were JSON, so I put together an  ingestion script that converted it to JSON. Even if I did need a database later, this would be a good intermediate step. This is straightforward nodeJS script that gave me a long list of chart entries:
-```
+```javascript
   ...
   .split('\n').filter(line => !!line)
   .map(line => {
@@ -53,7 +53,6 @@ To make this usable in a modern app, it would be easier if it were JSON, so I pu
 #### Data Modeling
 
 One of my complaints I have about the other tools is that they list the same song multple times in the search results, making the user sort it out. This is like a google that doesn't aggregate the pages from the same site! I wanted to do better, and make it easy for the user to select the chart in the book they wanted. So I need to distinguish between a **song** and a **chart**: it's a 1 to N relationship, multiple fake books will have the same song, and the performer wants to be able to pick one chart. This is a traditional parent-child relationship, with foreign keys and multiple database table. But I am not feeling the need for a database, yet, so instead I'll transform it to a more usable JSON format:
-
 ```typescript
 [
    {
@@ -76,7 +75,7 @@ I wrote it, but quickly ran across a complication.  I discovered that the chart 
 These match to a human, but not a computer. In addition, a song might also (sometimes) include the first line, as in _These Foolish Things (Remind Me Of You)_. There are also reasonable spelling variations, like  _until_ or _'til_ or _till_. And numbers are sometimes spelled out and sometimes not. 
 
 This is a common software engineering problem, and I have found the easiest solution is to create a single "spelling" for a song title that will map all spellings of the same song into the same "song key". It's similar to a hash key that maps them to the same bucket. I call this the **canonical key** for a song. (_Not_ the "key", like Bb or F#.) It's a simple function:
-```
+```javascript
 function songKey (s) {
   return s
     .replace(/^(the|a) /i, '')
@@ -92,7 +91,7 @@ function songKey (s) {
 }
 ```
 So, I pipe the array of songs and assign them each a key. Then, I combine the entries using `reduce`, as anticipated. But now that I have a key distinct from the song name, I switch the data structure to an object (map):
-```
+```javascript
   .reduce((m, chart) => {
     const key = songKey(chart.name)
     if (!m[key]) {
@@ -118,7 +117,7 @@ That was it. I had a nice JSON file with the data I needed.
 ### HTML
 
 The next step was to build some markup. I started in the most basic way possible, an `index.html` file circa 1998, and built what was needed: an `input` field and an `ol` tag to hold the search results. 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,7 +136,7 @@ The next step was to build some markup. I started in the most basic way possible
 ### Javascript
 
 Next, I needed to do the search. I really like interactive searches, like [AmpWhat](https://amp-what.com), despite them being non-standard. (Typically this interaction looks more like an autocomplete, and it might make sense to switch to it.) But for starters, I'd just do a query on `keyup` events. (On my phone, this performed well, but it may need some throttling for slower machines.)
-```
+```javascript
 const q = document.getElementById('q')
 q.addEventListener('keyup', e => {
   const matches = findMatches(q.value)
@@ -156,7 +155,7 @@ I didn't need to reach for another library to do this, and certainly not a datab
 #### Rendering
 
 To build the `showMatches`, I relied on the browser's built-in DOM API. Devs are used to rendering or templating engines like JSX, and they may forget that the built-in DOM API has evolved and been refined through the years. Here's a rough version of the first pass:
-```
+```javascript
 function showMatches (matches) {
   const listItems = matches
     .map(m => {
@@ -194,7 +193,7 @@ Once I saw results, though, I saw errors in the data. I could have looked for a 
 
 On previous projects in this situation, I have found it helpful to have a function specific to cleaning up the data, and using it as early in the flow as possible. Otherwise the same problem is solved in the wrong place, like in the `songKey` function or in the front-end UI, or perhaps both. So I added a `fixName` function that is used before anything is done with a song's title:
 
-```
+```javascript
 function fixName (name) {
   return name.replace(/ 15 /, ' Is ')
              .replace(/Reincarna11on /, 'Reincarnation ')
