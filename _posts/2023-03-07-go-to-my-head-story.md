@@ -13,7 +13,7 @@ tags:
 - mini-project
 ---
 
-I recently spent a few hours building  [gotomyhead.site](https://gotomyhead.site), which is an MVP app to find lead sheets in the popular fake (aka real) books. You can read more about it [here](https://blog.ndpsoftware.com/go-to-my-head). It was quick and easy to get going, and even if the project domain itself doesn't interest you, my development approach gave me what I think are interesting insights to share.
+I recently spent a few hours building  [gotomyhead.site](https://gotomyhead.site), which is an MVP app to find lead sheets in the popular fake (aka real) books. (You can read more about it [here](https://blog.ndpsoftware.com/go-to-my-head).) It's a "mini-project", and even if the project domain itself doesn't interest you, my development approach gave me what I think are interesting insights to share.
 
 The modern way to create  software app is to clone a template app or run a "meta" script that installs all the "stuff you're going to need" for a modern web app. I don't like these tools, but I will install Typescript, a code bundler like ESBuild, a web server and a testing framework. This setup step is codified in the ambitious and popular CreateReactApp. Rails, a complete framework itself, even spawned [tools to give you you even more.](http://railsapps.github.io/rails-application-templates.html). A recent trend is for hosting providers (PAASes) to leverage (or even provide) these setup tools to bring you to their hosting platform. Sadly, many new web engineers see this as the first step to any project.
 
@@ -21,7 +21,7 @@ To be honest, I've never liked this approach. Yes, you're up and going fast, but
 
 Instead, I like to approach new projects by _reluctantly adopting technology_.  As a result of this practice, my projects tend to have fewer dependencies than my peers' projects. It's the agile approach of only adding a tool when you feel real pain in not having it. For example, for one web app we built from the start, we didn't even select a database nor create the  schema for weeks into the project. (In fact, we did user testing on our production app before we had a database!) Instead, we simply modeled what we needed to in data structures built-in to the language. When we adopted a database eventually, we had an strong idea about what the schema and data looked like. 
 
-I tend to think of Typescript as a low-bar for new projects, but this time I even questioned that. When building [gotomyhead.site], I started with am empty directory. And as soon as I decided to forego Typescript, I wondered how few dependencies I could get away with. It became a _cleanse_, or sorts, and I ended up without _any_ libraries or dependencies. Although this little app could be a standard database-driven web app, it didn't need to be. Here's a blow-by-blow description of how I developed a no-tech web app:
+I tend to think of Typescript as a low-bar for new projects, but this time I even questioned that. When building [gotomyhead.site](https://gototmyhead.site), I started with am empty directory. And as soon as I decided to forego Typescript, I wondered how few dependencies I could get away with. It became a _cleanse_, or sorts, and I ended up without _any_ libraries or dependencies. Although this little app could be a standard database-driven web app, it didn't need to be. Here's a blow-by-blow description of how I developed a no-tech web app:
 
 ### Data
 
