@@ -10,21 +10,22 @@ tags:
 - sheetshow
 ---
 
-While helping a student at @techtonica write a test for a React component, what would seem to be a trivial task, I discovered a mess just under the surface of React testing.
+While helping a student at @techtonica write a test for a React component, I encountered a mess just under the surface of React testing.
+
 
 ## What I Found
 
-I  jumped back in to testing React (after a couple of years of React-free and noodling on [Thoreau](https://github.com/ndp/thoreau), [gauge](https://gauge.org/) and [Playwright](https://playwright.dev/).) Last time I'd written React, I used Enzyme and Jest, although Enzyme was on its way out. I weathered the transition from Jasmine to native-Jest tests, but I wasn't ready for the transitions that had piled up during my absence. Jumping back in, I discovered:
+I jumped back in to testing React (after a couple of years of React-free and noodling on Thoreau, Gauge, and Playwright), and was surprised by how much had changed.
+
+I jumped back in to testing React (after a couple of years of React-free and noodling on [Thoreau](https://github.com/ndp/thoreau), [gauge](https://gauge.org/) and [Playwright](https://playwright.dev/)), and was surprised by how much had changed. The last time I'd written React, I used Enzyme and Jest, although Enzyme was on its way out. I adapted to the change from Jasmine to Jest, but I wasn't ready for the transitions that had piled up during my absence. Jumping back in, I discovered:
 
 - incompatible Jest configuration changes, [version 23 or 24](https://testing-library.com/docs/react-testing-library/setup#jest-24-or-lower-and-defaults) or [version 27](https://testing-library.com/docs/react-testing-library/setup#jest-27)? 
-- abandonment of Enzyme (but 1000s of examples abound) on Google
-- The big change we all know about: the abandonment of class-components for "functional" ones, coupled with adoption of hooks to write code. But I was surprised on how little information there is on testing hooks within components.
+- abandonment of Enzyme (but 1000s of examples abound)
+- We abandoned class-components in favor of "functional" ones, along with using hooks. But I was surprised on how little information there is on testing hooks within components.
 - the addition of [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/), replacing many other solutions.
-- inconsistent naming of libries. For example, names of libraries don't always match their package names, so to a new person, the system seems more complicated than it actually is.
+- inconsistent naming of libraries. For example, names of libraries don't always match their package names, so to a new person, the system seems more complicated than it actually is.
 - Mocking seems to have evolved in different ways, and it's hard to find any two example that agree on what a `mock()` functions do. There are, in fact, at least 4 ways to mock a module using Jest, as explained [here](https://jestjs.io/docs/es6-class-mocks). The designers of this library could have helped users by coming up with simpler usage patterns.
-- Render means different things to different people. Documentation is confusing because half the examples feature setup/teardown blocks to place the rendered component in the DOM, and the other half seem to skip this step. It's not clear when copying code from StackOverflow and blogs whether there's code omitted. 
-  
-  The surprise here is that the code examples are using two different `render` methods from different libraries. Gotcha! If you're not paying attention, you'll miss it.  The generically named "React Testing Library" is responsible, with it's own `render` method to remove the frustration of needing a setup and teardown step for all tests. This goal is commendable, but using the same name is inexcuseable. 
+- A function call to "render" in a React test calls one of 3 different functions that do different things. This is seldom mentioned in the examples of all three found on Stack Overflow and numerous blog posts. Official documentation is confusing because half the examples feature setup/teardown blocks to place the rendered component in the DOM, and the other half seem to skip this step. If you're not paying attention, you'll miss it.  The generically named "React Testing Library" tried to address this by adding a third pattern on top the existing multiple "render" patterns. This goal is commendable, but using the same name is inexcuseable. 
   
   To make this slightly more confusing, for quite some time it was recommended practice to override the DOM `render` methods in the test setup code, to inject application-specific context. This cleaned up tests, but it also adds a third possibility of what `render` might mean. Readers are suitably confused when they see `render` in a test.
 - As a not particularly helpful convenience, `react-testing-library` re-exports all `dom-testing-library` utilities. The same names mean the same thing, but you would not be crazy to wonder. Good luck if you skip the last sentence of paragraph 4: "so, in the next examples, we will import from @testing-library/react instead of @testing-library/dom." 
@@ -46,8 +47,8 @@ Given all that, here's a brief overview of relevant libraries:
 
 ## Lessons to Learn
 
-To my eye, this is all a bit messy, but somehow the community tolerates it. Although I've touched on all this above, a few lessons I wish developers of these tools had learned:
-- Your *project name* should match your *package name*. Abbreviating and rearranging words _will_ confuse people.
-- Making a function like `render` work better is great, but if your function behaves differently, you've got to come up with another name. That's the rule. 
-  If you really can't use a new name, do something that won't confuse. In this case, you could use a name-spacing convention in all your examples: instead of `import { render } from MyLib`, use `import MyLib from 'my-lib'; MyLib.render(<Yeah />);`. Not great, but less confusing.
-- Re-exporting all the functions of another package is a sign that you're not adding any abstraction. No abstraction means more complexity. A move like this is ultimately a net increase of complexity in the ecosystem and can and should be avoided. Just recommend people use the other package directly.
+Although I've touched on all these above, a few lessons I wish developers of these tools had learned:
+
+- *Name your project and package the same way.* People will be confused if you shorten or rearrange words.
+- *If you change the behavior of a function, give it a new name.* That's the rule. If you really can't use a new name, do something to make it less confusing. You could use a name-spacing convention in all your examples: instead of `import { render } from MyLib`, use `import MyLib from 'my-lib'`, and then `MyLib.render(<Yeah />);` in examples. Not great, but less confusing.
+- *If you re-export all the functions of another package, you're not adding any abstraction.* No abstraction means more complexity. A move like this is ultimately a net increase of complexity in the ecosystem and can and should be avoided. Just recommend people use the other package directly.
