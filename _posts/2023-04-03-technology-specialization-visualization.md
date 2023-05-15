@@ -15,7 +15,8 @@ tags:
 - job search
 ---
 
-I recently removed most of the detail from [my resume](https://github.com/ndp/resume), in order to tell a more coherent story about my career.  <img src='/assets/posts/2023/viz-techs.png'  style='float: right; width: 33%; margin: 10px 0 10px 10px;' />In the shuffle, I threw all the "technologies" I'd used into a spreadsheet. Seeing it, I decided to play around a little bit "visualizing" these, to see if anything interesting came up.  Although I haven't found anything usable in lieu of a resume, this one chart, shown above breaking a few charting tools and guidelines, demonstrates how clearly the number of technologies we use has greatly increased through the years.
+I recently revamped [my resume](https://github.com/ndp/resume), stripping away the clutter to tell a more coherent story about my career.  <img src='/assets/posts/2023/viz-techs.png'  style='float: right; width: 33%; margin: 10px 0 10px 10px;' />  In the process, I compiled all the technologies I’ve used into a spreadsheet, and seeing it, I couldn’t resist the urge to experiment with visualizing this data.   One chart in particular, despite pushing the limits of charting tools and guidelines, vividly illustrates the explosive growth in the number of technologies we use day-to-day.
+
 
 <div id="observablehq-areaChart-bc88c6cc"></div>
 <p style='font-size: small; line-height: 1.2'>Hover over a color to see a different tool or technology (with some color repeats). Years are along the X axis. Usage is not to any scale. Credit: <a href="https://observablehq.com/d/833e598c806e2930@377">Technologies I Have Used by NDP</a> </p>
