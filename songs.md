@@ -40,15 +40,18 @@ title: Songs Repertoire
 - [ ] green dolphin street *RealBk1 179*
 - [ ] how high the moon *RealBk1 202*
 - [ ] in a sentimental mood (first set only)  (ballad) *RealBk1 223*
+- [ ] in walked bud NewRl1 173
 - [ ] i should care *RealBk1 237*
 - [ ] lament (ballad) *RealBk1 257*
 - [ ] las vegas tango *RealBk1 258*
+- [ ] line for lyons Sher1 203
 - [ ] long ago & far away *RealBk1 272*
 - [ ] misterioso (not head) *Library 189*
 - [ ] misty *RealBk1 296*
 - [ ] moment's notice *RealBk1 299*
 - [ ] my funny valentine *RealBk1 308*
 - [ ] my romance *NewReal1 229*
+- [ ] nature boy NewReal1 246
 - [ ] nica's dream *RealBk1 319*
 - [ ] night & day *RealBk1 320*
 - [ ] noddin' ya head blues (mingus)
@@ -57,11 +60,12 @@ title: Songs Repertoire
 - [ ] satin doll *RealBk1 367*
 - [ ] stella by starlight *RealBk1 408*
 - [ ] st. james infirmary *Colorado 199*
-- [ ] st. thomas *RealBk2 315*
+- [ ] st. thomas *RealBk2 315*, *newReal1 355*
 - [ ] stormy weather *RealBk3 287*
 - [ ] summertime (C or Bb) *RealBk2 323*
-- [ ] tenderly *RealBk2 362*
+- [ ] take the a train, *NewReal1 366*
+- [ ] tenderly *RealBk2 362, NewReal1 368*
 - [ ] they can't take that away from me *RealBk1 427*
-- [ ] up jumped spring  *RealBk1 440*
+- [ ] up jumped spring  *RealBk1 440, NewReal1 395*
 - [ ] warm canto (mal waldron)
 - [ ] watermelon man *RealBk3 334*
