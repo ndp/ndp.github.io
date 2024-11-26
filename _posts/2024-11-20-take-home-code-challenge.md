@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Take-home code challenge for Employers"
+title: "Take-home Code Challenge for Employers"
 date: 2024-11-20
 comments: false
 tags:
@@ -9,43 +9,44 @@ tags:
 - hiring
 - sarcasm
 ---
+Welcome, and congratulations on making it to this exciting stage of the hiring process! I'm thrilled that you're considering having me join your team. To help me understand your problem-solving skills, technical proficiency, creativity, and collaborative dynamics, I've designed a take-home code challenge just for your team.
 
-(Offered without comment.)
-Welcome, and congratulations on making it to this exciting stage of the hiring process! I'm thrilled that you're considering having me join your team. To help me understand your problem-solving skills, technical proficiency, creativity, and collaborative dynamics, I've designed a take-home code challenge just for you.
+This challenge is your chance to showcase your team's coding abilities in a relaxed, real-world environment. I've crafted the problems to be both engaging and fun, so it won't seem like work. I'm looking forward to seeing what you come up with!
 
-This challenge is your chance to showcase your team's coding abilities in a relaxed, real-world environment. I've crafted the problems to be both engaging and fun, so it won't seem like you're working!
+Please approach this as you would any internal project, including typical communication and code review processes. Note, the scope may be slightly larger than a typical code challenge, but if you leverage the whole team it will go fast.
 
-Please approach this as you would any internal project, including typical communication and code review processes. Note, the scope may be slightly larger than a typical code challenge since you have a whole team to implement it!
-
-**Submission Guidelines:**
+## Submission Guidelines:
 
 1. **Project Setup:** Provide clear instructions on how to set up and run the project locally.
-2. **Code Quality:** Ensure your code is clean, well-documented, and follows best practices. Make sure it is production-ready.
-3. **Collaboration:** Use a version control system (preferably Git). Include a commit history to demonstrate how tasks were divided and handled. This exercise is not just about the end product but also about showcasing your team’s work culture and communication
+2. **Collaboration:** Use a version control system (preferably Git). Include a commit history to demonstrate how tasks were divided and handled. This exercise is not just about the end product but also about showcasing your team’s work culture and communication.
 
-**Timeline:**
+## Timeline:
 
-Even though you are given a week to complete this, please spend about 30 minutes to an hour on it.
+Please spend about 30 minutes to an hour. But you will be given two weeks, just in case.
 
-**Evaluation Criteria:**
+## Evaluation Criteria:
 
 I will use a secret rubric with numbers, which (since they're numbers) seem scientific. Unfortunately, they have not been shown to correlate to, well, anything.
 
 Due to the number of jobs I am interested in, I'm not able to provide specific feedback on your submission.
 
-**Technical Requirements:**
+## Technical Requirements:
 
-- Use a front-end framework/library of your choice (e.g., React, Angular, Vue, JSF).
+- Use a front-end framework/library of your choice (e.g., React, Angular, Vue, Qt, JSF).
 - Implement a back-end service using a technology stack you're comfortable with (e.g., VBScript, Node.js, Python, Ruby, Java), but ideally something different than the backend to show your breadth.
-- Use a relational database (e.g., Oracle, PostgreSQL, MySQL) to store user and task information.
+- Use a relational database (e.g., Oracle) to store user and task information.
 - Include error handling and input validation.
 - Write unit and integration tests.
+- Deploy on your favorite cloud provider (e.g., Azure) using a CI/CD pipeline and Kubernetes.
 
-**Project: GitHub Analyzer**
+## Project: The GitHub Analyzer
 
-**Overview:** Develop an application that evaluates a GitHub profile. The goal is to technically assess job candidates based solely on their GitHub profile, in an automated way, and determine whether the candidate is a "good" fit or not for a job.
+### Overview:
+Develop an application that evaluates GitHub profiles. The goal is to technically assess job candidates based solely on their GitHub profile, in an automated way, and determine whether the candidate is a "good" fit or not for a job.
 
-**Project Description:** Build a **GitHub Analyzer** application that allows users to assess 3 or more of these:
+### Project Description:
+
+Implement 3 or more of these:
 
 1. **Emoji Usage Metric:** Analyze commit messages for the number of emojis used. The more emojis, the higher the score.
 2. **Late Night Commits:** Track the number of commits made between midnight and 4 AM to gauge dedication.
