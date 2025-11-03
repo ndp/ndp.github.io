@@ -13,7 +13,7 @@ tags:
 - mini-project
 ---
 
-I recently spent a few hours building  [gotomyhead.site](https://gotomyhead.site), which is an MVP app to find lead sheets in the popular fake (aka real) books. (You can read more about it [here](https://blog.ndpsoftware.com/go-to-my-head).) It's a "mini-project", and even if the project domain itself doesn't interest you, my development approach gave me what I think are interesting insights to share.
+I recently spent a few hours building  [gotomyhead.site](https://www.gotomyhead.site), which is an MVP app to find lead sheets in the popular fake (aka real) books. (You can read more about it [here](https://blog.ndpsoftware.com/go-to-my-head).) It's a "mini-project", and even if the project domain itself doesn't interest you, my development approach gave me what I think are interesting insights to share.
 
 The modern way to create  software app is to clone a template app or run a "meta" script that installs all the "stuff you're going to need" for a modern web app. This setup step is exemplified in the ambitious and popular CreateReactApp. Rails, a complete framework itself, even spawned [tools to give you you even more.](http://railsapps.github.io/rails-application-templates.html). A recent trend is for hosting providers (PAASes) to leverage (or even provide) these setup tools to bring you to their hosting platform. Sadly, many new web engineers see this as the first step to any project. 
 
@@ -148,7 +148,7 @@ q.addEventListener('keyup', e => {
 
 #### `findMatches` Function: a Humble Search Engine
 
-I won't show it here, but the first version of `findMatches` I wrote by traversing through the JSON generated from the ingestion. For each song, I match the typed query against any of the names used for it, and then I sort the matching songs based on how "well" it matches. Each song match gets a "score", with extra points for whole word matches and the beginning of the song's name. A fairly simple heuristic like this, from my experience, produces nice results on a limited dataset like this. I've spent years tweaking another version of it I use on [AmpWhat](https://www.amp-what.com/)
+I won't show it here, but the first version of `findMatches` I wrote by traversing through the JSON generated from the ingestion. For each song, I match the typed query against any of the names used for it, and then I sort the matching songs based on how well it matches. Each song match gets a "score", with extra points for whole word matches and the beginning of the song's name. A fairly simple heuristic like this, from my experience, produces nice results on a limited dataset like this. I've spent years tweaking another version of it I use on [AmpWhat](https://www.amp-what.com/)
 
 I didn't need to reach for another library to do this, and certainly not a database. People reach for databases because they are concerned about speed and memory, but in the modern world, browsers can execute 1000s of regular expressions per second, so it will be plenty fast. And the data file wasn't big by today's standards.
 

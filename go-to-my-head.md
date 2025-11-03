@@ -3,7 +3,7 @@ layout: page
 title: About "GoToMyHead.site"
 ---
 
-[Go To My Head](gotomyhead.site) is a web application to quickly locate music charts in the various "fake" books: The Real Book, The New Real Book, etc. 
+[Go To My Head](https://www.gotomyhead.site) is a web application to quickly locate music charts in the various "fake" books: The Real Book, The New Real Book, etc. 
 
 There are apps that try to manage all this for you, from $20+ Apps to free Linux-based DIY tools. These might be great, but to be honest, they were too much trouble for me. I trust the tools (paper books), and was looking for something that would speed me along at a gig-- supplement, not replace my workflow.
 
