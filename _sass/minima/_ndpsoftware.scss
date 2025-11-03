@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .post-title {
-line-height: 1.1;
+  line-height: 1.1;
 }
 .post-meta {
   font-style: italic;
@@ -22,7 +22,7 @@ line-height: 1.1;
 }
 
 li {
-font-style: italic;
+  font-style: italic;
 }
 
 p:hover a:link {
@@ -49,6 +49,14 @@ p:hover a:link {
     margin: 30px 0 5px;
     text-align: left;
     font: normal 55px/55px "ImpactLabelReversed", verdana;
+ }
+}
+
+@media (min-width: 1000px) {
+ .site-title {
+    margin: 30px 0 5px;
+    text-align: left;
+    font: normal 65px/65px "ImpactLabelReversed", verdana;
  }
 }
 
