@@ -1,4 +1,8 @@
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: 'Nunito', sans-serif;
   font-style: normal;
 }
@@ -12,6 +16,7 @@ h1, h2, h3, h4, h5 {
 .post-title {
   line-height: 1.1;
 }
+
 .post-meta {
   font-style: italic;
   font-size: inherit;
@@ -31,33 +36,34 @@ p:hover a:link {
 
 
 .site-header {
-    border: none;
+  border: none;
 }
 
 .site-title {
-    margin: -1px -20px 5px;
-    display: inline-block;
-    box-shadow: 1px 0px 5px #666644;
-    padding: 0 20px 0 30px;
-    font: normal 40px/40px "ImpactLabelReversed", verdana;
-    color: white !important;
-    background-color: #930;
+  margin: -1px -20px 5px;
+  display: inline-block;
+  box-shadow: 1px 0px 5px #666644;
+  padding: 0 20px 0 30px;
+  font: normal 40px/40px "ImpactLabelReversed", verdana;
+  color: white !important;
+  background-color: #930;
   text-align: center;
 }
+
 @media (min-width: 600px) {
- .site-title {
+  .site-title {
     margin: 30px 0 5px;
     text-align: left;
     font: normal 55px/55px "ImpactLabelReversed", verdana;
- }
+  }
 }
 
 @media (min-width: 1000px) {
- .site-title {
+  .site-title {
     margin: 30px 0 5px;
     text-align: left;
     font: normal 65px/65px "ImpactLabelReversed", verdana;
- }
+  }
 }
 
 .site-title:hover {
@@ -65,29 +71,44 @@ p:hover a:link {
 }
 
 .site-nav .page-link {
-    font-size: 10px;
-    color: $grey-color-light;
-  }
+  font-size: 10px;
+  color: $grey-color-light;
+}
 
 @media screen and (max-width: 600px) {
-.site-nav {
-  top: 1px;
-  right: 1px;
-}
+  .site-nav {
+    top: 1px;
+    right: 1px;
+  }
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 24px;
 }
+
 p {
   margin-top: 12px;
   margin-bottom: 12px;
 }
 
 @media (min-width: 600px) {
-  p, h1, h2, h3, h4, h5, h6 {
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     line-height: 36px;
   }
+
   p {
     margin-top: 18px;
     margin-bottom: 18px;
@@ -96,32 +117,32 @@ p {
 
 
 pre {
-    padding: 3px 15px 5px 15px;
-    font-family: 'source code pro', monospace;
-    background-color: white;
-    border: none;
-    box-shadow: inset 0px 0px 3px #666644;
+  padding: 3px 15px 5px 15px;
+  font-family: 'source code pro', monospace;
+  background-color: white;
+  border: none;
+  box-shadow: inset 0px 0px 3px #666644;
 }
 
 code {
   font-style: normal;
-    padding: 5px 5px;
-    margin: 5px -3px;
-    font-family: 'source code pro', monospace;
-    font-size: 16px;
-    background-color: white;
-    border: none;
-    box-shadow: 1px 2px 5px #666644;
+  padding: 5px 5px;
+  margin: 5px -3px;
+  font-family: 'source code pro', monospace;
+  font-size: 16px;
+  background-color: white;
+  border: none;
+  box-shadow: 1px 2px 5px #666644;
 }
 
 pre>code,
 p code,
 li code {
-    box-shadow: none;
-    background-color: transparent;
+  box-shadow: none;
+  background-color: transparent;
 }
 
-:is(h2,h3,h4,h5,h6) code {
+:is(h2, h3, h4, h5, h6) code {
   box-shadow: none;
   border: none;
   background-color: transparent;
@@ -132,42 +153,49 @@ li code {
 
 
 .social-media-list li span {
-font-size:16px;
-    font-family: 'Nunito', sans-serif;
-    font-style: normal;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  font-style: normal;
 }
 
 .social-media-list li .svg-icon {
-    transform: translate(4px, 6px);
+  transform: translate(4px, 6px);
 }
 
 @media (min-width: 700px) {
-.task-list {
-  columns: 2;
-  margin-left: 0;
+  .task-list {
+    columns: 2;
+    margin-left: 0;
+  }
 }
-}
+
 .task-list li {
   display: block;
 }
+
 .task-list li input {
   margin-right: 10px;
 }
+
 .task-list li em {
   margin-right: 10px;
   color: gray;
 }
+
 .task-list li em::before {
-content: '['
+  content: '['
 }
+
 .task-list li em::after {
-content: ']'
+  content: ']'
 }
 
 @media print {
-body>header, body>footer {
-  display: none;
-}
+
+  body>header,
+  body>footer {
+    display: none;
+  }
 }
 
 .highlighter-rouge .highlight {
