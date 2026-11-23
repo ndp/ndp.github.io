@@ -8,7 +8,7 @@ tags:
 - hacking
 - fun
 ---
-When I first came across [Wordle](https://www.powerlanguage.co.uk/wordle/), I accidentally glanced one of my kid's screen while walking down the stairs. After I was explained the game by them, I then proceeded to show my prowess by getting my first Wordle right in 1 guess. My family was surprised, but obviously onto me. But this got me started down a bad path of cheating on Wordle. 
+When I first came across [Wordle](https://www.nytimes.com/games/wordle/), I accidentally glanced one of my kid's screen while walking down the stairs. After I was explained the game by them, I then proceeded to show my prowess by getting my first Wordle right in 1 guess. My family was surprised, but obviously onto me. But this got me started down a bad path of cheating on Wordle. 
 
 I decided to have one rule I never broke: never cheat the same way twice.
 
@@ -38,3 +38,7 @@ If you start with the words `clean` and `riots`. This will give you a few letter
 The fifteen most common letters are found in `lurid month space`, which seems to pretty much guarantee a score of 4.
 
 That's all for now.
+
+
+Notes:
+- previous Wordle link: [Wordle](https://www.powerlanguage.co.uk/wordle/)
